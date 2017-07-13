@@ -1,0 +1,15 @@
+{
+	"routes": [
+		{
+			"name": "index",
+			"endpoint": "/",
+			"template": "index",
+			"async": false
+		}
+	],
+	"data":{
+		"index":{
+			"title": "Hello Ninja!"
+		}
+	}
+}
