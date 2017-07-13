@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name = "description" content = "">
+    <meta name = "keywords" content="">
+    <meta name="Copyright" content = "">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+<!--     <% for (var icon in htmlWebpackPlugin.files.favicon) { %>
+        
+    <% } %> -->
+    {% block title %}{% endblock %}    
+</head>
+
+<body>
+    {% block body %}{% endblock %}    
+    <% for (var chunk in htmlWebpackPlugin.files.chunks) { %>
+        <script src="<%= htmlWebpackPlugin.files.chunks[chunk].entry %>"></script>
+    <% } %>
+    {% block script %}{% endblock %}
+</body>
+
+</html>

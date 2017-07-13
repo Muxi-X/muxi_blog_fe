@@ -1,3 +1,3 @@
-## muxi_blog_fe
+## my-project
 
 > A vue project.

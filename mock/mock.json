@@ -5,6 +5,12 @@
 			"endpoint": "/",
 			"template": "index",
 			"async": false
+		},
+		{
+			"name": "second",
+			"endpoint": "/second",
+			"template": "second",
+			"async": false
 		}
 	],
 	"data":{
