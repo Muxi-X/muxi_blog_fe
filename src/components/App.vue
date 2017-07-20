@@ -1,30 +1,37 @@
 <template>
-    <div id="app" :class="$style.app">
-        <h2> {{ message }} </h2>
-        <img src="../assets/muxi_logo.png" alt="muxi_logo">
-        <a href="https://github.com/Muxi-Studio/ninja">
-      github
-    </a>
-        <a href="http://muxistudio.com/">
-      @Muxi-Studio
-    </a>
-    </div>
+    <div>
+    <navigation class="navi"></navigation>
+    <!-- <archieve></archieve> -->
+    <div>
+        lalalal
+        </div>
+        </div>
 </template>
 <script>
+import navigation from './navigation.vue'
+//import archieve from './archieve'
+
 export default {
-    name: 'app',
     data() {
-        return {
-            message: 'Hello Ninja!'
+            return {
+            }
+        },
+        components: {
+            "navigaiton": navigation,
+            "archieve": archieve
+        },
+        methods: {
         }
-    }
 }
 </script>
-<style lang="scss" module>
-.app {
-    margin: 0;
-}
-.foo {
-    margin-top: 180px;
+<style lang="scss" mudule>
+.navi {
+    height: 100%;
+    width: 200px;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    background: #ffffff;
+    overflow: hidden;
 }
 </style>

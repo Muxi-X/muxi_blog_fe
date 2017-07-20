@@ -12,34 +12,40 @@ function resolve(dir) {
 }
 
 module.exports = {
-        entry: {
-            index: './src/main.js',
-            second: './src/second.js'
-        },
-        output: {
-            path: path.join(__dirname, "../"),
-            filename: '[name].js',
-            publicPath: process.env.NODE_ENV === 'production' ? config.build.assetsPublicPath : config.dev.assetsPublicPath
-        },
-        module: {
-            rules: [{
-                    test: /\.vue$/,
-                    loader: 'vue-loader',
-                    options: {
-                        extractCSS: process.env.NODE_ENV === 'production'
-                    }
-                }, {
-                    test: /\.js$/,
-                    loader: 'babel-loader',
-                    include: [resolve('src')]
-                }, {
-                    test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
-                    loader: 'url-loader',
-                    options: {
-                        limit: 10000,
-                        name: 'img/[name].[hash:7].[ext]'
-                    }
-                }]
+    entry: {
+        index: './src/index.js',
+        second: './src/second.js'
+    },
+    output: {
+        path: path.join(__dirname, "../"),
+        filename: '[name].js',
+        publicPath: process.env.NODE_ENV === 'production' ? config.build.assetsPublicPath : config.dev.assetsPublicPath
+    },
+    module: {
+        rules: [{
+            test: /\.vue$/,
+            loader: 'vue-loader',
+            options: {
+                extractCSS: process.env.NODE_ENV === 'production'
+            }
+        }, {
+            test: /\.js$/,
+            loader: 'babel-loader',
+            include: [resolve('src')]
+        }, {
+            test: /\.scss$/,
+            loaders: ["style-loader", "css-loader", "sass-loader"]
+        }, {
+            test: /\.html$/,
+            loader: "html-loader"
+        }, {
+            test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+            loader: 'url-loader',
+            options: {
+            limit: 10000,
+            name: 'img/[name].[hash:7].[ext]'
+            }
+        }]
     },
     plugins: [
         // split vendor js into its own file
@@ -72,7 +78,7 @@ module.exports = {
             filename: 'template/base.html',
             inject: false,
             template: path.join(__dirname, '../template/base.ejs'),
-            chunks: ['manifest','vendor']
+            chunks: ['manifest', 'vendor']
         }),
         new HtmlWebpackPlugin({
             alwaysWriteToDisk: true,

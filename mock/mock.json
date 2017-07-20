@@ -1,21 +1,35 @@
 {
-	"routes": [
-		{
-			"name": "index",
-			"endpoint": "/",
-			"template": "index",
-			"async": false
-		},
-		{
-			"name": "second",
-			"endpoint": "/second",
-			"template": "second",
-			"async": false
-		}
-	],
-	"data":{
-		"index":{
-			"title": "Hello Ninja!"
-		}
-	}
+    "routes": [
+    {
+        "name": "index",
+        "endpoint": "/",
+        "template": "index",
+        "async": false
+    },
+    {
+        "name": "second",
+        "endpoint": "/second",
+        "template": "second",
+        "async": false
+    }],
+    "data":
+    {
+        "index":
+        {
+            "count": 2,
+            "pages_count": 1,
+            "page": 1,
+            "blogs": [
+            {
+                "id": 1,
+                "title": "Frontend",
+                "body": "lalalla",
+                "username": "Cruyun",
+                "comment": "https://avatars0.githubusercontent.com/u/24372759?v=4&s=460",
+                "avatar": "avatar",
+                "summary": "sum",
+                 "type": 1
+            }]
+        }
+    }
 }

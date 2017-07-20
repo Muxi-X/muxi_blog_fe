@@ -1,5 +1,5 @@
 {
-  "name": "my-project",
+  "name": "muxi_blog",
   "version": "1.0.0",
   "description": "A vue project.",
   "main": "./src/index.js",
@@ -29,10 +29,10 @@
     "html-webpack-harddisk-plugin": "^0.1.0",
     "html-webpack-plugin": "^2.9.0",
     "node-sass": "^4.5.2",
+    "url-loader": "^0.5.7",
     "optimize-css-assets-webpack-plugin": "^2.0.0",
     "sass-loader": "^4.0.0",
     "style-loader": "^0.13.2",
-    "url-loader": "^0.5.7",
     "vue-hot-reload-api": "^2.0.6",
     "vue-loader": "^12.2.1",
     "webpack": "^2.4.1",

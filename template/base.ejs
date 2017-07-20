@@ -1,21 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-cn">
 
 <head>
     <meta charset="UTF-8">
-    <meta name = "description" content = "">
-    <meta name = "keywords" content="">
-    <meta name="Copyright" content = "">
+    <meta name = "description" content = "华中师范大学木犀团队 木犀博客">
+    <meta name = "keywords" content="华中师范大学 木犀团队 博客">
+    <meta name="Copyright" content = "2014-2017 Muxistudio">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
 <!--     <% for (var icon in htmlWebpackPlugin.files.favicon) { %>
-        
     <% } %> -->
-    {% block title %}{% endblock %}    
+    <title>{% block title %}{% endblock %}</title>
 </head>
 
 <body>
-    {% block body %}{% endblock %}    
+    {% block body %}{% endblock %}
     <% for (var chunk in htmlWebpackPlugin.files.chunks) { %>
         <script src="<%= htmlWebpackPlugin.files.chunks[chunk].entry %>"></script>
     <% } %>
