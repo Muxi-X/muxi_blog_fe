@@ -7,9 +7,27 @@
         "async": false
     },
     {
-        "name": "second",
-        "endpoint": "/second",
-        "template": "second",
+        "name": "web",
+        "endpoint": "/web",
+        "template": "web",
+        "async": false
+    },
+    {
+        "name": "design",
+        "endpoint": "/design",
+        "template": "design",
+        "async": false
+    },
+    {
+        "name": "android",
+        "endpoint": "/android",
+        "template": "android",
+        "async": false
+    },
+    {
+        "name": "product",
+        "endpoint": "/product",
+        "template": "product",
         "async": false
     }],
     "data":
@@ -28,7 +46,7 @@
                 "comment": "https://avatars0.githubusercontent.com/u/24372759?v=4&s=460",
                 "avatar": "avatar",
                 "summary": "sum",
-                 "type": 1
+                "type": 1
             }]
         }
     }

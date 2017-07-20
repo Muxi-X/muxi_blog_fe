@@ -1,15 +1,13 @@
 <template>
     <div>
-    <navigation class="navi"></navigation>
-    <!-- <archieve></archieve> -->
+    <navi :class="$style.navi"></navi>
     <div>
-        lalalal
+        
         </div>
         </div>
 </template>
 <script>
 import navigation from './navigation.vue'
-//import archieve from './archieve'
 
 export default {
     data() {
@@ -17,14 +15,13 @@ export default {
             }
         },
         components: {
-            "navigaiton": navigation,
-            "archieve": archieve
+            "navi": navigation
         },
         methods: {
         }
 }
 </script>
-<style lang="scss" mudule>
+<style lang='scss' module>
 .navi {
     height: 100%;
     width: 200px;

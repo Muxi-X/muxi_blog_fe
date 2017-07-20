@@ -14,7 +14,10 @@ function resolve(dir) {
 module.exports = {
     entry: {
         index: './src/index.js',
-        second: './src/second.js'
+        web: './src/web.js',
+        design: './src/design.js',
+        android: './src/android.js',
+        product: './src/product.js'
     },
     output: {
         path: path.join(__dirname, "../"),
@@ -82,6 +85,13 @@ module.exports = {
         }),
         new HtmlWebpackPlugin({
             alwaysWriteToDisk: true,
+            filename: 'template/svg.html',
+            inject: false,
+            template: path.join(__dirname, '../template/svg.ejs'),
+            chunks: ['svg']
+        }),
+        new HtmlWebpackPlugin({
+            alwaysWriteToDisk: true,
             filename: 'template/index.html',
             inject: false,
             template: path.join(__dirname, '../template/index.ejs'),
@@ -89,10 +99,31 @@ module.exports = {
         }),
         new HtmlWebpackPlugin({
             alwaysWriteToDisk: true,
-            filename: 'template/second.html',
+            filename: 'template/web.html',
             inject: false,
-            template: path.join(__dirname, '../template/second.ejs'),
-            chunks: ['second']
+            template: path.join(__dirname, '../template/web.ejs'),
+            chunks: ['web']
+        }),
+        new HtmlWebpackPlugin({
+            alwaysWriteToDisk: true,
+            filename: 'template/design.html',
+            inject: false,
+            template: path.join(__dirname, '../template/design.ejs'),
+            chunks: ['design']
+        }),
+        new HtmlWebpackPlugin({
+            alwaysWriteToDisk: true,
+            filename: 'template/android.html',
+            inject: false,
+            template: path.join(__dirname, '../template/android.ejs'),
+            chunks: ['android']
+        }),
+        new HtmlWebpackPlugin({
+            alwaysWriteToDisk: true,
+            filename: 'template/product.html',
+            inject: false,
+            template: path.join(__dirname, '../template/product.ejs'),
+            chunks: ['product']
         }),
         new HtmlWebpackHarddiskPlugin()
     ]
