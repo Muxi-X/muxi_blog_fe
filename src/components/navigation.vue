@@ -35,10 +35,15 @@
 	        </svg>
 	        <span :class="$style.class_word">Product</span>
 	    </a>
+	    <a href="http://muxistudio.com" :class="$style.link_box">
+	        <svg :class="$style.icon" viewBox="0 0 1024 1024">
+	            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#about"></use>
+	        </svg>
+	        <span :class="$style.class_word">About</span>
+	    </a>
 	</div>
 </template>
 <script>
-	
 </script>
 <style lang='scss' module>
 .logo_box {
@@ -56,21 +61,21 @@
 
 .link_box {
 	border-bottom: 1px #d9dcdc solid;
-	height: 70px;
-	width: 100%;
-	display: block;
-	font-size: 16px;
-	// composes: link from "sass-loader!../common.scss";
+	// height: 70px;
+	// width: 100%;
+	// display: block;
+	// font-size: 16px;
+	composes: link from "sass-loader!../common.scss";
 }
 
 .link_box_first{
 	border-top: 1px #d9dcdc solid;
 	border-bottom: 1px #d9dcdc solid;
-	height: 70px;
-	width: 100%;
-	display: block;
-	font-size: 16px;
-	// composes: link from "sass-loader!../common.scss";
+	// height: 70px;
+	// width: 100%;
+	// display: block;
+	// font-size: 16px;
+	composes: link from "sass-loader!../common.scss";
 }
 
 .icon {
@@ -86,7 +91,12 @@
     line-height: 70px;
     vertical-align: middle;
 }
-a:hover {
+.link_box_first:hover {
     background: #69cad3;
-    color: #fff; }
+    color: #fff; 
+}
+.link_box:hover {
+	background: #69cad3;
+    color: #fff;
+}
 </style>

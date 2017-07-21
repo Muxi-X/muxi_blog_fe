@@ -12,13 +12,17 @@ body {
 
 a {
     text-decoration: none;
-    color: #2b4755;
     margin: 0;
     padding: 0;
+    color: #000;
 }
 
 input,
 button {
     outline: 0;
     border: 0;
+}
+
+.wrap {
+    height: 100%;
 }
