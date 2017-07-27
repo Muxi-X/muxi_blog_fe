@@ -34,14 +34,19 @@
         "name": "get_blogs",
         "endpoint": "/blogs/",
         "async": true
+    },
+    {
+        "name": "get_web",
+        "endpoint": "/web/",
+        "async": true
     }
 ],
     "data":
     {
         "get_blogs":
         {
-            "count": 2,
-            "pages_count": 1,
+            "count": 10,
+            "pages_count": 5,
             "page": 1,
             "blogs": [
             {
@@ -51,22 +56,60 @@
                 "body": "lalalla",
                 "username": "Cruyun",
                 "comment_num": 23,
-                "like_num": 33,
                 "avatar": "https://avatars0.githubusercontent.com/u/24372759?v=4&s=460",
                 "summary": "HTML5 中提供的文件API在前端中有着丰富的应用，上传、下载、读取内容等在日常的交互中很常见。而且在各个浏览器的兼容也比较好，包括移动端，除了 IE 只支持 IE10 以上的版本。想要更好地掌握好操作文件的功能，先要熟悉每个API。",
-                "type": 1
+                "type": 1,
+                "img_url": "https://avatars0.githubusercontent.com/u/24372759?v=4&s=460",
+                "tags": ["前端","HTML"],
+                "tags_num": 2
             },{
-                "id": 1,
+                "id": 2,
                 "title": "风骚一点！在网页中玩转霓虹色的正确姿势",
                 "date": "7月6日",
                 "body": "lalalla",
                 "username": "Cruyun",
                 "comment_num": 23,
-                "like_num": 3,
                 "avatar": "https://avatars0.githubusercontent.com/u/24372759?v=4&s=460",
                 "summary": "霓虹色真的是让人又爱又恨的一种设计元素啊。作为设计趋势，你会看到别人的设计中，霓虹色的运用是如此的帅气和炸裂，可是自己上手的时候，却一下子将逼格拉回到80年代，尴尬。现实世界中的霓虹灯所带来的效果本就参差不齐，在网页设计当中运用，稍不注意……就会整段垮掉。这种局面让我忍不住去仔细审视那些成功的霓虹色运用案例，并且有了今天这篇零碎但是有用的文章。霓虹色是大胆而有自由的，同时它的特性也是有规律的。如果你希望霓虹色可以出现在你的设计当中，不妨读下去。",
-                "type": 3
+                "type": 3,
+                "img_url": "https://avatars0.githubusercontent.com/u/24372759?v=4&s=460",
+                "tags": ["设计","配色"],
+                "tags_num": 2
             }]
+        },
+        "get_web":
+        {
+            "count": 10,
+            "pages_count": 5,
+            "page": 1,
+            "blogs": [
+            {
+                "id": 1,
+                "title": "HTML5 进阶系列：文件上传下载",
+                "date": "7月6日",
+                "body": "lalalla",
+                "username": "Cruyun",
+                "comment_num": 23,
+                "avatar": "https://avatars0.githubusercontent.com/u/24372759?v=4&s=460",
+                "summary": "HTML5 中提供的文件API在前端中有着丰富的应用，上传、下载、读取内容等在日常的交互中很常见。而且在各个浏览器的兼容也比较好，包括移动端，除了 IE 只支持 IE10 以上的版本。想要更好地掌握好操作文件的功能，先要熟悉每个API。",
+                "type": 1,
+                "img_url": "https://avatars0.githubusercontent.com/u/24372759?v=4&s=460",
+                "tags": ["前端","HTML"],
+                "tags_num": 2
+            },{
+                "id": 2,
+                "title": "HTML5 进阶系列：文件上传下载",
+                "date": "7月6日",
+                "body": "lalalla",
+                "username": "Cruyun",
+                "comment_num": 23,
+                "avatar": "https://avatars0.githubusercontent.com/u/24372759?v=4&s=460",
+                "summary": "HTML5 中提供的文件API在前端中有着丰富的应用，上传、下载、读取内容等在日常的交互中很常见。而且在各个浏览器的兼容也比较好，包括移动端，除了 IE 只支持 IE10 以上的版本。想要更好地掌握好操作文件的功能，先要熟悉每个API。",
+                "type": 1,
+                "img_url": "https://avatars0.githubusercontent.com/u/24372759?v=4&s=460",
+                "tags": ["前端","HTML"],
+                "tags_num": 2
+            }]  
         }
     }
 }

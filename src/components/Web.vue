@@ -1,11 +1,9 @@
 <template>
-    <div :class="$style.wrap">
+    <div :class="$style.wrap" id="web">
+        sdfsdf
         <sign :class="$style.sign"></sign>
         <navi :class="$style.navi"></navi>
-        <con :class="$style.cont" 
-            :items="this.items" 
-            :page_num="this.page_num"
-            :page_count="this.page_count"></con>
+        <con :class="$style.cont" :items="this.items"></con>
     </div>
 </template>
 <script>
@@ -24,13 +22,13 @@ export default {
         "con": content
     },
     mounted() {
-        fetch('/blogs/').then(res => {
+        fetch('/web/').then(res => {
             return res.json()
             })
             .then(res => {
                 this.items = res.blogs
-                this.pages_count = res.pages_count
-                this.page_num = res.page
+                this.page_Num = res.pages_count
+                this.current_page = res.page
             })
     },
     methods: {

@@ -1,6 +1,33 @@
 .link {
-height: 70px;
+    height: 70px;
 	width: 100%;
 	display: block;
 	font-size: 16px;
+}
+.navi {
+    height: 100%;
+    width: 200px;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    background: #ffffff;
+    overflow: hidden;
+}
+.sign {
+    height: 30px;
+    width: 100px;
+    color: #959595;
+    background: #dcdcdc;
+    margin: 0px -2px;
+    font-size: 14px;
+    position: fixed;
+    right: 0px;
+    top: 0px;
+}
+.cont {
+    margin-left: 250px;
+    width: 600px;
+    height: 550px;
+    overflow: hidden;
+    margin-top: 100px;
 }
