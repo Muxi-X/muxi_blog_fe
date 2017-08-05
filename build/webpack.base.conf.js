@@ -99,6 +99,13 @@ module.exports = {
         }),
         new HtmlWebpackPlugin({
             alwaysWriteToDisk: true,
+            filename: 'template/second.html',
+            inject: false,
+            template: path.join(__dirname, '../template/second.ejs'),
+            chunks: ['second']
+        }),
+        new HtmlWebpackPlugin({
+            alwaysWriteToDisk: true,
             filename: 'template/web.html',
             inject: false,
             template: path.join(__dirname, '../template/web.ejs'),

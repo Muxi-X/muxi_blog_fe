@@ -1,9 +1,12 @@
 <template>
-    <div :class="$style.wrap" id="web">
-        sdfsdf
+    <div :class="$style.wrap">
         <sign :class="$style.sign"></sign>
         <navi :class="$style.navi"></navi>
-        <con :class="$style.cont" :items="this.items"></con>
+        <con :class="$style.cont" 
+             :items="this.items" 
+             :page_count="this.page_count" 
+             v-on:pageUp="PageUp" 
+             v-on:pageDown="PageDown"></con>
     </div>
 </template>
 <script>
@@ -13,7 +16,7 @@ import content from './content.vue'
 export default {
     data() {
         return {
-            items:[]
+            items: []
         }
     },
     components: {
@@ -22,17 +25,45 @@ export default {
         "con": content
     },
     mounted() {
-        fetch('/web/').then(res => {
+        this.page_num
+        fetch('/blogs/1').then(res => {
+        //fetch('/api/v2.0/1').then(res => {
             return res.json()
             })
             .then(res => {
                 this.items = res.blogs
-                this.page_Num = res.pages_count
-                this.current_page = res.page
+                this.pages_count = res.pages_count
+                //this.page_num = res.page
             })
     },
     methods: {
+        PageUp() {
+            if (this.page_num != this.pages_count) {
+                this.page_num += 1;
+                //console.log(this.page_num)
+                fetch('/api/v2.0/'+ this.page_num).then(res => {
+                    return res.json()
+                })
+                .then(res => {
+                    this.items = res.blogs
+                    this.pages_count = res.pages_count
+                })
+            }
+        },
+        PageDown() {
+            if (this.page_num != 1) {
+                this.page_num -= 1;
+                //console.log(this.page_num)
+                fetch('/api/v2.0/'+ this.page_num).then(res => {
+                    return res.json()
+                })
+                .then(res => {
+                    this.items = res.blogs
+                    this.pages_count = res.pages_count
+                })
+            }
         }
+    }
 }
 </script>
 <style lang='scss' module>

@@ -1,6 +1,6 @@
 <template>
-	<div id="content">
-		<div v-for="item in items" :class="$style.content_box" :key="item">
+	<div>
+		<a :href="/second/+ item.id" v-for="item in items" :class="$style.content_box" :key="item" v-on:click="toSecond">
 			<div :class="$style.left_box">
 				<div :class="$style.top">
 					<img :class="$style.avatar_size" v-bind:src="item.avatar">
@@ -16,7 +16,7 @@
 					<div :class="$style.bottom_left">
 						<svg :class="$style.content_icon" viewBox="0 0 1024 1024">
 							<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#comment"></use>
-					    </svg>
+						</svg>
 						<div :class="$style.comment_num">{{item.comment_num}}</div>
 					</div>
 					<div :class="$style.bottom_right">
@@ -28,108 +28,133 @@
 				</div>
 			</div>
 			<img :class="$style.right_box" v-bind:src="item.img_url">
-		</div>
-		 <div :class="$style.page_row">
+		</a>
+		<div :class="$style.page_row">
 			<button :class="$style.page_button" v-on:click="pageDown"> < </button>
-		    <button :class="$style.page_button" v-on:click="pageUp"> > </button>
+			<button :class="$style.right_button" v-on:click="pageUp"> > </button>
 		</div>
 	</div>
 </template>
 
 <script>
-	export default {
-		data() {
-			return {
-			}
+export default {
+	data() {
+		return {
+			page_num: 1
+		}
+	},
+	props: ['items', 'page_count'],
+	methods: {
+		pageDown() {
+			this.$emit('pageDown')
 		},
-		props: ['items','page_num','page_count'],
-		methods: {
-			pageDown() {
-				if(this.page_num != 1)
-				    this.$parent.page_num -= 1;
-			},
-			pageUp() {
-				if(this.page_num != this.page_count)
-				    this.$parent.page_num += 1;
-			}
+		pageUp() {
+			this.$emit('pageUp')
 		}
 	}
+}
 </script>
 
 <style lang='scss' module>
-	.content_box {
-		width: 600px;
-		height: 210px;
-		margin-bottom: 30px;
-		font-size: 0;
-		background-color: #ffffff;
-		//border: 1px 
-		//composes: inline-block from "sass-loader!../utility.scss";
-	}
-	
-	.avatar_size {
-		width: 40px;
-		height: 40px;
-	}
-	
-	.content_icon {
-		width: 20px;
-		height: 20px;
-		composes: inline-block from "sass-loader!../utility.scss";
-	}
-	
-	.top_right {
-		composes: inline-block from "sass-loader!../utility.scss";
-	}
-	
-	.left_box {
-		composes: inline-block from "sass-loader!../utility.scss";
-		composes: full-height from "sass-loader!../utility.scss";
-		width: 390px;
-		vertical-align: top;
-	}
-	
-	.right_box {
-		composes: inline-block from "sass-loader!../utility.scss";
-		composes: full-height from "sass-loader!../utility.scss";
-		width: 210px;
-	}
-	
-	.bottom {
-		font-size: 0;
-	}
-	
-	.bottom_left {
-		composes: inline-block from "sass-loader!../utility.scss";
-		composes: full-height from "sass-loader!../utility.scss";
-	}
-	
-	.blog_word {
-		composes: inline-block from "sass-loader!../utility.scss";
-		composes: min-font from "sass-loader!../utility.scss";
-	}
-	
-	.blog_summary {
-		composes: min-font from "sass-loader!../utility.scss";
-	}
-	
+a {
+	display: block;
+}
+.content_box {
+	width: 600px;
+	height: 214px;
+	margin-bottom: 30px;
+	font-size: 0;
+	background-color: #ffffff; 
+	border: 2px solid #ffffff;
+	//composes: inline-block from "sass-loader!../utility.scss";
+}
+
+.content_box:hover {
+	border: 2px solid #ffc162;
 	.blog_title {
-		font-size: 16px;
+		color: #ffc162;
 	}
-	
-	.comment_num {
-		composes: min-font from "sass-loader!../utility.scss";
-	}
-	
-	.tag_list {
-		font-size: 12px;
-		width: 100%;
-	}
-	
-	.tag {
-		background-color: #ffc162;
-		color: #ffffff;
-		display: inline-block;
-		font-size: 12px;
-	}
+}
+.avatar_size {
+	width: 40px;
+	height: 40px;
+}
+
+.content_icon {
+	width: 20px;
+	height: 20px;
+	composes: inline-block from "sass-loader!../utility.scss";
+}
+
+.top_right {
+	composes: inline-block from "sass-loader!../utility.scss";
+}
+
+.left_box {
+	composes: inline-block from "sass-loader!../utility.scss";
+	composes: full-height from "sass-loader!../utility.scss";
+	width: 390px;
+	vertical-align: top;
+}
+
+.right_box {
+	composes: inline-block from "sass-loader!../utility.scss";
+	composes: full-height from "sass-loader!../utility.scss";
+	width: 210px;
+}
+
+.bottom {
+	font-size: 0;
+}
+
+.bottom_left {
+	composes: inline-block from "sass-loader!../utility.scss";
+	composes: full-height from "sass-loader!../utility.scss";
+}
+
+.blog_word {
+	composes: inline-block from "sass-loader!../utility.scss";
+	composes: min-font from "sass-loader!../utility.scss";
+}
+
+.blog_summary {
+	composes: min-font from "sass-loader!../utility.scss";
+}
+
+.blog_title {
+	font-size: 16px;
+}
+
+.comment_num {
+	composes: min-font from "sass-loader!../utility.scss";
+}
+
+.tag_list {
+	font-size: 12px;
+	width: 100%;
+	height: 16px;
+}
+
+.tag {
+	background-color: #ffc162;
+	color: #ffffff;
+	display: inline-block;
+	font-size: 12px;
+	line-height: 16px;
+	margin-left: 15px;
+	border-radius: 2px;
+	padding: 0 3px;
+}
+
+.page_row {
+	composes: full-width from "sass-loader!../utility.scss";
+	display: flex;
+	-webkit-align-items: center;
+    align-items: center;
+   -webkit-justify-content: center;
+   justify-content: center;
+}
+.right_button {
+	margin-left: 20px;
+}
 </style>
