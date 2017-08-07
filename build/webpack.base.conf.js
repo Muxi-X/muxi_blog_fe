@@ -17,7 +17,8 @@ module.exports = {
         web: './src/web.js',
         design: './src/design.js',
         android: './src/android.js',
-        product: './src/product.js'
+        product: './src/product.js',
+        second : './src/second.js'
     },
     output: {
         path: path.join(__dirname, "../"),
@@ -131,7 +132,6 @@ module.exports = {
             inject: false,
             template: path.join(__dirname, '../template/product.ejs'),
             chunks: ['product']
-        }),
-        new HtmlWebpackHarddiskPlugin()
+        })
     ]
 }
