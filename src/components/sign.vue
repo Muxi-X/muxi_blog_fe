@@ -9,6 +9,7 @@
 .sign {
 	height: 100%;
 	width: 100%;
+	line-height: 25px;
 }
 .sign_box {
 	height: 100%;

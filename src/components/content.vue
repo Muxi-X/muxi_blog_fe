@@ -1,34 +1,36 @@
 <template>
 	<div>
-		<a :href="/second/+ item.id" v-for="item in items" :class="$style.content_box" :key="item" v-on:click="toSecond">
-			<div :class="$style.left_box">
-				<div :class="$style.top">
-					<img :class="$style.avatar_size" v-bind:src="item.avatar">
-					<div :class="$style.top_right">
-						<div :class="$style.blog_title">{{item.title}}</div>
-						<div>
-							<div :class="$style.blog_word">{{item.username}}</div>
-							<div :class="$style.blog_word">{{item.date}}</div>
+		<div :class="$style.blogs_box">
+			<a :href="/second/+ item.id" v-for="item in items" :class="$style.content_box" :key="item" v-on:click="toSecond">
+				<div :class="$style.left_box">
+					<div :class="$style.top">
+						<img :class="$style.avatar_size" v-bind:src="item.avatar">
+						<div :class="$style.top_right">
+							<div :class="$style.blog_title">{{item.title}}</div>
+							<div>
+								<div :class="$style.blog_word">{{item.username}}</div>
+								<div :class="$style.blog_word">{{item.date}}</div>
+							</div>
+						</div>
+					</div>
+					<div :class="$style.bottom">
+						<div :class="$style.bottom_left">
+							<svg :class="$style.content_icon" viewBox="0 0 1024 1024">
+								<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#comment"></use>
+							</svg>
+							<div :class="$style.comment_num">{{item.comment_num}}</div>
+						</div>
+						<div :class="$style.bottom_right">
+							<div :class="$style.blog_summary">{{item.summary}}</div>
+							<div :class="$style.tag_list">
+								<div v-for="onetag in item.tags" :class="$style.tag" :key="onetag">{{onetag}}</div>
+							</div>
 						</div>
 					</div>
 				</div>
-				<div :class="$style.bottom">
-					<div :class="$style.bottom_left">
-						<svg :class="$style.content_icon" viewBox="0 0 1024 1024">
-							<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#comment"></use>
-						</svg>
-						<div :class="$style.comment_num">{{item.comment_num}}</div>
-					</div>
-					<div :class="$style.bottom_right">
-						<div :class="$style.blog_summary">{{item.summary}}</div>
-						<div :class="$style.tag_list">
-							<div v-for="onetag in item.tags" :class="$style.tag" :key="onetag">{{onetag}}</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<img :class="$style.right_box" v-bind:src="item.img_url">
-		</a>
+				<img :class="$style.right_box" v-bind:src="item.img_url">
+			</a>
+		</div>
 		<div :class="$style.page_row">
 			<button :class="$style.page_button" v-on:click="pageDown"> < </button>
 			<button :class="$style.right_button" v-on:click="pageUp"> > </button>
@@ -56,17 +58,21 @@ export default {
 </script>
 
 <style lang='scss' module>
+.blogs_box {
+	height: 530px;
+}
+
 a {
 	display: block;
 }
+
 .content_box {
 	width: 600px;
 	height: 214px;
 	margin-bottom: 30px;
 	font-size: 0;
-	background-color: #ffffff; 
-	border: 2px solid #ffffff;
-	//composes: inline-block from "sass-loader!../utility.scss";
+	background-color: #ffffff;
+	border: 2px solid #ffffff; //composes: inline-block from "sass-loader!../utility.scss";
 }
 
 .content_box:hover {
@@ -75,6 +81,7 @@ a {
 		color: #ffc162;
 	}
 }
+
 .avatar_size {
 	width: 40px;
 	height: 40px;
@@ -150,11 +157,25 @@ a {
 	composes: full-width from "sass-loader!../utility.scss";
 	display: flex;
 	-webkit-align-items: center;
-    align-items: center;
-   -webkit-justify-content: center;
-   justify-content: center;
+	align-items: center;
+	-webkit-justify-content: center;
+	justify-content: center;
+	margin-bottom: 10px;
 }
+
 .right_button {
 	margin-left: 20px;
+}
+
+.page_button:hover {
+	background-color: #ffc162;
+	color: #ffffff;
+	cursor: pointer;
+}
+
+.right_button:hover {
+	background-color: #ffc162;
+	color: #ffffff;
+	cursor: pointer;
 }
 </style>

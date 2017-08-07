@@ -25,22 +25,21 @@ export default {
         "con": content
     },
     mounted() {
-        this.page_num
-        fetch('/blogs/1').then(res => {
-        //fetch('/api/v2.0/1').then(res => {
+        // this.page_num = 1;
+        fetch('/api/v2.0/1').then(res => {
             return res.json()
             })
             .then(res => {
                 this.items = res.blogs
                 this.pages_count = res.pages_count
-                //this.page_num = res.page
+                this.page_num = res.page
             })
     },
     methods: {
         PageUp() {
             if (this.page_num != this.pages_count) {
                 this.page_num += 1;
-                //console.log(this.page_num)
+                console.log(this.page_num)
                 fetch('/api/v2.0/'+ this.page_num).then(res => {
                     return res.json()
                 })
@@ -53,7 +52,7 @@ export default {
         PageDown() {
             if (this.page_num != 1) {
                 this.page_num -= 1;
-                //console.log(this.page_num)
+                console.log(this.page_num)
                 fetch('/api/v2.0/'+ this.page_num).then(res => {
                     return res.json()
                 })
@@ -67,5 +66,5 @@ export default {
 }
 </script>
 <style lang='scss' module>
-@import '../common.scss'
+@import '../common.scss';
 </style>

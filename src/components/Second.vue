@@ -13,10 +13,12 @@
 export default {
     data() {
         return {
+            // "id": "",
+            // "url": ""
         }
     },
     mounted() {
-        //fetch('')
+        //this.url = window.location.split('/')
     }
 }
 </script>
