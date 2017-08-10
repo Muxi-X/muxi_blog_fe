@@ -7,31 +7,31 @@
 	    </div>
 	    <a href="/" :class="$style.link_box_first">
 	        <svg :class="$style.icon" viewBox="0 0 1024 1024">
-	            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#home"></use>
+	            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#homeIcon"></use>
 	        </svg>
 	         <span :class="$style.class_word">Home</span>
 	    </a>
 	    <a href="/web" :class="$style.link_box">
 	        <svg :class="$style.icon" viewBox="0 0 1024 1024">
-	            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#web"></use>
+	            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#webIcon"></use>
 	         </svg>
             <span :class="$style.class_word">Web</span>
 	    </a>
 	    <a href="/design" :class="$style.link_box">
 	        <svg :class="$style.icon" viewBox="0 0 1024 1024">
-	            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#design"></use>
+	            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#designIcon"></use>
 	        </svg>
 	        <span :class="$style.class_word">Design</span>
 	    </a>
 	    <a href="/android" :class="$style.link_box">
 	        <svg :class="$style.icon" viewBox="0 0 1024 1024">
-	            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#android"></use>
+	            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#androidIcon"></use>
 	        </svg>
 	        <span :class="$style.class_word">Android</span>
 	    </a>
 	    <a href="/product" :class="$style.link_box">
 	        <svg :class="$style.icon" viewBox="0 0 1024 1024">
-	            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#product"></use>
+	            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#productIcon"></use>
 	        </svg>
 	        <span :class="$style.class_word">Product</span>
 	    </a>

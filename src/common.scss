@@ -30,4 +30,15 @@
     height: 550px;
     overflow: hidden;
     margin-top: 100px;
+    display: inline-block;
+}
+.tagBox {
+    width: 215px;
+    height: 226px;
+    background-color: #ffffff;
+    margin-top: 100px;
+    margin-left: 100px;
+    display: inline-block;
+    float: right;
+    padding: 10px;
 }

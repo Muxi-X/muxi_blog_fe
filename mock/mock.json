@@ -13,7 +13,7 @@
         },
         {
             "name": "blogInfo",
-            "endpoint": "/api/v2.0/:id/views/",
+            "endpoint": "/api/v2.0/1/views/",
             "async": true
         },
         {
@@ -42,7 +42,7 @@
         },
         {
             "name": "get_blogs",
-            "endpoint": "/api/v2.0/1",
+            "endpoint": "/api/v2.0/",
             "async": true
         },
         {
@@ -141,7 +141,7 @@
             }]
         },
         "blogInfo": {
-            "blog": [{
+            "blog": {
                 "id": 1,
                 "title": "HTML5 进阶系列：文件上传下载",
                 "date": "7月6日",
@@ -154,7 +154,7 @@
                 "img_url": "https://avatars0.githubusercontent.com/u/24372759?v=4&s=460",
                 "tags": ["前端", "HTML"],
                 "tags_num": 2
-            }],
+            },
             "comments": [{
                 "date": "7月6日",
                 "comment": "哈哈哈哈哈写的真好",

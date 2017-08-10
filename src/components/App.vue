@@ -7,12 +7,14 @@
              :page_count="this.page_count" 
              v-on:pageUp="PageUp" 
              v-on:pageDown="PageDown"></con>
+        <tagBox :class="$style.tagBox"></tagBox>
     </div>
 </template>
 <script>
 import navigation from './navigation.vue'
 import sign from './sign.vue'
 import content from './content.vue'
+import tags from './tags.vue'
 export default {
     data() {
         return {
@@ -22,11 +24,12 @@ export default {
     components: {
         "navi": navigation,
         "sign": sign,
-        "con": content
+        "con": content,
+        "tagBox": tags
     },
     mounted() {
         // this.page_num = 1;
-        fetch('/api/v2.0/1').then(res => {
+        fetch('/api/v2.0/').then(res => {
             return res.json()
             })
             .then(res => {

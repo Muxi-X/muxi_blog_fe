@@ -18,7 +18,7 @@ module.exports = {
         design: './src/design.js',
         android: './src/android.js',
         product: './src/product.js',
-        second : './src/second.js'
+        second: './src/second.js'
     },
     output: {
         path: path.join(__dirname, "../"),
@@ -46,8 +46,8 @@ module.exports = {
             test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
             loader: 'url-loader',
             options: {
-            limit: 10000,
-            name: 'img/[name].[hash:7].[ext]'
+                limit: 10000,
+                name: 'img/[name].[hash:7].[ext]'
             }
         }]
     },
@@ -132,6 +132,7 @@ module.exports = {
             inject: false,
             template: path.join(__dirname, '../template/product.ejs'),
             chunks: ['product']
-        })
+        }),
+        new HtmlWebpackHarddiskPlugin()
     ]
 }
