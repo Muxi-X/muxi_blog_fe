@@ -15,187 +15,183 @@
                     <div :class="$style.comment_date">{{comment.date}}</div>
                     <div :class="$style.comment_text">{{comment.comment}}</div>
                 </div>
-                <div :class="$style.cBox">
-                    <textarea v-model="message" :class="$style.editComment" placeholder="你的看法？"></textarea>
-                    <div :class="$style.buttonBox">
-                        <button v-on:click="submit" :class="$style.submitComment">评论</button>
-                    </div>
-                </div>
+                <commentBox :class="$style.cBox" v-on:submit="submit">
+                </commentBox>
             </div>
         </div>
     </div>
 </template>
+
 <script>
-import navigation from './navigation.vue'
-import sign from './sign.vue'
-import commentBox from './commentBox.vue'
-export default {
-    data() {
-        return {
-            "tags": [],
-            "comments": [],
-            "blog": {
-                type: Object
-            },
-            "message": ""
-            // "id": 0
-        }
-    },
-    components: {
-        "navi": navigation,
-        "sign": sign,
-        "commentBox": commentBox
-    },
-    mounted() {
-        // var api = window.loacation.pathname;
-        // this.id = api.split('/')[2];
-        // console.log(id)
-        // this.id = 1;
-        var id = 1;
-        
-        fetch('/api/v2.0/' + id + '/views/').then(res => {
-            return res.json()
-        })
-            .then(res => {
-                this.blog = res.blog
-                this.comments = res.comments
-                this.tags = this.blog.tags
-            })
-    },
-    methods: {
-        submit(e) {
-            e.stopPropagation();
-            if (this.message) {
-                fetch("/api/v2.0/' + id + '/views/", {
-                    method: 'POST',
-                    headers: {
-                        'Accept': 'application/json',
-                        'Content-Type': 'application/json'
-                        //token
-                    },
-                    body: JSON.stringify({
-                        id: this.id,
-                        message: this.message
-                    })
-                }).then(res => {
-                    if (res.ok) {
-                        fetch('/api/v2.0/' + id + '/views/').then(res => {
-                            return res.json()
-                        })
-                            .then(res => {
-                                // this.blog = res.blog
-                                this.comments = res.comments
-                                // this.tags = this.blog.tags
-                            })
-                    }
+    import navigation from './navigation.vue'
+    import sign from './sign.vue'
+    import commentBox from './commentBox.vue'
+    export default {
+        data() {
+            return {
+                "tags": [],
+                "comments": [],
+                "blog": {
+                    type: Object
+                },
+                "id": 0,
+                "comments": [],
+                "Cmessage": ""
+            }
+        },
+        components: {
+            "navi": navigation,
+            "sign": sign,
+            "commentBox": commentBox
+        },
+        mounted() {
+            var api = window.location.pathname;
+            this.id = api.split('/')[2];    
+            fetch('/api/v2.0/' + this.id + '/views/').then(res => {
+                    return res.json()
                 })
+                .then(res => {
+                    this.blog = res.blog
+                    this.comments = res.comments
+                    this.tags = this.blog.tags
+                })
+        },
+        methods: {
+            submit(e) {
+                // e.stopPropagation();
+                if (this.Cmessage) {
+                    fetch('/api/v2.0/' + this.id + '/add_comment/', {
+                        method: 'POST',
+                        headers: {
+                            'Accept': 'application/json',
+                            'Content-Type': 'application/json'
+                            //token
+                        },
+                        body: JSON.stringify({
+                            id: this.id,
+                            comment: this.Cmessage
+                        })
+                    }).then(res => {
+                        if (res.ok) {
+                            fetch('/api/v2.0/' + this.id + '/views/').then(res => {
+                                    return res.json()
+                                })
+                                .then(res => {
+                                    this.comments = res.comments
+                                })
+                        }else {
+                            alert("未登录")
+                            console.log(this.Cmessage)
+                        }
+                    })
+                }
             }
         }
     }
-}
 </script>
+
 <style lang="scss" module>
-@import '../common.scss';
-.main {
-    width: 800px;
-    background: #fff;
-    margin-left: 250px;
-    margin-top: 100px;
-    padding-top: 30px;
-    padding-bottom: 90px;
-}
-
-.avatar {
-    composes: inline-block from "sass-loader!../utility.scss";
-    width: 60px;
-    height: 60px;
-    margin-left: 40px;
-    margin-right: 20px;
-    vertical-align: top;
-}
-
-.right {
-    composes: inline-block from "sass-loader!../utility.scss";
-    width: 605px;
-}
-
-.title {
-    height: 60px;
-    font-size: 24px;
-    font-style: bold;
-    color: #545866;
-    composes: full-width from "sass-loader!../utility.scss";
-}
-
-.author {
-    font-size: 14px;
-    color: #ffc162;
-    composes: inline-block from "sass-loader!../utility.scss";
-    margin-right: 20px;
-}
-
-.time {
-    font-size: 14px;
-    color: #898989;
-    composes: inline-block from "sass-loader!../utility.scss";
-}
-
-.article {
-    margin-top: 35px;
-    margin-bottom: 50px;
-}
-
-.tag {
-    color: #ffc162;
-    font-size: 14px;
-    composes: inline-block from "sass-loader!../utility.scss";
-    margin-right: 10px;
-}
-
-.comment {
-    margin-top: 35px;
-    padding: 15px 0;
-    font-size: 12px;
-    border-top: 2px solid #e6e6e6;
-}
-
-.comment_name {
-    color: #f29a76;
-    composes: inline-block from "sass-loader!../utility.scss";
-}
-
-.comment_date {
-    margin-right: 0;
-    composes: inline-block from "sass-loader!../utility.scss";
-}
-
-.comment_text {
-    width: 516px;
-    margin-top: 10px;
-}
-
-.cBox {
-    padding-top: 50px;
-    border-top: 2px solid #e6e6e6;
-}
-
-.editComment {
-    height: 75px;
-    width: 380px;
-    border: 2px solid #e6e6e6;
-}
-
-.submitComment {
-    background-color: #ffc162;
-    color: #fff;
-    width: 50px;
-    height: 30px;
-    border-radius: 4px;
-}
-
-.buttonBox {
-    composes: full-width from "sass-loader!../utility.scss";
-    margin-top: 15px;
-    font-size: 14px;
-}
+    @import '../common.scss';
+    .main {
+        width: 800px;
+        background: #fff;
+        margin-left: 250px;
+        margin-top: 100px;
+        padding-top: 30px;
+        padding-bottom: 90px;
+    }
+    
+    .avatar {
+        composes: inline-block from "sass-loader!../utility.scss";
+        width: 60px;
+        height: 60px;
+        margin-left: 40px;
+        margin-right: 20px;
+        vertical-align: top;
+    }
+    
+    .right {
+        composes: inline-block from "sass-loader!../utility.scss";
+        width: 605px;
+    }
+    
+    .title {
+        height: 60px;
+        font-size: 24px;
+        font-style: bold;
+        color: #545866;
+        composes: full-width from "sass-loader!../utility.scss";
+    }
+    
+    .author {
+        font-size: 14px;
+        color: #ffc162;
+        composes: inline-block from "sass-loader!../utility.scss";
+        margin-right: 20px;
+    }
+    
+    .time {
+        font-size: 14px;
+        color: #898989;
+        composes: inline-block from "sass-loader!../utility.scss";
+    }
+    
+    .article {
+        margin-top: 35px;
+        margin-bottom: 50px;
+    }
+    
+    .tag {
+        color: #ffc162;
+        font-size: 14px;
+        composes: inline-block from "sass-loader!../utility.scss";
+        margin-right: 10px;
+    }
+    
+    .comment {
+        margin-top: 35px;
+        padding: 15px 0;
+        font-size: 12px;
+        border-top: 2px solid #e6e6e6;
+    }
+    
+    .comment_name {
+        color: #f29a76;
+        composes: inline-block from "sass-loader!../utility.scss";
+    }
+    
+    .comment_date {
+        margin-right: 0;
+        composes: inline-block from "sass-loader!../utility.scss";
+    }
+    
+    .comment_text {
+        width: 516px;
+        margin-top: 10px;
+    }
+    
+    .cBox {
+        padding-top: 50px;
+        border-top: 2px solid #e6e6e6;
+    }
+    
+    .editComment {
+        height: 75px;
+        width: 380px;
+        border: 2px solid #e6e6e6;
+    }
+    
+    .submitComment {
+        background-color: #ffc162;
+        color: #fff;
+        width: 50px;
+        height: 30px;
+        border-radius: 4px;
+    }
+    
+    .buttonBox {
+        composes: full-width from "sass-loader!../utility.scss";
+        margin-top: 15px;
+        font-size: 14px;
+    }
 </style>

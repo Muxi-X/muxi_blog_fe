@@ -18,7 +18,9 @@ module.exports = {
         design: './src/design.js',
         android: './src/android.js',
         product: './src/product.js',
-        second: './src/second.js'
+        second: './src/second.js',
+        tagBlogs: './src/tagBlogs.js',
+        archiveBlogs: './src/archiveBlogs.js'
     },
     output: {
         path: path.join(__dirname, "../"),
@@ -132,6 +134,20 @@ module.exports = {
             inject: false,
             template: path.join(__dirname, '../template/product.ejs'),
             chunks: ['product']
+        }),
+        new HtmlWebpackPlugin({
+            alwaysWriteToDisk: true,
+            filename: 'template/tagBlogs.html',
+            inject: false,
+            template: path.join(__dirname, '../template/tagBlogs.ejs'),
+            chunks: ['tagBlogs']
+        }),
+        new HtmlWebpackPlugin({
+            alwaysWriteToDisk: true,
+            filename: 'template/archiveBlogs.html',
+            inject: false,
+            template: path.join(__dirname, '../template/archiveBlogs.ejs'),
+            chunks: ['archiveBlogs']
         }),
         new HtmlWebpackHarddiskPlugin()
     ]

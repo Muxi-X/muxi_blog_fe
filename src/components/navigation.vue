@@ -61,20 +61,12 @@
 
 .link_box {
 	border-bottom: 1px #d9dcdc solid;
-	// height: 70px;
-	// width: 100%;
-	// display: block;
-	// font-size: 16px;
 	composes: link from "sass-loader!../common.scss";
 }
 
 .link_box_first{
 	border-top: 1px #d9dcdc solid;
 	border-bottom: 1px #d9dcdc solid;
-	// height: 70px;
-	// width: 100%;
-	// display: block;
-	// font-size: 16px;
 	composes: link from "sass-loader!../common.scss";
 }
 

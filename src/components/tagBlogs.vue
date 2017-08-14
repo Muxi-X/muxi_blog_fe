@@ -24,7 +24,8 @@
     export default {
         data() {
             return {
-                items: []
+                items: [],
+                tag: ""
             }
         },
         components: {
@@ -35,9 +36,10 @@
             "archiveBox": archive
         },
         mounted() {
-            // this.page_num = 1;
-            fetch('/api/v2.0/').then(res => {
-            // fetch('/api/v2.0/?page=1').then(res => {
+            var api = window.location.pathname
+            this.tag = api.split('/')[2]
+            // console.log("tag",this.tag)
+            fetch('/api/v2.0/'+this.tag + '/find_blogs/').then(res => {
                     return res.json()
                 })
                 .then(res => {
@@ -51,7 +53,7 @@
                 if (this.page_num != this.pages_count) {
                     this.page_num += 1;
                     console.log(this.page_num)
-                    fetch('/api/v2.0/?page=' + this.page_num).then(res => {
+                    fetch('/api/v2.0/'+ this.tag + '/find_blogs/?page=' + this.page_num).then(res => {
                             return res.json()
                         })
                         .then(res => {
@@ -64,7 +66,7 @@
                 if (this.page_num != 1) {
                     this.page_num -= 1;
                     console.log(this.page_num)
-                    fetch('/api/v2.0/?page=' + this.page_num).then(res => {
+                    fetch('/api/v2.0/'+ this.tag + '/find_blogs/?page=' + this.page_num).then(res => {
                         return res.json()
                     })
                     .then(res => {

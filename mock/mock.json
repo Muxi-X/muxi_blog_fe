@@ -12,6 +12,18 @@
             "async": false
         },
         {
+            "name": "tag_blogs",
+            "endpoint": "/tag_blogs/:id",
+            "template": "tagBlogs",
+            "async": false
+        },
+        {
+            "name": "archive_blogs",
+            "endpoint": "/archive_blogs/:id/:id/",
+            "template": "archiveBlogs",
+            "async": false
+        },
+        {
             "name": "blogInfo",
             "endpoint": "/api/v2.0/1/views/",
             "async": true
@@ -47,12 +59,32 @@
         },
         {
             "name": "get_blogs_2",
-            "endpoint": "/api/v2.0/2",
+            "endpoint": "/api/v2.0/?page=2",
             "async": true
         },
         {
             "name": "get_web",
             "endpoint": "/web/",
+            "async": true
+        },
+        {
+            "name": "get_tags",
+            "endpoint": "/api/v2.0/all_tags/",
+            "async": true
+        },
+        {
+            "name": "get_time",
+            "endpoint": "/api/v2.0/get_time/",
+            "async": true
+        },
+        {
+            "name": "find_tag_blog",
+            "endpoint": "/api/v2.0/:id/find_blogs",
+            "async": true
+        },
+        {
+            "name": "find_archive_blog",
+            "endpoint": "/api/v2.0/get_month/:id/:id/",
             "async": true
         }
     ],
@@ -160,6 +192,84 @@
                 "comment": "哈哈哈哈哈写的真好",
                 "username": "Cruyun",
                 "avatar": "https://avatars0.githubusercontent.com/u/24372759?v=4&s=460"
+            }]
+        },
+        "get_tags": {
+            "tags":["前端","HTML","设计","配色","http","CSS","JavaScript","Python","product","Vue","React","后台","前端","HTML","设计","配色","http","CSS","JavaScript","Python","product","Vue","React","后台","前端","HTML","设计","配色","http","CSS","JavaScript","Python","product","Vue","React","后台","前端","HTML","设计","配色","http","CSS","JavaScript","Python","product","Vue","React","后台"],
+            "tag_num": 12
+        },
+        "find_tag_blog": {
+            "count": 10,
+            "pages_count": 5,
+            "page": 1,
+            "blogs": [{
+                "id": 1,
+                "title": "我是标签的文章",
+                "date": "7月6日",
+                "body": "lalalla",
+                "username": "Cruyun",
+                "comment_num": 23,
+                "avatar": "https://avatars0.githubusercontent.com/u/24372759?v=4&s=460",
+                "summary": "HTML5 中提供的文件API在前端中有着丰富的应用，上传、下载、读取内容等在日常的交互中很常见。而且在各个浏览器的兼容也比较好，包括移动端，除了 IE 只支持 IE10 以上的版本。想要更好地掌握好操作文件的功能，先要熟悉每个API。",
+                "type": 1,
+                "img_url": "https://avatars0.githubusercontent.com/u/24372759?v=4&s=460",
+                "tags": ["前端", "HTML"],
+                "tags_num": 2
+            }, {
+                "id": 2,
+                "title": "风骚一点！在网页中玩转霓虹色的正确姿势",
+                "date": "7月6日",
+                "body": "lalalla",
+                "username": "Cruyun",
+                "comment_num": 23,
+                "avatar": "https://avatars0.githubusercontent.com/u/24372759?v=4&s=460",
+                "summary": "霓虹色真的是让人又爱又恨的一种设计元素啊。作为设计趋势，你会看到别人的设计中，霓虹色的运用是如此的帅气和炸裂，可是自己上手的时候，却一下子将逼格拉回到80年代，尴尬。现实世界中的霓虹灯所带来的效果本就参差不齐，在网页设计当中运用，稍不注意……就会整段垮掉。这种局面让我忍不住去仔细审视那些成功的霓虹色运用案例，并且有了今天这篇零碎但是有用的文章。霓虹色是大胆而有自由的，同时它的特性也是有规律的。如果你希望霓虹色可以出现在你的设计当中，不妨读下去。",
+                "type": 3,
+                "img_url": "https://avatars0.githubusercontent.com/u/24372759?v=4&s=460",
+                "tags": ["前端", "HTML"],
+                "tags_num": 2
+            }]
+        },
+        "get_time": {
+            "time":[
+                {"year":2017,"month": 8},
+                {"year":2017,"month": 7},
+                {"year":2017,"month": 6},
+                {"year":2017,"month": 5},
+                {"year":2017,"month": 4},
+                {"year":2017,"month": 3}
+            ]
+        },
+        "find_archive_blog": {
+            "count": 10,
+            "pages_count": 5,
+            "page": 1,
+            "blogs": [{
+                "id": 1,
+                "title": "我是归档的文章",
+                "date": "7月6日",
+                "body": "lalalla",
+                "username": "Cruyun",
+                "comment_num": 23,
+                "avatar": "https://avatars0.githubusercontent.com/u/24372759?v=4&s=460",
+                "summary": "HTML5 中提供的文件API在前端中有着丰富的应用，上传、下载、读取内容等在日常的交互中很常见。而且在各个浏览器的兼容也比较好，包括移动端，除了 IE 只支持 IE10 以上的版本。想要更好地掌握好操作文件的功能，先要熟悉每个API。",
+                "type": 1,
+                "img_url": "https://avatars0.githubusercontent.com/u/24372759?v=4&s=460",
+                "tags": ["前端", "HTML"],
+                "tags_num": 2
+            }, {
+                "id": 2,
+                "title": "风骚一点！在网页中玩转霓虹色的正确姿势",
+                "date": "7月6日",
+                "body": "lalalla",
+                "username": "Cruyun",
+                "comment_num": 23,
+                "avatar": "https://avatars0.githubusercontent.com/u/24372759?v=4&s=460",
+                "summary": "霓虹色真的是让人又爱又恨的一种设计元素啊。作为设计趋势，你会看到别人的设计中，霓虹色的运用是如此的帅气和炸裂，可是自己上手的时候，却一下子将逼格拉回到80年代，尴尬。现实世界中的霓虹灯所带来的效果本就参差不齐，在网页设计当中运用，稍不注意……就会整段垮掉。这种局面让我忍不住去仔细审视那些成功的霓虹色运用案例，并且有了今天这篇零碎但是有用的文章。霓虹色是大胆而有自由的，同时它的特性也是有规律的。如果你希望霓虹色可以出现在你的设计当中，不妨读下去。",
+                "type": 3,
+                "img_url": "https://avatars0.githubusercontent.com/u/24372759?v=4&s=460",
+                "tags": ["前端", "HTML"],
+                "tags_num": 2
             }]
         }
     }

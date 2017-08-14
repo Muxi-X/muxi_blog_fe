@@ -24,21 +24,26 @@
     right: 0px;
     top: 0px;
 }
+.middle_right {
+     margin: 100px auto;
+    padding-left: 200px;
+    width: 860px;
+    overflow: hidden;
+}
 .cont {
-    margin-left: 250px;
     width: 604px;
     height: 550px;
-    overflow: hidden;
-    margin-top: 100px;
-    display: inline-block;
+    float: left;
 }
-.tagBox {
-    width: 215px;
-    height: 226px;
-    background-color: #ffffff;
-    margin-top: 100px;
-    margin-left: 100px;
-    display: inline-block;
+.archiveBox, .tagBox {
+    width: 185px; 
     float: right;
-    padding: 10px;
+    margin-left: 35px;
+    background-color: #ffffff;
+    height: 226px;
+    padding: 15px;
+}
+
+.archiveBox {
+    margin-top: 30px;
 }

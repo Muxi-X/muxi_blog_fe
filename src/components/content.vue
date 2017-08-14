@@ -8,7 +8,7 @@
 						<div :class="$style.top_right">
 							<div :class="$style.blog_title">{{item.title}}</div>
 							<div>
-								<div :class="$style.blog_word">{{item.username}}</div>
+								<div :class="$style.blog_username">{{item.username}}</div>
 								<div :class="$style.blog_word">{{item.date}}</div>
 							</div>
 						</div>
@@ -16,7 +16,11 @@
 					<div :class="$style.bottom">
 						<div :class="$style.bottom_left">
 							<svg :class="$style.content_icon" viewBox="0 0 1024 1024">
-								<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#comment"></use>
+								<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#commentIcon"></use>
+							</svg>
+							<div :class="$style.comment_num">{{item.comment_num}}</div>
+							<svg :class="$style.like_icon" viewBox="0 0 1024 1024">
+								<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#likeIcon"></use>
 							</svg>
 							<div :class="$style.comment_num">{{item.comment_num}}</div>
 						</div>
@@ -87,10 +91,14 @@ a {
 	height: 40px;
 }
 
-.content_icon {
+.content_icon, .like_icon {
 	width: 20px;
 	height: 20px;
 	composes: inline-block from "sass-loader!../utility.scss";
+}
+
+.like_icon {
+	margin-top: 20px;
 }
 
 .top_right {
@@ -114,17 +122,30 @@ a {
 	font-size: 0;
 }
 
-.bottom_left {
+.bottom_left, .bottom_right {
 	composes: inline-block from "sass-loader!../utility.scss";
 	composes: full-height from "sass-loader!../utility.scss";
 }
 
-.blog_word {
+.bottom_left {
+	vertical-align: top;
+    padding: 10px;
+}
+.bottom_right {
+	width: 325px;
+	padding: 10px;
+}
+.blog_word, .blog_username {
 	composes: inline-block from "sass-loader!../utility.scss";
 	composes: min-font from "sass-loader!../utility.scss";
 }
-
+.blog_username {
+	margin-right: 20px;
+}
 .blog_summary {
+	height: 100px;
+    overflow: hidden;
+    margin-bottom: 24px;
 	composes: min-font from "sass-loader!../utility.scss";
 }
 
@@ -140,6 +161,7 @@ a {
 	font-size: 12px;
 	width: 100%;
 	height: 16px;
+	margin-bottom: 0;
 }
 
 .tag {
@@ -148,7 +170,7 @@ a {
 	display: inline-block;
 	font-size: 12px;
 	line-height: 16px;
-	margin-left: 15px;
+	margin-right: 15px;
 	border-radius: 2px;
 	padding: 0 3px;
 }

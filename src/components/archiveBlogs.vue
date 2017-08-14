@@ -24,7 +24,9 @@
     export default {
         data() {
             return {
-                items: []
+                items: [],
+                year: 0,
+                month: 0
             }
         },
         components: {
@@ -35,9 +37,11 @@
             "archiveBox": archive
         },
         mounted() {
-            // this.page_num = 1;
-            fetch('/api/v2.0/').then(res => {
-            // fetch('/api/v2.0/?page=1').then(res => {
+            var api = window.location.pathname
+            this.year = api.split('/')[2]
+            this.month = api.split('/')[3]
+            // console.log("tag",this.tag)
+            fetch('/api/v2.0/get_month/' + this.year + '/' + this.month + '/').then(res => {
                     return res.json()
                 })
                 .then(res => {
@@ -51,7 +55,7 @@
                 if (this.page_num != this.pages_count) {
                     this.page_num += 1;
                     console.log(this.page_num)
-                    fetch('/api/v2.0/?page=' + this.page_num).then(res => {
+                    fetch('/api/v2.0/get_month/' + this.year + '/' + this.month + '/?page=' + this.page_num).then(res => {
                             return res.json()
                         })
                         .then(res => {
@@ -64,7 +68,7 @@
                 if (this.page_num != 1) {
                     this.page_num -= 1;
                     console.log(this.page_num)
-                    fetch('/api/v2.0/?page=' + this.page_num).then(res => {
+                    fetch('/api/v2.0/get_month/' + this.year + '/' + this.month + '/?page=' + this.page_num).then(res => {
                         return res.json()
                     })
                     .then(res => {

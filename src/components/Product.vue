@@ -2,11 +2,16 @@
     <div :class="$style.wrap">
         <sign :class="$style.sign"></sign>
         <navi :class="$style.navi"></navi>
-        <con :class="$style.cont" 
-             :items="this.items" 
-             :page_count="this.page_count" 
-             v-on:pageUp="PageUp" 
-             v-on:pageDown="PageDown"></con>
+        <div :class="$style.middle_right">
+            <con :class="$style.cont" 
+                 :items="this.items" 
+                 :page_count="this.page_count" 
+                 v-on:pageUp="PageUp" 
+                 v-on:pageDown="PageDown">
+            </con>
+            <tagBox :class="$style.tagBox"></tagBox>
+            <archiveBox :class="$style.archiveBox"></archiveBox>
+        </div>
     </div>
 </template>
 <script>
@@ -26,7 +31,7 @@ export default {
     },
     mounted() {
         // this.page_num = 1;
-        fetch('/api/v2.0/4/1').then(res => {
+        fetch('/api/v2.0/sort/?sort=4/?page=1').then(res => {
             return res.json()
             })
             .then(res => {
@@ -40,7 +45,7 @@ export default {
             if (this.page_num != this.pages_count) {
                 this.page_num += 1;
                 console.log(this.page_num)
-                fetch('/api/v2.0/4/'+ this.page_num).then(res => {
+                fetch('/api/v2.0/sort/?sort=4/?page='+ this.page_num).then(res => {
                     return res.json()
                 })
                 .then(res => {
@@ -53,7 +58,7 @@ export default {
             if (this.page_num != 1) {
                 this.page_num -= 1;
                 console.log(this.page_num)
-                fetch('/api/v2.0/4/'+ this.page_num).then(res => {
+                fetch('/api/v2.0/sort/?sort=4/?page='+ this.page_num).then(res => {
                     return res.json()
                 })
                 .then(res => {
