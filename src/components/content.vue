@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<div :class="$style.blogs_box">
+		<div :class="$style.blogs_box" v-if="this.blog_num">
 			<a :href="/second/+ item.id" v-for="item in items" :class="$style.content_box" :key="item" v-on:click="toSecond">
 				<div :class="$style.left_box">
 					<div :class="$style.top">
@@ -19,10 +19,6 @@
 								<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#commentIcon"></use>
 							</svg>
 							<div :class="$style.comment_num">{{item.comment_num}}</div>
-							<svg :class="$style.like_icon" viewBox="0 0 1024 1024">
-								<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#likeIcon"></use>
-							</svg>
-							<div :class="$style.comment_num">{{item.comment_num}}</div>
 						</div>
 						<div :class="$style.bottom_right">
 							<div :class="$style.blog_summary">{{item.summary}}</div>
@@ -35,6 +31,7 @@
 				<img :class="$style.right_box" v-bind:src="item.img_url">
 			</a>
 		</div>
+		<div v-if="!this.blog_num" :class="$style.show">没有对应的博客</div>
 		<div :class="$style.page_row">
 			<button :class="$style.page_button" v-on:click="pageDown"> < </button>
 			<button :class="$style.right_button" v-on:click="pageUp"> > </button>
@@ -49,7 +46,7 @@ export default {
 			page_num: 1
 		}
 	},
-	props: ['items', 'page_count'],
+	props: ['items', 'page_count','blog_num'],
 	methods: {
 		pageDown() {
 			this.$emit('pageDown')
@@ -62,10 +59,14 @@ export default {
 </script>
 
 <style lang='scss' module>
-.blogs_box {
+.blogs_box, .show {
 	height: 530px;
 }
 
+.show {
+	text-align: center;
+	font-size: 14px;
+}
 a {
 	display: block;
 }
@@ -91,14 +92,10 @@ a {
 	height: 40px;
 }
 
-.content_icon, .like_icon {
+.content_icon{
 	width: 20px;
 	height: 20px;
 	composes: inline-block from "sass-loader!../utility.scss";
-}
-
-.like_icon {
-	margin-top: 20px;
 }
 
 .top_right {

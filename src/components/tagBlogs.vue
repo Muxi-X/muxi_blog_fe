@@ -1,11 +1,12 @@
 <template>
     <div :class="$style.wrap">
         <sign :class="$style.sign"></sign>
-        <navi :class="$style.navi"></navi>
+        <navi :class="$style.navi"></navi> 
         <div :class="$style.middle_right">
             <con :class="$style.cont" 
                  :items="this.items" 
                  :page_count="this.page_count" 
+                 :blog_num = "this.blog_num"
                  v-on:pageUp="PageUp" 
                  v-on:pageDown="PageDown">
             </con>
@@ -38,7 +39,7 @@
         mounted() {
             var api = window.location.pathname
             this.tag = api.split('/')[2]
-            // console.log("tag",this.tag)
+            console.log("tag",this.tag)
             fetch('/api/v2.0/'+this.tag + '/find_blogs/').then(res => {
                     return res.json()
                 })
@@ -46,6 +47,7 @@
                     this.items = res.blogs
                     this.pages_count = res.pages_count
                     this.page_num = res.page
+                    this.blog_num = res.blog_num
                 })
         },
         methods: {

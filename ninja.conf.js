@@ -5,10 +5,10 @@ module.exports = {
 	mock: "/mock/mock.json", // dir for mock data
 	webpack: true, // flag for using webpack or not
 	webpackConfigPath: path.join(__dirname, "./build/webpack.dev.conf.js"),
-	// proxy: {
-	// 	route: "/api",
-	// 	origin: "blog.muxixyz.test:5488"
-	// },
+	proxy: {
+		route: "/api",
+		origin: "blog.muxixyz.test:5488"
+	},
 	staticDir: "/static",
 	templateDir: "/template",
 }

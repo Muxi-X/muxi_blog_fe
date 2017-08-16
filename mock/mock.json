@@ -93,6 +93,7 @@
             "count": 10,
             "pages_count": 5,
             "page": 1,
+            "blog_num": 10,
             "blogs": [{
                 "id": 1,
                 "title": "HTML5 进阶系列：文件上传下载",
@@ -125,6 +126,7 @@
             "count": 10,
             "pages_count": 5,
             "page": 2,
+            "blog_num": 10,
             "blogs": [{
                 "id": 1,
                 "title": "HTML5 进阶系列：文件上传下载",
@@ -144,6 +146,7 @@
             "count": 10,
             "pages_count": 5,
             "page": 1,
+            "blog_num": 3,
             "blogs": [{
                 "id": 1,
                 "title": "HTML5 进阶系列：文件上传下载",
@@ -202,6 +205,7 @@
             "count": 10,
             "pages_count": 5,
             "page": 1,
+            "blog_num": 3,
             "blogs": [{
                 "id": 1,
                 "title": "我是标签的文章",
@@ -244,6 +248,7 @@
             "count": 10,
             "pages_count": 5,
             "page": 1,
+            "blog_num": 0,
             "blogs": [{
                 "id": 1,
                 "title": "我是归档的文章",
