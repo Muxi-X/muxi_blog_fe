@@ -1,6 +1,6 @@
 <template>
     <div>
-        <textarea v-model.trim="message" :class="$style.editComment" placeholder="你的看法？"></textarea>
+        <textarea v-model.trim="message" :class="$style.editComment" placeholder="你的看法是？"></textarea>
         <div :class="$style.buttonBox">
             <button v-on:click="submit" :class="$style.submitComment">评论</button>
         </div>
@@ -11,16 +11,34 @@
     export default {
         data() {
             return {
-                "message": ""
+                message: ""
             }
         },
-        created(){
-            this.$parent.Cmessage = ""
+        props: ['id'],
+        created() {
+            this.$parent.sendComment = false
         },
         methods: {
-            submit() {
-                this.$emit('submit')
-                this.$parent.Cmessage = this.message
+            submit(e) {
+                e.stopPropagation();
+                if (this.message) {
+                    fetch('/api/v2.0/' + this.id + '/add_comment/', {
+                        method: 'POST',
+                        headers: {
+                            'Accept': 'application/json',
+                            'Content-Type': 'application/json',
+                            'token': 'eyJhbGciOiJIUzI1NiJ9.eyJpZCI6N30.P5rU9mV7xAVwTKf06RA7o1BOvF9jWLGDpYZ_fohWL6s'
+                        },
+                        body: JSON.stringify({
+                            id: this.id,
+                            comment: this.message
+                        })
+                    }).then(res => {
+                        this.message=""
+                        this.$parent.sendComment = true
+                        this.$parent.fetchComments()
+                    })
+                }
             }
         }
     }

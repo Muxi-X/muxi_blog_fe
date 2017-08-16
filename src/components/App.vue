@@ -80,5 +80,4 @@
 
 <style lang='scss' module>
     @import '../common.scss';
-    @import '../navi.scss';
 </style>

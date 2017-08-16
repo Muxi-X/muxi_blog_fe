@@ -1,6 +1,6 @@
 <template>
     <div>
-        <navi :class="$style.navi"></navi> 
+        <navi :class="$style.navi"></navi>
         <sign :class="$style.sign"></sign>
         <div :class="$style.main">
             <img :class="$style.avatar" src="blog.avatar">
@@ -15,7 +15,7 @@
                     <div :class="$style.comment_date">{{comment.date}}</div>
                     <div :class="$style.comment_text">{{comment.comment}}</div>
                 </div>
-                <commentBox :class="$style.cBox" v-on:submit="submit">
+                <commentBox :class="$style.cBox" v-on:submit="submit" :id="this.id">
                 </commentBox>
             </div>
         </div>
@@ -35,8 +35,8 @@ export default {
                 type: Object
             },
             "id": 0,
-            "comments": [],
-            "Cmessage": ""
+            "omments": [],
+            "sendComment": false
         }
     },
     components: {
@@ -57,33 +57,16 @@ export default {
             })
     },
     methods: {
-        submit(e) {
-            // e.stopPropagation();
-            if (this.Cmessage) {
-                fetch('/api/v2.0/' + this.id + '/add_comment/', {
-                    method: 'POST',
-                    headers: {
-                        'Accept': 'application/json',
-                        'Content-Type': 'application/json'
-                        //token
-                    },
-                    body: JSON.stringify({
-                        id: this.id,
-                        comment: this.Cmessage
-                    })
-                }).then(res => {
-                    if (res.ok) {
-                        fetch('/api/v2.0/' + this.id + '/views/').then(res => {
-                            return res.json()
-                        })
-                            .then(res => {
-                                this.comments = res.comments
-                            })
-                    } else {
-                        alert("未登录")
-                        console.log(this.Cmessage)
-                    }
+        fetchComments() {
+            if (this.sendComment) {
+                fetch('/api/v2.0/' + this.id + '/views/').then(res => {
+                    return res.json()
                 })
+                    .then(res => {
+                        this.blog = res.blog
+                        this.comments = res.comments
+                        this.tags = this.blog.tags
+                    })
             }
         }
     }
@@ -161,7 +144,7 @@ export default {
 }
 
 .comment_date {
-    margin-right: 0;
+    margin-left: 40px;
     composes: inline-block from "sass-loader!../utility.scss";
 }
 
