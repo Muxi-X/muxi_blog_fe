@@ -64,7 +64,7 @@
         },
         {
             "name": "get_web",
-            "endpoint": "/web/",
+            "endpoint": "/api/v2.0/sort/?sort=1/?page=1",
             "async": true
         },
         {

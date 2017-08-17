@@ -35,7 +35,7 @@ export default {
         "archiveBox": archive
     },
     mounted() {
-        // this.page_num = 1;
+        this.page_num = 1;
         fetch('/api/v2.0/sort/?sort=3/?page=1').then(res => {
             return res.json()
             })
@@ -50,7 +50,6 @@ export default {
         PageUp() {
             if (this.page_num != this.pages_count) {
                 this.page_num += 1;
-                console.log(this.page_num)
                 fetch('/api/v2.0/sort/?sort=3/?page='+ this.page_num).then(res => {
                     return res.json()
                 })
@@ -63,7 +62,6 @@ export default {
         PageDown() {
             if (this.page_num != 1) {
                 this.page_num -= 1;
-                console.log(this.page_num)
                 fetch('/api/v2.0/sort/?sort=3/?page='+ this.page_num).then(res => {
                     return res.json()
                 })
@@ -77,5 +75,5 @@ export default {
 }
 </script>
 <style lang='scss' module>
-@import '../common.scss';
+@import '../scss/common.scss';
 </style>

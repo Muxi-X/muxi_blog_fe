@@ -7,13 +7,11 @@
 </template>
 <style lang='scss' module>
 .sign {
-	height: 100%;
-	width: 100%;
 	line-height: 25px;
 }
-.sign_box {
-	height: 100%;
-	width: 100%;
+.sign_box,.sign {
+	composes: full-width from "sass-loader!../scss/utility.scss";
+	composes: full-height from "sass-loader!../scss/utility.scss";
 }
 .sign_box:hover {
     background: #ffc162;

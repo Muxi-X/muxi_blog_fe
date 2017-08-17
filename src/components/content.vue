@@ -77,7 +77,7 @@ a {
 	margin-bottom: 30px;
 	font-size: 0;
 	background-color: #ffffff;
-	border: 2px solid #ffffff; //composes: inline-block from "sass-loader!../utility.scss";
+	border: 2px solid #ffffff; //composes: inline-block from "sass-loader!../scss/utility.scss";
 }
 
 .content_box:hover {
@@ -95,23 +95,24 @@ a {
 .content_icon{
 	width: 20px;
 	height: 20px;
-	composes: inline-block from "sass-loader!../utility.scss";
+	composes: inline-block from "sass-loader!../scss/utility.scss";
 }
 
 .top_right {
-	composes: inline-block from "sass-loader!../utility.scss";
+	composes: inline-block from "sass-loader!../scss/utility.scss";
+	padding-left: 10px;
 }
 
 .left_box {
-	composes: inline-block from "sass-loader!../utility.scss";
-	composes: full-height from "sass-loader!../utility.scss";
+	composes: inline-block from "sass-loader!../scss/utility.scss";
+	composes: full-height from "sass-loader!../scss/utility.scss";
 	width: 390px;
 	vertical-align: top;
 }
 
 .right_box {
-	composes: inline-block from "sass-loader!../utility.scss";
-	composes: full-height from "sass-loader!../utility.scss";
+	composes: inline-block from "sass-loader!../scss/utility.scss";
+	composes: full-height from "sass-loader!../scss/utility.scss";
 	width: 210px;
 }
 
@@ -120,8 +121,8 @@ a {
 }
 
 .bottom_left, .bottom_right {
-	composes: inline-block from "sass-loader!../utility.scss";
-	composes: full-height from "sass-loader!../utility.scss";
+	composes: inline-block from "sass-loader!../scss/utility.scss";
+	composes: full-height from "sass-loader!../scss/utility.scss";
 }
 
 .bottom_left {
@@ -133,17 +134,17 @@ a {
 	padding: 10px;
 }
 .blog_word, .blog_username {
-	composes: inline-block from "sass-loader!../utility.scss";
-	composes: min-font from "sass-loader!../utility.scss";
+	composes: inline-block from "sass-loader!../scss/utility.scss";
+	composes: min-font from "sass-loader!../scss/utility.scss";
 }
 .blog_username {
 	margin-right: 20px;
 }
 .blog_summary {
-	height: 100px;
+	height: 110px;
     overflow: hidden;
     margin-bottom: 24px;
-	composes: min-font from "sass-loader!../utility.scss";
+	composes: min-font from "sass-loader!../scss/utility.scss";
 }
 
 .blog_title {
@@ -151,7 +152,8 @@ a {
 }
 
 .comment_num {
-	composes: min-font from "sass-loader!../utility.scss";
+	text-align: center;
+	composes: min-font from "sass-loader!../scss/utility.scss";
 }
 
 .tag_list {
@@ -164,7 +166,7 @@ a {
 .tag {
 	background-color: #ffc162;
 	color: #ffffff;
-	display: inline-block;
+	composes: inline-block from "sass-loader!../scss/utility.scss";
 	font-size: 12px;
 	line-height: 16px;
 	margin-right: 15px;
@@ -173,7 +175,7 @@ a {
 }
 
 .page_row {
-	composes: full-width from "sass-loader!../utility.scss";
+	composes: full-width from "sass-loader!../scss/utility.scss";
 	display: flex;
 	-webkit-align-items: center;
 	align-items: center;
@@ -186,15 +188,10 @@ a {
 	margin-left: 20px;
 }
 
-.page_button:hover {
+.page_button:hover, .right_button:hover {
 	background-color: #ffc162;
 	color: #ffffff;
 	cursor: pointer;
 }
 
-.right_button:hover {
-	background-color: #ffc162;
-	color: #ffffff;
-	cursor: pointer;
-}
 </style>

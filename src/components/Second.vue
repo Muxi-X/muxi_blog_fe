@@ -11,8 +11,10 @@
                 <div :class="$style.article">{{blog.body}}</div>
                 <div :class="$style.tag" v-for="tag in tags" :key="tag">{{tag}}</div>
                 <div :class="$style.comment" v-for="comment in comments" :key="comment">
-                    <div :class="$style.comment_name">{{comment.username}}</div>
-                    <div :class="$style.comment_date">{{comment.date}}</div>
+                    <div>
+                        <div :class="$style.comment_name">{{comment.username}}</div>
+                        <div :class="$style.comment_date">{{comment.date}}</div>
+                    </div>
                     <div :class="$style.comment_text">{{comment.comment}}</div>
                 </div>
                 <commentBox :class="$style.cBox" v-on:submit="submit" :id="this.id">
@@ -63,9 +65,7 @@ export default {
                     return res.json()
                 })
                     .then(res => {
-                        this.blog = res.blog
                         this.comments = res.comments
-                        this.tags = this.blog.tags
                     })
             }
         }
@@ -74,7 +74,7 @@ export default {
 </script>
 
 <style lang="scss" module>
-@import '../common.scss';
+@import '../scss/common.scss';
 .main {
     width: 800px;
     background: #fff;
@@ -85,7 +85,7 @@ export default {
 }
 
 .avatar {
-    composes: inline-block from "sass-loader!../utility.scss";
+    composes: inline-block from "sass-loader!../scss/utility.scss";
     width: 60px;
     height: 60px;
     margin-left: 40px;
@@ -94,7 +94,7 @@ export default {
 }
 
 .right {
-    composes: inline-block from "sass-loader!../utility.scss";
+    composes: inline-block from "sass-loader!../scss/utility.scss";
     width: 605px;
 }
 
@@ -103,20 +103,20 @@ export default {
     font-size: 24px;
     font-style: bold;
     color: #545866;
-    composes: full-width from "sass-loader!../utility.scss";
+    composes: full-width from "sass-loader!../scss/utility.scss";
 }
 
 .author {
     font-size: 14px;
     color: #ffc162;
-    composes: inline-block from "sass-loader!../utility.scss";
+    composes: inline-block from "sass-loader!../scss/utility.scss";
     margin-right: 20px;
 }
 
 .time {
     font-size: 14px;
     color: #898989;
-    composes: inline-block from "sass-loader!../utility.scss";
+    composes: inline-block from "sass-loader!../scss/utility.scss";
 }
 
 .article {
@@ -127,7 +127,7 @@ export default {
 .tag {
     color: #ffc162;
     font-size: 14px;
-    composes: inline-block from "sass-loader!../utility.scss";
+    composes: inline-block from "sass-loader!../scss/utility.scss";
     margin-right: 10px;
 }
 
@@ -140,12 +140,12 @@ export default {
 
 .comment_name {
     color: #f29a76;
-    composes: inline-block from "sass-loader!../utility.scss";
+    composes: inline-block from "sass-loader!../scss/utility.scss";
 }
 
 .comment_date {
-    margin-left: 40px;
-    composes: inline-block from "sass-loader!../utility.scss";
+    margin-right: 0;
+    float: right;
 }
 
 .comment_text {
@@ -173,7 +173,7 @@ export default {
 }
 
 .buttonBox {
-    composes: full-width from "sass-loader!../utility.scss";
+    composes: full-width from "sass-loader!../scss/utility.scss";
     margin-top: 15px;
     font-size: 14px;
 }

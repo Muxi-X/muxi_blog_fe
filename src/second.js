@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Second from './components/Second'
-import style from './reset.scss'
+import style from './scss/reset.scss'
 
 new Vue({
     el: '#second',

@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import ArchiveBlogs from './components/archiveBlogs'
-import style from './reset.scss'
+import style from './scss/reset.scss'
 
 new Vue({
     el: '#archiveBlogs',

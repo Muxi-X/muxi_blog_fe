@@ -60,7 +60,7 @@
     }
     
     .buttonBox {
-        composes: full-width from "sass-loader!../utility.scss";
+        composes: full-width from "sass-loader!../scss/utility.scss";
         margin-top: 15px;
         font-size: 14px;
     }

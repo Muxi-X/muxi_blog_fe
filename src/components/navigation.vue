@@ -49,7 +49,7 @@
 .logo_box {
 	width: 100%;
 	height: 100px;
-	margin: 0 auto;
+	composes: margin from "sass-loader!../scss/common.scss";
 }
 
 .logo {
@@ -59,19 +59,17 @@
 	height: auto;
 }
 
-.link_box {
+.link_box,.link_box_first {
 	border-bottom: 1px #d9dcdc solid;
-	composes: link from "sass-loader!../common.scss";
+	composes: link from "sass-loader!../scss/common.scss";
 }
 
 .link_box_first {
 	border-top: 1px #d9dcdc solid;
-	border-bottom: 1px #d9dcdc solid;
-	composes: link from "sass-loader!../common.scss";
 }
 
 .icon {
-	display: inline-block;
+	composes: inline-block from "sass-loader!../scss/common.scss";
 	width: 39px;
 	fill: #d9dcdc;
 	margin-left: 30px;
@@ -85,12 +83,7 @@
 	vertical-align: middle;
 }
 
-.link_box_first:hover {
-	background: #69cad3;
-	color: #fff;
-}
-
-.link_box:hover {
+.link_box_first:hover,.link_box:hover {
 	background: #69cad3;
 	color: #fff;
 }

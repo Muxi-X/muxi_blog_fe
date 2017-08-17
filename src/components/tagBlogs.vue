@@ -82,5 +82,5 @@
 </script>
 
 <style lang='scss' module>
-    @import '../common.scss';
+    @import '../scss/common.scss';
 </style>

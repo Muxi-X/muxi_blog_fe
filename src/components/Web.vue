@@ -35,7 +35,7 @@ export default {
         "archiveBox": archive
     },
     mounted() {
-        // this.page_num = 1;
+        console.log(this.blog_num)
         fetch('/api/v2.0/sort/?sort=1/?page=1').then(res => {
             return res.json()
         })
@@ -77,5 +77,5 @@ export default {
 }
 </script>
 <style lang='scss' module>
-@import '../common.scss';
+@import '../scss/common.scss';
 </style>

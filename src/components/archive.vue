@@ -36,7 +36,7 @@
 </script>
 
 <style lang="scss" module>
-    @import '../common.scss';
+    @import '../scss/common.scss';
     .icon {
         width: 25px;
         height: 25px;
@@ -49,7 +49,7 @@
     }
     
     .year {
-        composes: inline-block from "sass-loader!../utility.scss";
+        composes: inline-block from "sass-loader!../scss/utility.scss";
         margin-bottom: 5px;
     }
     

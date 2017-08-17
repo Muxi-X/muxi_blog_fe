@@ -31,11 +31,11 @@ export default {
 }
 </script>
 <style lang="scss" module>
-@import '../common.scss';
+@import '../scss/common.scss';
 .icon {
 	width: 25px;
 	height: 25px;
-	vertical-align: middle;
+	composes: vertical-align from "sass-loader!../scss/utility.scss";
     margin-right: 5px;
 }
 .word {
@@ -46,7 +46,7 @@ export default {
 	color: #fff;
 	line-height: 16px;
 	padding: 2px 2px;
-	display: inline-block;
+	composes: inline-block from "sass-loader!../scss/utility.scss";
 	margin-top: 10px;
 	margin-right: 6px;
 }
