@@ -55,7 +55,6 @@
             PageUp() {
                 if (this.page_num != this.pages_count) {
                     this.page_num += 1;
-                    console.log(this.page_num)
                     fetch('/api/v2.0/get_month/' + this.year + '/' + this.month + '/?page=' + this.page_num).then(res => {
                             return res.json()
                         })
@@ -68,7 +67,6 @@
             PageDown() {
                 if (this.page_num != 1) {
                     this.page_num -= 1;
-                    console.log(this.page_num)
                     fetch('/api/v2.0/get_month/' + this.year + '/' + this.month + '/?page=' + this.page_num).then(res => {
                         return res.json()
                     })

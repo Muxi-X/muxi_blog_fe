@@ -63,7 +63,6 @@ export default {
         PageDown() {
             if (this.page_num != 1) {
                 this.page_num -= 1;
-                console.log(this.page_num)
                 fetch('/api/v2.0/sort/?sort=1/?page=' + this.page_num).then(res => {
                     return res.json()
                 })
