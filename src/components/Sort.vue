@@ -2,12 +2,18 @@
     <div :class="$style.wrap">
         <sign :class="$style.sign"></sign>
         <navi :class="$style.navi"></navi>
-        <div :class="$style.middle_right">
-            <con :class="$style.cont" :items="this.items" :pages_count="this.pages_count" :blog_num="this.blog_num" v-on:pageUp="PageUp" v-on:pageDown="PageDown">
-            </con>
+        <div :class="$style.boxs">
             <tagBox :class="$style.tagBox"></tagBox>
             <archiveBox :class="$style.archiveBox"></archiveBox>
         </div>
+        <con :class="$style.cont" 
+             :items="this.items" 
+             :pages_count="this.pages_count" 
+             :blog_num="this.blog_num" 
+             v-on:pageUp="PageUp" 
+             v-on:pageDown="PageDown">
+        </con>
+        
     </div>
 </template>
 <script>
@@ -69,7 +75,7 @@ export default {
             }
         },
         FetchUrl() {
-            fetch('/api/v2.0'+ this.Url +'/?page=' + this.page_num).then(res => {
+            fetch('/api/v2.0' + this.Url + '/?page=' + this.page_num).then(res => {
                 return res.json()
             })
                 .then(res => {

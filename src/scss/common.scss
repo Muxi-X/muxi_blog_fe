@@ -1,3 +1,9 @@
+
+.wrap {
+    height: 100%;
+    clear: both;
+    min-width: 1200px;
+}
 .link {
     height: 70px;
 	width: 100%;
@@ -24,21 +30,21 @@
     right: 0px;
     top: 0px;
 }
-.middle_right {
-     margin: 100px auto;
-    padding-left: 200px;
-    width: 860px;
-    overflow: hidden;
-}
+
 .cont {
     width: 604px;
     height: 550px;
-    float: left;
+    margin-top: 100px;
+    padding-left: 250px;
+    overflow: hidden;
+}
+
+.boxs {
+    float: right;
+    margin-right: 100px;
 }
 .archiveBox, .tagBox {
     width: 185px; 
-    float: right;
-    margin-left: 35px;
     background-color: #ffffff;
     height: 226px;
     padding: 15px;
