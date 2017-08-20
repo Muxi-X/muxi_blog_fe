@@ -101,7 +101,7 @@ export default {
 .title {
     height: 60px;
     font-size: 24px;
-    font-style: bold;
+    font-weight: bold;
     color: #545866;
     composes: full-width from "sass-loader!../scss/utility.scss";
 }

@@ -13,14 +13,8 @@ function resolve(dir) {
 
 module.exports = {
     entry: {
-        index: './src/index.js',
-        web: './src/web.js',
-        design: './src/design.js',
-        android: './src/android.js',
-        product: './src/product.js',
-        second: './src/second.js',
-        tagBlogs: './src/tagBlogs.js',
-        archiveBlogs: './src/archiveBlogs.js'
+        sort: './src/sort.js',
+        second: './src/second.js'
     },
     output: {
         path: path.join(__dirname, "../"),
@@ -98,7 +92,7 @@ module.exports = {
             filename: 'template/index.html',
             inject: false,
             template: path.join(__dirname, '../template/index.ejs'),
-            chunks: ['index']
+            chunks: ['sort']
         }),
         new HtmlWebpackPlugin({
             alwaysWriteToDisk: true,
@@ -112,42 +106,42 @@ module.exports = {
             filename: 'template/web.html',
             inject: false,
             template: path.join(__dirname, '../template/web.ejs'),
-            chunks: ['web']
+            chunks: ['sort']
         }),
         new HtmlWebpackPlugin({
             alwaysWriteToDisk: true,
             filename: 'template/design.html',
             inject: false,
             template: path.join(__dirname, '../template/design.ejs'),
-            chunks: ['design']
+            chunks: ['sort']
         }),
         new HtmlWebpackPlugin({
             alwaysWriteToDisk: true,
             filename: 'template/android.html',
             inject: false,
             template: path.join(__dirname, '../template/android.ejs'),
-            chunks: ['android']
+            chunks: ['sort']
         }),
         new HtmlWebpackPlugin({
             alwaysWriteToDisk: true,
             filename: 'template/product.html',
             inject: false,
             template: path.join(__dirname, '../template/product.ejs'),
-            chunks: ['product']
+            chunks: ['sort']
         }),
         new HtmlWebpackPlugin({
             alwaysWriteToDisk: true,
             filename: 'template/tagBlogs.html',
             inject: false,
             template: path.join(__dirname, '../template/tagBlogs.ejs'),
-            chunks: ['tagBlogs']
+            chunks: ['sort']
         }),
         new HtmlWebpackPlugin({
             alwaysWriteToDisk: true,
             filename: 'template/archiveBlogs.html',
             inject: false,
             template: path.join(__dirname, '../template/archiveBlogs.ejs'),
-            chunks: ['archiveBlogs']
+            chunks: ['sort']
         }),
         new HtmlWebpackHarddiskPlugin()
     ]

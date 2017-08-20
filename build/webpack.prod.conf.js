@@ -26,10 +26,10 @@ var webpackConfig = merge(baseWebpackConfig, {
     },
     devtool: config.build.productionSourceMap ? '#source-map' : false,
     plugins: [
-        new faviconsWebpackPlugin({
-            logo: './src/assets/favicon.png',
-            prefix: 'favicon/',
-        }),
+        // new faviconsWebpackPlugin({
+        //     logo: './src/assets/favicon.png',
+        //     prefix: 'favicon/',
+        // }),
         // http://vuejs.github.io/vue-loader/en/workflow/production.html
         new webpack.DefinePlugin({
             'process.env': env

@@ -33,7 +33,8 @@
 		</div>
 		<div v-if="!this.blog_num" :class="$style.show">没有对应的博客</div>
 		<div :class="$style.page_row">
-			<button :class="$style.page_button" v-on:click="pageDown"> < </button>
+			<button :class="$style.page_button" v-on:click="pageDown">
+< </button>
 			<button :class="$style.right_button" v-on:click="pageUp"> > </button>
 		</div>
 	</div>
@@ -46,7 +47,7 @@ export default {
 			page_num: 1
 		}
 	},
-	props: ['items', 'page_count','blog_num'],
+	props: ['items', 'blog_num'],
 	methods: {
 		pageDown() {
 			this.$emit('pageDown')
@@ -59,7 +60,8 @@ export default {
 </script>
 
 <style lang='scss' module>
-.blogs_box, .show {
+.blogs_box,
+.show {
 	height: 530px;
 }
 
@@ -67,6 +69,7 @@ export default {
 	text-align: center;
 	font-size: 14px;
 }
+
 a {
 	display: block;
 }
@@ -88,24 +91,30 @@ a {
 }
 
 .avatar_size {
-	width: 40px;
-	height: 40px;
+	width: 50px;
 }
 
-.content_icon{
+.avatar_size,
+.top_right {
+	composes: inline-block from "sass-loader!../scss/utility.scss";
+	composes: full-height from "sass-loader!../scss/utility.scss";
+}
+
+.content_icon {
 	width: 20px;
 	height: 20px;
 	composes: inline-block from "sass-loader!../scss/utility.scss";
 }
 
-.top_right {
-	composes: inline-block from "sass-loader!../scss/utility.scss";
-	padding-left: 10px;
+.top {
+	height: 50px;
+	font-size: 0;
 }
 
 .left_box {
 	composes: inline-block from "sass-loader!../scss/utility.scss";
 	composes: full-height from "sass-loader!../scss/utility.scss";
+	padding-top: 15px;
 	width: 390px;
 	vertical-align: top;
 }
@@ -120,35 +129,44 @@ a {
 	font-size: 0;
 }
 
-.bottom_left, .bottom_right {
+.bottom_left,
+.bottom_right {
 	composes: inline-block from "sass-loader!../scss/utility.scss";
 	composes: full-height from "sass-loader!../scss/utility.scss";
 }
 
+.avatar_size,
 .bottom_left {
 	vertical-align: top;
-    padding: 10px;
 }
+
+.bottom_left {
+	padding: 15px;
+}
+
 .bottom_right {
-	width: 325px;
-	padding: 10px;
+	width: 315px;
 }
-.blog_word, .blog_username {
+
+.blog_word,
+.blog_username {
 	composes: inline-block from "sass-loader!../scss/utility.scss";
 	composes: min-font from "sass-loader!../scss/utility.scss";
 }
+
 .blog_username {
 	margin-right: 20px;
 }
+
 .blog_summary {
-	height: 110px;
-    overflow: hidden;
-    margin-bottom: 24px;
+	height: 90px;
+	overflow: hidden;
+	margin: 15px 0;
 	composes: min-font from "sass-loader!../scss/utility.scss";
 }
 
 .blog_title {
-	font-size: 16px;
+	font-size: 20px;
 }
 
 .comment_num {
@@ -158,7 +176,7 @@ a {
 
 .tag_list {
 	font-size: 12px;
-	width: 100%;
+	composes: full-width from "sass-loader!../scss/utility.scss";
 	height: 16px;
 	margin-bottom: 0;
 }
@@ -188,10 +206,10 @@ a {
 	margin-left: 20px;
 }
 
-.page_button:hover, .right_button:hover {
+.page_button:hover,
+.right_button:hover {
 	background-color: #ffc162;
 	color: #ffffff;
 	cursor: pointer;
 }
-
 </style>
