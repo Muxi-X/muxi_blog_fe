@@ -2,15 +2,9 @@ import Vue from 'vue'
 import Sort from './components/Sort'
 import style from './scss/reset.scss'
 
-const App = {
-    template: "#app",
+const TagBlogs = {
+    template: "#tagBlogs",
     mixins: [Sort]
 }
-
-App.el = "#app"
-const app = new Vue(App)
-
-
-
-
-
+TagBlogs.el = "#tagBlogs"
+const tagBlogs = new Vue(TagBlogs)

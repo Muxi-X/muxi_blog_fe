@@ -14,6 +14,12 @@ function resolve(dir) {
 module.exports = {
     entry: {
         sort: './src/sort.js',
+        web: './src/web.js',
+        android: './src/android.js',
+        design: './src/design.js',
+        product: './src/product.js',
+        archiveBlogs: './src/archiveBlogs.js',
+        tagBlogs: './src/tagBlogs.js',
         second: './src/second.js'
     },
     output: {
@@ -106,42 +112,42 @@ module.exports = {
             filename: 'template/web.html',
             inject: false,
             template: path.join(__dirname, '../template/web.ejs'),
-            chunks: ['sort']
+            chunks: ['web']
         }),
         new HtmlWebpackPlugin({
             alwaysWriteToDisk: true,
             filename: 'template/design.html',
             inject: false,
             template: path.join(__dirname, '../template/design.ejs'),
-            chunks: ['sort']
+            chunks: ['design']
         }),
         new HtmlWebpackPlugin({
             alwaysWriteToDisk: true,
             filename: 'template/android.html',
             inject: false,
             template: path.join(__dirname, '../template/android.ejs'),
-            chunks: ['sort']
+            chunks: ['android']
         }),
         new HtmlWebpackPlugin({
             alwaysWriteToDisk: true,
             filename: 'template/product.html',
             inject: false,
             template: path.join(__dirname, '../template/product.ejs'),
-            chunks: ['sort']
+            chunks: ['product']
         }),
         new HtmlWebpackPlugin({
             alwaysWriteToDisk: true,
             filename: 'template/tagBlogs.html',
             inject: false,
             template: path.join(__dirname, '../template/tagBlogs.ejs'),
-            chunks: ['sort']
+            chunks: ['tagBlogs']
         }),
         new HtmlWebpackPlugin({
             alwaysWriteToDisk: true,
             filename: 'template/archiveBlogs.html',
             inject: false,
             template: path.join(__dirname, '../template/archiveBlogs.ejs'),
-            chunks: ['sort']
+            chunks: ['archiveBlogs']
         }),
         new HtmlWebpackHarddiskPlugin()
     ]

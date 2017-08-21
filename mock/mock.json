@@ -13,13 +13,13 @@
         },
         {
             "name": "tag_blogs",
-            "endpoint": "/tag_blogs/:id",
+            "endpoint": "/tagblogs/:id",
             "template": "tagBlogs",
             "async": false
         },
         {
             "name": "archive_blogs",
-            "endpoint": "/archive_blogs/:id/:id/",
+            "endpoint": "/archiveblogs/:id/:id/",
             "template": "archiveBlogs",
             "async": false
         },

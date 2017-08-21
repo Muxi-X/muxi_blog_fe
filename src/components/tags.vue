@@ -7,7 +7,7 @@
 			<span :class="$style.word">文章标签</span>
 		</div>
 		<div :class="$style.item_list">
-		<a v-for="item in items" :href="'/tag_blogs/' + item" :key="item" :class="$style.item">{{item}}</a>
+		<a v-for="item in items" :href="'/tagBlogs/' + item" :key="item" :class="$style.item">{{item}}</a>
 		</div>
 	</div>
 </template>

@@ -2,15 +2,10 @@ import Vue from 'vue'
 import Sort from './components/Sort'
 import style from './scss/reset.scss'
 
-const App = {
-    template: "#app",
+const Android = {
+    template: "#android",
     mixins: [Sort]
 }
 
-App.el = "#app"
-const app = new Vue(App)
-
-
-
-
-
+Android.el = "#android"
+const android = new Vue(Android)

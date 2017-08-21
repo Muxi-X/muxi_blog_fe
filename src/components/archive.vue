@@ -8,7 +8,7 @@
             <span :class="$style.word">文章归档</span>
         </div>
         <div :class="$style.time">
-            <a v-for="item in items" :key="item" :href="'/archive_blogs/'+ item.year +'/' + item.month +'/'">
+            <a v-for="item in items" :key="item" :href="'/archiveBlogs/'+ item.year +'/' + item.month +'/'">
                 <div :class="$style.year">{{item.year}}<span>年</span>
                     <div :class="$style.year">{{item.month}}</div><span>月</span>
                 </div>

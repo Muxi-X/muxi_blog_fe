@@ -31,10 +31,9 @@
 				<img :class="$style.right_box" v-bind:src="item.img_url">
 			</a>
 		</div>
-		<div v-if="!this.blog_num" :class="$style.show">没有对应的博客</div>
+		 <div v-if="!this.blog_num" :class="$style.show">没有对应的博客</div> 
 		<div :class="$style.page_row">
-			<button :class="$style.page_button" v-on:click="pageDown">
-< </button>
+			<button :class="$style.page_button" v-on:click="pageDown"> < </button>
 			<button :class="$style.right_button" v-on:click="pageUp"> > </button>
 		</div>
 	</div>
