@@ -15,9 +15,6 @@
             }
         },
         props: ['id'],
-        created() {
-            this.$parent.sendComment = false
-        },
         methods: {
             submit(e) {
                 e.stopPropagation();
@@ -35,7 +32,6 @@
                         })
                     }).then(res => {
                         this.message=""
-                        this.$parent.sendComment = true
                         this.$parent.fetchComments()
                     })
                 }

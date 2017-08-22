@@ -31,14 +31,13 @@ import commentBox from './commentBox.vue'
 export default {
     data() {
         return {
-            "tags": [],
-            "comments": [],
-            "blog": {
+            tags: [],
+            comments: [],
+            blog: {
                 type: Object
             },
-            "id": 0,
-            "omments": [],
-            "sendComment": false
+            id: 0,
+            comments: []
         }
     },
     components: {
@@ -60,14 +59,12 @@ export default {
     },
     methods: {
         fetchComments() {
-            if (this.sendComment) {
-                fetch('/api/v2.0/' + this.id + '/views/').then(res => {
-                    return res.json()
+            fetch('/api/v2.0/' + this.id + '/views/').then(res => {
+                return res.json()
+            })
+                .then(res => {
+                    this.comments = res.comments
                 })
-                    .then(res => {
-                        this.comments = res.comments
-                    })
-            }
         }
     }
 }
@@ -75,15 +72,6 @@ export default {
 
 <style lang="scss" module>
 @import '../scss/common.scss';
-.main {
-    width: 800px;
-    background: #fff;
-    margin-left: 250px;
-    margin-top: 100px;
-    padding-top: 30px;
-    padding-bottom: 90px;
-}
-
 .avatar {
     composes: inline-block from "sass-loader!../scss/utility.scss";
     width: 60px;
@@ -162,6 +150,8 @@ export default {
     height: 75px;
     width: 380px;
     border: 2px solid #e6e6e6;
+    font-size: 14px;
+
 }
 
 .submitComment {

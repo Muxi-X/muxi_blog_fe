@@ -41,6 +41,11 @@
 			</svg>
 			<span :class="$style.class_word">About</span>
 		</a>
+		<a href="/send" :class="$style.logo_box">
+			<svg :class="$style.send" viewBox="0 0 1024 1024">
+				<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#sendIcon"></use>
+			</svg>
+		</a>
 	</div>
 </template>
 <script>
@@ -53,12 +58,17 @@
 }
 
 .logo {
-	margin: 22px auto;
-	display: block;
 	width: 70px;
 	height: auto;
 }
-
+.send, .logo {
+	margin: 22px auto;
+	display: block;
+}
+.send {
+	height: 45px;
+    margin-top: 50px;
+}
 .link_box,.link_box_first {
 	border-bottom: 1px #d9dcdc solid;
 	composes: link from "sass-loader!../scss/common.scss";
@@ -70,9 +80,8 @@
 
 .icon {
 	composes: inline-block from "sass-loader!../scss/common.scss";
-	width: 39px;
-	fill: #d9dcdc;
 	margin-left: 30px;
+	width: 39px;
 	margin-right: 15px;
 	vertical-align: middle;
 }

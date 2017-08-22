@@ -10,7 +10,3 @@ const App = {
 App.el = "#app"
 const app = new Vue(App)
 
-
-
-
-

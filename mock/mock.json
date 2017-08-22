@@ -6,9 +6,21 @@
             "async": false
         },
         {
+            "name": "mobile",
+            "endpoint": "/mobile",
+            "template": "mobile",
+            "async": false
+        },
+        {
             "name": "second",
             "endpoint": "/second/:Int",
             "template": "second",
+            "async": false
+        },
+        {
+            "name": "send",
+            "endpoint": "/send",
+            "template": "send",
             "async": false
         },
         {

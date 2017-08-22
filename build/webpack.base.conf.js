@@ -13,14 +13,16 @@ function resolve(dir) {
 
 module.exports = {
     entry: {
-        sort: './src/sort.js',
+        home: './src/home.js',
         web: './src/web.js',
-        android: './src/android.js',
+        android: './src/android.js', 
         design: './src/design.js',
         product: './src/product.js',
         archiveBlogs: './src/archiveBlogs.js',
         tagBlogs: './src/tagBlogs.js',
-        second: './src/second.js'
+        second: './src/second.js',
+        mobile: './src/mobile.js',
+        send: './src/send.js'
     },
     output: {
         path: path.join(__dirname, "../"),
@@ -74,6 +76,10 @@ module.exports = {
             name: 'manifest',
             chunks: ['vendor']
         }),
+        new webpack.optimize.CommonsChunkPlugin({
+            name: 'common',
+            chunks: ['sort','web','android','design','product','tagBlogs','archiveBlogs']
+        }),
         new webpack.DefinePlugin({
             'process.env': {
                 NODE_ENV: '"production"'
@@ -98,7 +104,7 @@ module.exports = {
             filename: 'template/index.html',
             inject: false,
             template: path.join(__dirname, '../template/index.ejs'),
-            chunks: ['sort']
+            chunks: ['common','home']
         }),
         new HtmlWebpackPlugin({
             alwaysWriteToDisk: true,
@@ -112,42 +118,56 @@ module.exports = {
             filename: 'template/web.html',
             inject: false,
             template: path.join(__dirname, '../template/web.ejs'),
-            chunks: ['web']
+            chunks: ['common','web']
         }),
         new HtmlWebpackPlugin({
             alwaysWriteToDisk: true,
             filename: 'template/design.html',
             inject: false,
             template: path.join(__dirname, '../template/design.ejs'),
-            chunks: ['design']
+            chunks: ['common','design']
         }),
         new HtmlWebpackPlugin({
             alwaysWriteToDisk: true,
             filename: 'template/android.html',
             inject: false,
             template: path.join(__dirname, '../template/android.ejs'),
-            chunks: ['android']
+            chunks: ['common','android']
         }),
         new HtmlWebpackPlugin({
             alwaysWriteToDisk: true,
             filename: 'template/product.html',
             inject: false,
             template: path.join(__dirname, '../template/product.ejs'),
-            chunks: ['product']
+            chunks: ['common','product']
         }),
         new HtmlWebpackPlugin({
             alwaysWriteToDisk: true,
             filename: 'template/tagBlogs.html',
             inject: false,
             template: path.join(__dirname, '../template/tagBlogs.ejs'),
-            chunks: ['tagBlogs']
+            chunks: ['common','tagBlogs']
         }),
         new HtmlWebpackPlugin({
             alwaysWriteToDisk: true,
             filename: 'template/archiveBlogs.html',
             inject: false,
             template: path.join(__dirname, '../template/archiveBlogs.ejs'),
-            chunks: ['archiveBlogs']
+            chunks: ['common','archiveBlogs']
+        }),
+        new HtmlWebpackPlugin({
+            alwaysWriteToDisk: true,
+            filename: 'template/mobile.html',
+            inject: false,
+            template: path.join(__dirname, '../template/mobile.ejs'),
+            chunks: ['mobile']
+        }),
+        new HtmlWebpackPlugin({
+            alwaysWriteToDisk: true,
+            filename: 'template/send.html',
+            inject: false,
+            template: path.join(__dirname, '../template/send.ejs'),
+            chunks: ['send']
         }),
         new HtmlWebpackHarddiskPlugin()
     ]
