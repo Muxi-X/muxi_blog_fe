@@ -15,6 +15,7 @@
     "lodash": "^4.17.4",
     "marked": "^0.3.6",
     "vue": "^2.3.2",
+    "vue-markdown": "^2.2.4",
     "vue-template-compiler": "^2.4.2",
     "webpack-bundle-analyzer": "^2.9.0",
     "webpack-merge": "^4.1.0"
