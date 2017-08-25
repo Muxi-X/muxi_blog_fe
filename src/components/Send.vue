@@ -26,7 +26,7 @@
                 </div>
                 <div v-if="this.tip" :class="$style.tip">最多五个标签</div>
             </div>
-            <textarea v-model.trim="summary" :class="$style.summary" placeholder="Summary..."></textarea>
+            <textarea v-model.trim="summary" :class="$style.summary" placeholder="Summary...(no more than 200 words)" maxlength="200"></textarea>
             <div :class="$style.editor">
                 <textarea :value="input" @input="update" :class="$style.write" ref="editBox"></textarea>
                 <div :class="$style.md_box">
@@ -151,7 +151,7 @@ code {
     overflow: hidden;
     outline: 0;
     flex-direction: column;
-    white-space: pre-wrap;
+    white-space: nowrap;
     word-wrap: break-word;
     border-bottom: 2px solid #d9dcdc;
     padding-bottom: 15px;
@@ -195,8 +195,10 @@ code {
 }
 
 .summary {
-    height: 100px;
-    width: 800px;
+    height: 80px;
+    width: 760px;
+    padding: 10px 20px;
+    font-size: 16px;
 }
 
 .submit {

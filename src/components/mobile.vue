@@ -1,11 +1,10 @@
 <template>
   <div>
-     <myHeader></myHeader>
+     <myHeader :class="$style.header"></myHeader>
   </div>
 </template>
 <script>
 import myHeader from './header'
-import myNavi from './navi_mobile'
 import myCont from './cont_mobile'
 export default {
   data() {
@@ -15,13 +14,14 @@ export default {
   },
   components: {
     "myHeader": myHeader,
-    "myNavi": myNavi,
     "myCont": myCont
   }
 }
 </script>
 <style lang="scss" module>
+.header {
 
+}
 </style>
 
 

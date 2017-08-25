@@ -17,7 +17,9 @@
                     </div>
                     <div :class="$style.comment_text">{{comment.comment}}</div>
                 </div>
-                <commentBox :class="$style.cBox" v-on:submit="submit" :id="this.id">
+                <commentBox :class="$style.cBox" 
+                            :id="this.id" 
+                            v-on:newComment="fetchComments">
                 </commentBox>
             </div>
         </div>
