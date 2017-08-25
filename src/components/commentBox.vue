@@ -2,7 +2,7 @@
     <div>
         <textarea v-model.trim="message" :class="$style.editComment" placeholder="你的看法是？"></textarea>
         <div :class="$style.buttonBox">
-            <button v-on:click="submit" :class="$style.submitComment">评论</button>
+            <button v-on:click="submitComment" :class="$style.submitComment">评论</button>
         </div>
     </div>
 </template>
@@ -16,7 +16,7 @@
         },
         props: ['id'],
         methods: {
-            submit(e) {
+            submitComment(e) {
                 e.stopPropagation();
                 if (this.message) {
                     fetch('/api/v2.0/' + this.id + '/add_comment/', {
@@ -32,7 +32,9 @@
                         })
                     }).then(res => {
                         this.message=""
-                        this.$parent.fetchComments()
+                        //this.$parent.fetchComments()
+                        this.$emit('newComment')
+                        
                     })
                 }
             }
