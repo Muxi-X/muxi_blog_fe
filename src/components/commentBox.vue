@@ -34,7 +34,6 @@
                         this.message=""
                         //this.$parent.fetchComments()
                         this.$emit('newComment')
-                        
                     })
                 }
             }
