@@ -90,7 +90,6 @@ export default {
 }
 </script>
 <style lang='scss'>
-@import '../scss/common.scss';
 @import '../scss/pc.scss';
 @import '../scss/utility.scss';
 </style>

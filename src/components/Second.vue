@@ -3,16 +3,16 @@
         <navi class="navi"></navi>
         <sign class="sign"></sign>
         <div class="main">
-            <img class="avatar inline-block" :src="blog.avatar">
-            <div class="right inline-block">
+            <img class="avatar inline_block" :src="blog.avatar">
+            <div class="right inline_block">
                 <div class="title full-width">{{blog.title}}</div>
-                <div class="author inline-block">{{blog.username}}</div>
-                <div class="time inline-block">{{blog.date}}</div>
+                <div class="author inline_block">{{blog.username}}</div>
+                <div class="time inline_block">{{blog.date}}</div>
                 <div class="article">{{blog.body}}</div>
-                <div class="tag inline-block" v-for="tag in tags" :key="tag">{{tag}}</div>
+                <div class="tag inline_block" v-for="tag in tags" :key="tag">{{tag}}</div>
                 <div class="comment" v-for="comment in comments" :key="comment">
                     <div>
-                        <div class="comment_name inline-block">{{comment.username}}</div>
+                        <div class="comment_name inline_block">{{comment.username}}</div>
                         <div class="comment_date">{{comment.date}}</div>
                     </div>
                     <div class="comment_text">{{comment.comment}}</div>
@@ -72,7 +72,6 @@ export default {
 </script>
 
 <style lang="scss">
-@import '../scss/common.scss';
 @import '../scss/utility.scss';
 @import '../scss/pc.scss';
 

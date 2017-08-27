@@ -1,16 +1,16 @@
 <template>
     <div>
         <div>
-            <svg class="archive_icon" viewBox="0 0 1024 1024">
+            <svg class="archive_icon vertical_align" viewBox="0 0 1024 1024">
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#archiveIcon"></use>
             </svg>
             <span class="archive_word">文章归档</span>
         </div>
         <div class="archive_time">
             <a v-for="item in items" :key="item" :href="'/archiveBlogs/'+ item.year +'/' + item.month +'/'">
-                <div class="archive_year inline-block">{{item.year}}
+                <div class="archive_year inline_block">{{item.year}}
                     <span>年</span>
-                    <div class="archive_year inline-block">{{item.month}}</div>
+                    <div class="archive_year inline_block">{{item.month}}</div>
                     <span>月</span>
                 </div>
             </a>
@@ -37,12 +37,11 @@ export default {
 </script>
 
 <style lang="scss">
-@import '../scss/common.scss';
+@import '../scss/pc.scss';
 @import '../scss/utility.scss';
 .archive_icon {
     width: 25px;
     height: 25px;
-    vertical-align: middle;
     margin-right: 5px;
 }
 

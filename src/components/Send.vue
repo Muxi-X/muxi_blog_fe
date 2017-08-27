@@ -122,7 +122,6 @@ export default {
 
 <style lang="scss">
 @import '../scss/utility.scss';
-@import '../scss/common.scss';
 @import '../scss/pc.scss';
 
 code {

@@ -1,7 +1,7 @@
 <template>
     <div>
-        <button class="signup_box full-width full-height">
-	        <a href = "https://user.muxixyz.com/" class="signup full-width full-height">登录 / 注册</a>
+        <button class="signup_box full_width full_height">
+	        <a href = "https://user.muxixyz.com/" class="signup full_width full_height">登录 / 注册</a>
 	    </button>
 	</div>
 </template>
@@ -11,9 +11,9 @@
 	line-height: 25px;
 }
 .signup_box:hover {
-    background: #ffc162;
+    background: $yellow;
 	a { 
-		color: #ffffff;
+		color: $white;
 	}
 }
 </style>

@@ -1,7 +1,7 @@
 <template>
     <div>
         <textarea v-model.trim="message" class="editComment" placeholder="你的看法是？"></textarea>
-        <div class="buttonBox full-width">
+        <div class="buttonBox full_width">
             <button v-on:click="submitComment" class="submitComment">评论</button>
         </div>
     </div>
@@ -42,6 +42,7 @@
 </script>
 
 <style lang='scss'>
+@import '../scss/pc.scss';
 @import '../scss/utility.scss';
     .editComment {
         height: 75px;
@@ -50,8 +51,8 @@
     }
     
     .submitComment {
-        background-color: #ffc162;
-        color: #fff;
+        background-color: $orange;
+        color: $white;
         width: 50px;
         height: 30px;
         border-radius: 4px;

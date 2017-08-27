@@ -1,13 +1,13 @@
 <template>
 	<div>
 		<div class="box">
-			<svg class="tag_icon vertical-align" viewBox="0 0 1024 1024">
+			<svg class="tag_icon vertical_align" viewBox="0 0 1024 1024">
 	            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#tagIcon"></use>
 	        </svg>
 			<span class="tag_word">文章标签</span>
 		</div>
 		<div class="item_list">
-		<a v-for="item in items" :href="'/tagBlogs/' + item" :key="item" class="item inline-block">{{item}}</a>
+		<a v-for="item in items" :href="'/tagBlogs/' + item" :key="item" class="item inline_block">{{item}}</a>
 		</div>
 	</div>
 </template>
@@ -31,7 +31,7 @@ export default {
 }
 </script>
 <style lang="scss">
-@import '../scss/common.scss';
+@import '../scss/pc.scss';
 @import '../scss/utility.scss';
 .tag_icon {
 	width: 25px;
@@ -43,7 +43,7 @@ export default {
 }
 .item {
 	background-color: #cbcbcb;
-	color: #fff;
+	color: $white;
 	line-height: 16px;
 	padding: 2px 2px;
 	margin-top: 10px;
@@ -56,6 +56,6 @@ export default {
 	overflow: hidden;
 }
 .item:hover {
-	background-color: #ffb17d;
+	background-color: $orange;
 }
 </style>

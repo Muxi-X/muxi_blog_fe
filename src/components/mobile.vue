@@ -26,11 +26,6 @@ export default {
 }
 </script>
 <style lang="scss">
-@import '../scss/common.scss';
-
-.mobile,.mobileNavi {
-    // composes: full-height from "sass-loader!../scss/utility.scss";
-}
 .mobile {
   min-width: 320px;
   min-height: 560px;

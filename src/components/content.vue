@@ -2,39 +2,39 @@
 	<div>
 		<div class="blogs_box" v-if="this.blog_num">
 			<a :href="/second/+ item.id" v-for="item in items" class="content_box" :key="item" v-on:click="toSecond">
-				<div class="left_box inline-block full-height">
+				<div class="left_box inline_block full-height">
 					<div class="top">
-						<img class="avatar_size inline-block full-height" v-bind:src="item.avatar">
-						<div class="top_right inline-block full-height">
+						<img class="avatar_size inline_block full_height" v-bind:src="item.avatar">
+						<div class="top_right inline_block full_height">
 							<div class="blog_title">{{item.title}}</div>
 							<div>
-								<div class="blog_username inline-block min-font">{{item.username}}</div>
-								<div class="blog_word inline-block min-font">{{item.date}}</div>
+								<div class="blog_username inline_block min_font">{{item.username}}</div>
+								<div class="blog_word inline_block min_font">{{item.date}}</div>
 							</div>
 						</div>
 					</div>
 					<div class="bottom">
-						<div class="bottom_left inline-block full-height">
-							<svg class="content_icon inline-block" viewBox="0 0 1024 1024">
+						<div class="bottom_left inline_block full_height">
+							<svg class="content_icon inline_block" viewBox="0 0 1024 1024">
 								<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#commentIcon"></use>
 							</svg>
-							<div class="comment_num min-font">{{item.comment_num}}</div>
+							<div class="comment_num min_font">{{item.comment_num}}</div>
 						</div>
-						<div class="bottom_right inline-block full-height">
-							<div class="blog_summary min-font">{{item.summary}}</div>
-							<div class="tag_list full-width">
-								<div v-for="onetag in item.tags" class="tag inline-block" :key="onetag">{{onetag}}</div>
+						<div class="bottom_right inline_block full_height">
+							<div class="blog_summary min_font">{{item.summary}}</div>
+							<div class="tag_list full_width">
+								<div v-for="onetag in item.tags" class="tag inline_block" :key="onetag">{{onetag}}</div>
 							</div>
 						</div>
 					</div>
 				</div>
-				<img class="right_box inline-block full-height" v-bind:src="item.img_url">
+				<img class="right_box inline_block full_height" v-bind:src="item.img_url">
 			</a>
 		</div>
 		 <div v-if="!this.blog_num" class="show">没有对应的博客</div> 
-		<div class="page_row full-width">
-			<button class="page_button" v-on:click="pageDown"> < </button>
-			<button class="right_button" v-on:click="pageUp"> > </button>
+		<div class="page_row full_width">
+			<button class="page_button button_size" v-on:click="pageDown"> < </button>
+			<button class="right_button button_size" v-on:click="pageUp"> > </button>
 		</div>
 	</div>
 </template>
@@ -79,14 +79,14 @@ a {
 	height: 214px;
 	margin-bottom: 30px;
 	font-size: 0;
-	background-color: #ffffff;
-	border: 2px solid #ffffff; //composes: inline-block from "sass-loader!../scss/utility.scss";
+	background-color: $white;
+	border: 2px solid transparent; 
 }
 
 .content_box:hover {
-	border: 2px solid #ffc162;
+	border: 2px solid $yellow;
 	.blog_title {
-		color: #ffc162;
+		color: $yellow;
 	}
 }
 
@@ -156,9 +156,9 @@ a {
 }
 
 .tag {
-	background-color: #ffc162;
-	color: #ffffff;
-\	font-size: 12px;
+	background-color: $yellow;
+	color: $white;
+	font-size: 12px;
 	line-height: 16px;
 	margin-right: 15px;
 	border-radius: 2px;
@@ -177,11 +177,16 @@ a {
 .right_button {
 	margin-left: 20px;
 }
+.button_size {
+	width: 16px;
+	height: 16px;
+	color: $white;
+	line-height: 16px;
+}
 
 .page_button:hover,
 .right_button:hover {
-	background-color: #ffc162;
-	color: #ffffff;
+	background-color: $yellow;
 	cursor: pointer;
 }
 </style>
