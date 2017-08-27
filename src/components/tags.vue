@@ -1,13 +1,13 @@
 <template>
 	<div>
-		<div :class="$style.box">
-			<svg :class="$style.icon" viewBox="0 0 1024 1024">
+		<div class="box">
+			<svg class="tag_icon vertical-align" viewBox="0 0 1024 1024">
 	            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#tagIcon"></use>
 	        </svg>
-			<span :class="$style.word">文章标签</span>
+			<span class="tag_word">文章标签</span>
 		</div>
-		<div :class="$style.item_list">
-		<a v-for="item in items" :href="'/tagBlogs/' + item" :key="item" :class="$style.item">{{item}}</a>
+		<div class="item_list">
+		<a v-for="item in items" :href="'/tagBlogs/' + item" :key="item" class="item inline-block">{{item}}</a>
 		</div>
 	</div>
 </template>
@@ -30,15 +30,15 @@ export default {
 		}
 }
 </script>
-<style lang="scss" module>
+<style lang="scss">
 @import '../scss/common.scss';
-.icon {
+@import '../scss/utility.scss';
+.tag_icon {
 	width: 25px;
 	height: 25px;
-	composes: vertical-align from "sass-loader!../scss/utility.scss";
     margin-right: 5px;
 }
-.word {
+.tag_word {
 	font-size: 14px;
 }
 .item {
@@ -46,7 +46,6 @@ export default {
 	color: #fff;
 	line-height: 16px;
 	padding: 2px 2px;
-	composes: inline-block from "sass-loader!../scss/utility.scss";
 	margin-top: 10px;
 	margin-right: 6px;
 }

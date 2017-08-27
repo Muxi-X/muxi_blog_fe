@@ -1,12 +1,12 @@
 <template>
-    <div :class="$style.wrap">
-        <sign :class="$style.sign"></sign>
-        <navi :class="$style.navi"></navi>
-        <div :class="$style.boxs">
-            <tagBox :class="$style.tagBox"></tagBox>
-            <archiveBox :class="$style.archiveBox"></archiveBox>
+    <div class="wrap">
+        <sign class="sign"></sign>
+        <navi class="navi"></navi>
+        <div class="boxs">
+            <tagBox class="tagBox"></tagBox>
+            <archiveBox class="archiveBox"></archiveBox>
         </div>
-        <con :class="$style.cont" 
+        <con class="cont" 
              :items="this.items" 
              :pages_count="this.pages_count" 
              :blog_num="this.blog_num"
@@ -89,6 +89,8 @@ export default {
     }
 }
 </script>
-<style lang='scss' module>
+<style lang='scss'>
 @import '../scss/common.scss';
+@import '../scss/pc.scss';
+@import '../scss/utility.scss';
 </style>

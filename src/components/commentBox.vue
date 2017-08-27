@@ -1,8 +1,8 @@
 <template>
     <div>
-        <textarea v-model.trim="message" :class="$style.editComment" placeholder="你的看法是？"></textarea>
-        <div :class="$style.buttonBox">
-            <button v-on:click="submitComment" :class="$style.submitComment">评论</button>
+        <textarea v-model.trim="message" class="editComment" placeholder="你的看法是？"></textarea>
+        <div class="buttonBox full-width">
+            <button v-on:click="submitComment" class="submitComment">评论</button>
         </div>
     </div>
 </template>
@@ -41,7 +41,8 @@
     }
 </script>
 
-<style lang='scss' module>
+<style lang='scss'>
+@import '../scss/utility.scss';
     .editComment {
         height: 75px;
         width: 380px;
@@ -57,7 +58,6 @@
     }
     
     .buttonBox {
-        composes: full-width from "sass-loader!../scss/utility.scss";
         margin-top: 15px;
         font-size: 14px;
     }

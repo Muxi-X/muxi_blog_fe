@@ -1,40 +1,40 @@
 <template>
 	<div>
-		<div :class="$style.blogs_box" v-if="this.blog_num">
-			<a :href="/second/+ item.id" v-for="item in items" :class="$style.content_box" :key="item" v-on:click="toSecond">
-				<div :class="$style.left_box">
-					<div :class="$style.top">
-						<img :class="$style.avatar_size" v-bind:src="item.avatar">
-						<div :class="$style.top_right">
-							<div :class="$style.blog_title">{{item.title}}</div>
+		<div class="blogs_box" v-if="this.blog_num">
+			<a :href="/second/+ item.id" v-for="item in items" class="content_box" :key="item" v-on:click="toSecond">
+				<div class="left_box inline-block full-height">
+					<div class="top">
+						<img class="avatar_size inline-block full-height" v-bind:src="item.avatar">
+						<div class="top_right inline-block full-height">
+							<div class="blog_title">{{item.title}}</div>
 							<div>
-								<div :class="$style.blog_username">{{item.username}}</div>
-								<div :class="$style.blog_word">{{item.date}}</div>
+								<div class="blog_username inline-block min-font">{{item.username}}</div>
+								<div class="blog_word inline-block min-font">{{item.date}}</div>
 							</div>
 						</div>
 					</div>
-					<div :class="$style.bottom">
-						<div :class="$style.bottom_left">
-							<svg :class="$style.content_icon" viewBox="0 0 1024 1024">
+					<div class="bottom">
+						<div class="bottom_left inline-block full-height">
+							<svg class="content_icon inline-block" viewBox="0 0 1024 1024">
 								<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#commentIcon"></use>
 							</svg>
-							<div :class="$style.comment_num">{{item.comment_num}}</div>
+							<div class="comment_num min-font">{{item.comment_num}}</div>
 						</div>
-						<div :class="$style.bottom_right">
-							<div :class="$style.blog_summary">{{item.summary}}</div>
-							<div :class="$style.tag_list">
-								<div v-for="onetag in item.tags" :class="$style.tag" :key="onetag">{{onetag}}</div>
+						<div class="bottom_right inline-block full-height">
+							<div class="blog_summary min-font">{{item.summary}}</div>
+							<div class="tag_list full-width">
+								<div v-for="onetag in item.tags" class="tag inline-block" :key="onetag">{{onetag}}</div>
 							</div>
 						</div>
 					</div>
 				</div>
-				<img :class="$style.right_box" v-bind:src="item.img_url">
+				<img class="right_box inline-block full-height" v-bind:src="item.img_url">
 			</a>
 		</div>
-		 <div v-if="!this.blog_num" :class="$style.show">没有对应的博客</div> 
-		<div :class="$style.page_row">
-			<button :class="$style.page_button" v-on:click="pageDown"> < </button>
-			<button :class="$style.right_button" v-on:click="pageUp"> > </button>
+		 <div v-if="!this.blog_num" class="show">没有对应的博客</div> 
+		<div class="page_row full-width">
+			<button class="page_button" v-on:click="pageDown"> < </button>
+			<button class="right_button" v-on:click="pageUp"> > </button>
 		</div>
 	</div>
 </template>
@@ -58,7 +58,8 @@ export default {
 }
 </script>
 
-<style lang='scss' module>
+<style lang='scss'>
+@import '../scss/utility.scss';
 .blogs_box,
 .show {
 	height: 530px;
@@ -93,16 +94,9 @@ a {
 	width: 50px;
 }
 
-.avatar_size,
-.top_right {
-	composes: inline-block from "sass-loader!../scss/utility.scss";
-	composes: full-height from "sass-loader!../scss/utility.scss";
-}
-
 .content_icon {
 	width: 20px;
 	height: 20px;
-	composes: inline-block from "sass-loader!../scss/utility.scss";
 }
 
 .top {
@@ -111,27 +105,17 @@ a {
 }
 
 .left_box {
-	composes: inline-block from "sass-loader!../scss/utility.scss";
-	composes: full-height from "sass-loader!../scss/utility.scss";
 	padding-top: 15px;
 	width: 390px;
 	vertical-align: top;
 }
 
 .right_box {
-	composes: inline-block from "sass-loader!../scss/utility.scss";
-	composes: full-height from "sass-loader!../scss/utility.scss";
 	width: 210px;
 }
 
 .bottom {
 	font-size: 0;
-}
-
-.bottom_left,
-.bottom_right {
-	composes: inline-block from "sass-loader!../scss/utility.scss";
-	composes: full-height from "sass-loader!../scss/utility.scss";
 }
 
 .avatar_size,
@@ -147,12 +131,6 @@ a {
 	width: 315px;
 }
 
-.blog_word,
-.blog_username {
-	composes: inline-block from "sass-loader!../scss/utility.scss";
-	composes: min-font from "sass-loader!../scss/utility.scss";
-}
-
 .blog_username {
 	margin-right: 20px;
 }
@@ -161,7 +139,6 @@ a {
 	height: 90px;
 	overflow: hidden;
 	margin: 15px 0;
-	composes: min-font from "sass-loader!../scss/utility.scss";
 }
 
 .blog_title {
@@ -170,12 +147,10 @@ a {
 
 .comment_num {
 	text-align: center;
-	composes: min-font from "sass-loader!../scss/utility.scss";
 }
 
 .tag_list {
 	font-size: 12px;
-	composes: full-width from "sass-loader!../scss/utility.scss";
 	height: 16px;
 	margin-bottom: 0;
 }
@@ -183,8 +158,7 @@ a {
 .tag {
 	background-color: #ffc162;
 	color: #ffffff;
-	composes: inline-block from "sass-loader!../scss/utility.scss";
-	font-size: 12px;
+\	font-size: 12px;
 	line-height: 16px;
 	margin-right: 15px;
 	border-radius: 2px;
@@ -192,7 +166,6 @@ a {
 }
 
 .page_row {
-	composes: full-width from "sass-loader!../scss/utility.scss";
 	display: flex;
 	-webkit-align-items: center;
 	align-items: center;

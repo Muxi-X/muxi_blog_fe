@@ -1,10 +1,10 @@
 <template>
     <div>
-        <navi :class="$style.navi"></navi>
-        <sign :class="$style.sign"></sign>
-        <div :class="$style.main">
-            <textarea v-model="title" :class="$style.title" placeholder="文章标题"></textarea>
-            <div :class="$style.group">
+        <navi class="navi"></navi>
+        <sign class="sign"></sign>
+        <div class="main">
+            <textarea v-model="title" class="title margin" placeholder="文章标题"></textarea>
+            <div class="group margin">
                 <label for="Web">
                     <input type="radio" id="Web" value="1" v-model="group"> Web
                 </label>
@@ -12,28 +12,28 @@
                     <input type="radio" id="Android" value="3" v-model="group"> Android
                 </label>
                 <label for="Design">
-                    <input type="radio" id="Design"value="2" v-model="group"> Design
+                    <input type="radio" id="Design" value="2" v-model="group"> Design
                 </label>
                 <label for="Product">
-                    <input type="radio" id="Product"value="4" v-model="group"> Product
+                    <input type="radio" id="Product" value="4" v-model="group"> Product
                 </label>
             </div>
-            <div :class="$style.group">
-                <input v-model="newTag" @keyup.enter="addTag" placeholder="add tag?" autofocus :class="$style.write_tag">
-                <button v-on:click="addTag" :class="$style.add_tag">ADD TAG</button>
-                <div v-for="tag in tags" :class="$style.tag_list"> {{tag}}
-                    <button v-on:click="removeTag(tag)" :class="$style.delete">X</button>
+            <div class="group margin">
+                <input v-model="newTag" @keyup.enter="addTag" placeholder="add tag?" autofocus class="write_tag inline-block">
+                <button v-on:click="addTag" class="add_tag inline-block">ADD</button>
+                <div v-for="tag in tags" class="tag_list inline-block"> {{tag}}
+                    <button v-on:click="removeTag(tag)" class="delete">X</button>
                 </div>
-                <div v-if="this.tip" :class="$style.tip">最多五个标签</div>
+                <div v-if="this.tip" class="tip">最多五个标签</div>
             </div>
-            <textarea v-model.trim="summary" :class="$style.summary" placeholder="Summary...(no more than 200 words)" maxlength="200"></textarea>
-            <div :class="$style.editor">
-                <textarea :value="input" @input="update" :class="$style.write" ref="editBox"></textarea>
-                <div :class="$style.md_box">
-                    <div v-html="compiledMarkdown" :class="$style.view_md" ref="viewBox"></div>
+            <textarea v-model.trim="summary" class="summary" placeholder="Summary...(no more than 200 words)" maxlength="200"></textarea>
+            <div class="editor">
+                <textarea :value="input" @input="update" class="write"></textarea>
+                <div class="md_box">
+                    <div v-html="compiledMarkdown" class="view_md"></div>
                 </div>
             </div>
-            <button v-on:click="submit" :class="$style.submit">POST</button>
+            <button v-on:click="submit" class="submit">POST</button>
         </div>
     </div>
 </template>
@@ -84,7 +84,7 @@ export default {
             if (tag && this.tags.length < 5) {
                 this.tags.push(tag);
                 this.newTag = "";
-            } else if (this.tags.length >= 5) {
+            } else if (this.tags.length >= 5 && this.newTag) {
                 this.tip = true
             }
         },
@@ -120,26 +120,13 @@ export default {
 }
 </script>
 
-<style lang="scss" module>
+<style lang="scss">
+@import '../scss/utility.scss';
 @import '../scss/common.scss';
-.edit {
-    display: inline-block;
-    width: 49%;
-    height: 100%;
-    vertical-align: top;
-    box-sizing: border-box;
-    padding: 0 20px;
-}
+@import '../scss/pc.scss';
 
 code {
     color: #f29a76;
-}
-
-.title,
-.group,
-.edit {
-    composes: full-width from "sass-loader!../scss/utility.scss";
-    composes: margin from "sass-loader!../scss/utility.scss";
 }
 
 .title {
@@ -166,7 +153,6 @@ code {
     padding: 10px 20px;
     border-bottom: 2px solid #d9dcdc;
     width: 764px;
-    ;
 }
 
 .editor {
@@ -176,7 +162,6 @@ code {
 
 .write,
 .md_box {
-    composes: inline-block from "sass-loader!../scss/utility.scss"; //width: 400px;
     display: inline-block;
     width: 402px;
     height: 700px;
@@ -205,7 +190,10 @@ code {
     width: 64px;
     height: 36px;
     border-radius: 2px;
-    color: #000;
+    color: #fff;
+    background-color: #ffc162;
+    margin-left: 100px;
+    margin-top: 30px;
 }
 
 .write_tag {
@@ -227,12 +215,6 @@ code {
     cursor: pointer;
 }
 
-.tag_list,
-.add_tag,
-.write_tag {
-    composes: inline-block from "sass-loader!../scss/utility.scss"; //width: 400px;
-}
-
 .tag_list {
     margin-left: 20px;
     color: #ffc162;
@@ -245,13 +227,15 @@ code {
 .delete {
     border-radius: 2px;
     font-size: 12px;
+    color: #ffffff;
+    width: 14px;
+    height: 14px;
+    vertical-align: middle;
+    text-align: center;
 }
 
 .delete:hover {
     cursor: pointer;
-}
-
-.delete:hover {
     background-color: #f29a76;
     color: #fff;
 }

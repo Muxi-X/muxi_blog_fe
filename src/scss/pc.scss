@@ -1,0 +1,44 @@
+.logo_box {
+	width: 100%;
+	height: 100px;
+}
+
+.logo {
+	width: 70px;
+	height: auto;
+}
+.send, .logo {
+	margin: 22px auto;
+	display: block;
+}
+.send {
+	height: 45px;
+    margin-top: 50px;
+}
+.link_box,.link_box_first {
+	border-bottom: 1px #d9dcdc solid;
+	//composes: link from "sass-loader!../scss/common.scss";
+}
+
+.link_box_first {
+	border-top: 1px #d9dcdc solid;
+}
+
+.icon {
+	//composes: inline-block from "sass-loader!../scss/common.scss";
+	margin-left: 30px;
+	width: 39px;
+	margin-right: 15px;
+	vertical-align: middle;
+}
+
+.class_word {
+	display: inline-block;
+	line-height: 70px;
+	vertical-align: middle;
+}
+
+.link_box_first:hover,.link_box:hover {
+	background: #69cad3;
+	color: #fff;
+}

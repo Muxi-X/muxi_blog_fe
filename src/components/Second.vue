@@ -1,23 +1,23 @@
 <template>
     <div>
-        <navi :class="$style.navi"></navi>
-        <sign :class="$style.sign"></sign>
-        <div :class="$style.main">
-            <img :class="$style.avatar" src="blog.avatar">
-            <div :class="$style.right">
-                <div :class="$style.title">{{blog.title}}</div>
-                <div :class="$style.author">{{blog.username}}</div>
-                <div :class="$style.time">{{blog.date}}</div>
-                <div :class="$style.article">{{blog.body}}</div>
-                <div :class="$style.tag" v-for="tag in tags" :key="tag">{{tag}}</div>
-                <div :class="$style.comment" v-for="comment in comments" :key="comment">
+        <navi class="navi"></navi>
+        <sign class="sign"></sign>
+        <div class="main">
+            <img class="avatar inline-block" :src="blog.avatar">
+            <div class="right inline-block">
+                <div class="title full-width">{{blog.title}}</div>
+                <div class="author inline-block">{{blog.username}}</div>
+                <div class="time inline-block">{{blog.date}}</div>
+                <div class="article">{{blog.body}}</div>
+                <div class="tag inline-block" v-for="tag in tags" :key="tag">{{tag}}</div>
+                <div class="comment" v-for="comment in comments" :key="comment">
                     <div>
-                        <div :class="$style.comment_name">{{comment.username}}</div>
-                        <div :class="$style.comment_date">{{comment.date}}</div>
+                        <div class="comment_name inline-block">{{comment.username}}</div>
+                        <div class="comment_date">{{comment.date}}</div>
                     </div>
-                    <div :class="$style.comment_text">{{comment.comment}}</div>
+                    <div class="comment_text">{{comment.comment}}</div>
                 </div>
-                <commentBox :class="$style.cBox" 
+                <commentBox class="cBox" 
                             :id="this.id" 
                             v-on:newComment="fetchComments">
                 </commentBox>
@@ -39,7 +39,6 @@ export default {
                 type: Object
             },
             id: 0,
-            comments: []
         }
     },
     components: {
@@ -72,10 +71,12 @@ export default {
 }
 </script>
 
-<style lang="scss" module>
+<style lang="scss">
 @import '../scss/common.scss';
+@import '../scss/utility.scss';
+@import '../scss/pc.scss';
+
 .avatar {
-    composes: inline-block from "sass-loader!../scss/utility.scss";
     width: 60px;
     height: 60px;
     margin-left: 40px;
@@ -84,7 +85,6 @@ export default {
 }
 
 .right {
-    composes: inline-block from "sass-loader!../scss/utility.scss";
     width: 605px;
 }
 
@@ -93,20 +93,17 @@ export default {
     font-size: 24px;
     font-weight: bold;
     color: #545866;
-    composes: full-width from "sass-loader!../scss/utility.scss";
 }
 
 .author {
     font-size: 14px;
     color: #ffc162;
-    composes: inline-block from "sass-loader!../scss/utility.scss";
     margin-right: 20px;
 }
 
 .time {
     font-size: 14px;
     color: #898989;
-    composes: inline-block from "sass-loader!../scss/utility.scss";
 }
 
 .article {
@@ -117,7 +114,6 @@ export default {
 .tag {
     color: #ffc162;
     font-size: 14px;
-    composes: inline-block from "sass-loader!../scss/utility.scss";
     margin-right: 10px;
 }
 
@@ -130,7 +126,6 @@ export default {
 
 .comment_name {
     color: #f29a76;
-    composes: inline-block from "sass-loader!../scss/utility.scss";
 }
 
 .comment_date {
@@ -164,9 +159,4 @@ export default {
     border-radius: 4px;
 }
 
-.buttonBox {
-    composes: full-width from "sass-loader!../scss/utility.scss";
-    margin-top: 15px;
-    font-size: 14px;
-}
 </style>

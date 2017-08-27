@@ -1,10 +1,17 @@
 <template>
-  <div>
-     <myHeader :class="$style.header"></myHeader>
-  </div>
+   <div class="mobile full-height">
+     <mobileNavi class="full-height"></mobileNavi>
+     <con class="cont" 
+             :items="this.items" 
+             :pages_count="this.pages_count" 
+             :blog_num="this.blog_num"
+             v-on:pageUp="PageUp" 
+             v-on:pageDown="PageDown">
+    </con>
+  </div> 
 </template>
 <script>
-import myHeader from './header'
+import mobileNavi from './mobileNavi'
 import myCont from './cont_mobile'
 export default {
   data() {
@@ -13,14 +20,20 @@ export default {
     }
   },
   components: {
-    "myHeader": myHeader,
-    "myCont": myCont
+    "mobileNavi": mobileNavi,
+    "con": myCont
   }
 }
 </script>
-<style lang="scss" module>
-.header {
+<style lang="scss">
+@import '../scss/common.scss';
 
+.mobile,.mobileNavi {
+    // composes: full-height from "sass-loader!../scss/utility.scss";
+}
+.mobile {
+  min-width: 320px;
+  min-height: 560px;
 }
 </style>
 
