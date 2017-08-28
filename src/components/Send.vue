@@ -166,7 +166,7 @@ code {
     height: 700px;
     vertical-align: top;
     box-sizing: border-box;
-    padding: 0 20px;
+    padding: 10px 20px;
     font-size: 16px;
     border-top: 2px solid #d9dcdc;
     border-bottom: 2px solid #d9dcdc;

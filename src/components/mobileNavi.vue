@@ -4,11 +4,12 @@
       <svg class="navi_button" viewBox="0 0 93 93" v-on:click="showNavi = !showNavi">
         <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#naviButton"></use>
       </svg>
-       <svg viewBox="0 0 2707 768" class="blog_logo">
-      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#blogLogo"></use>
-      </svg> 
+       <img src="../assets/blog_logo.png" class="blog_logo">
+      <svg viewBox="0 0 2707 768" class="mobile_sign">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#mobileSign"></use>
+      </svg>
     </div>
-    <transition name="slide_fade">
+    <transition name="slide-fade">
       <div class="full_width full_height bottom" v-if="showNavi">
         <div class="navi_col full_height">
           <a href="/" class="link_box_first link">
@@ -86,16 +87,24 @@ export default {
 @import '../scss/utility.scss';
 
 .navi_button {
-  height: 30px;
-  width: 60px;
-    // margin-top: 10px;
-    // margin-left: 10px;
-   // float: left;
-  position: absolute;
-  top: 10px;
-  left: 10px;
-
+      height: 20px;
+    /* width: 60px; */
+    position: absolute;
+    top: 15px;
+    left: 15px;
 }
+.mobile_sign {
+  height: 20px;
+  position: absolute;
+  top: 15px;
+  right: 0;
+}
+.blog_logo {
+  width: 120px;
+  height: 40px;
+  margin-top: 6px;
+}
+
 .header {
   background-color: #fff;
   height: 50px;
@@ -106,11 +115,7 @@ export default {
   z-index: 3;
   overflow: hidden;
 }
-.blog_logo {
-  width: 140px;
-  height: 100px;
-  margin-top: -24px;
-}
+
 .bottom {
   margin-top: 50px;
 }
@@ -118,6 +123,7 @@ export default {
 .navi_col {
   width: 40%;
   background-color: #fff;
+  z-index: 4;
 }
 .link {
   width: 100%;
@@ -136,14 +142,12 @@ export default {
 
 .icon {
   margin-left: 10%;
-  width: 40px;
+  width: 30px;
   margin-right: 5%;
-  //vertical-align: middle;
 }
 
 .class_word {
   line-height: 50px;
-  //vertical-align: middle;
 }
 
 .link_box_first:hover,
@@ -154,22 +158,18 @@ export default {
 
 .mask {
   background-color: rgba(51, 51, 51, 0.3);
-  width: 70%;
+  width: 100%;
   top: 0;
   right: 0;
-  left: 40%;
   bottom: 0;
-  z-index: 2;
   position: fixed;
 }
 
 .slide-fade-enter-active {
-  //transition: all .3s cubic-bezier(1.0, 0.5, 0.8, 1.0);
   transition: all .5s ease;
 }
 
 .slide-fade-leave-active {
-  //transition: all .3s cubic-bezier(1.0, 0.5, 0.8, 1.0);
   transition: all .5s ease;
 }
 
