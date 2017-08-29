@@ -102,7 +102,7 @@ $green: #69cad3;
 }
 
 .main {
-    width: 804px;
+    width: 800px;
     background: $white;
     margin-left: 250px;
     margin-top: 100px;
@@ -129,14 +129,6 @@ a {
 	margin-bottom: 30px;
 	font-size: 0;
 	background-color: $white;
-	border: 2px solid transparent; 
-}
-
-.content_box:hover {
-	border: 2px solid $yellow;
-	.blog_title {
-		color: $yellow;
-	}
 }
 
 .avatar_size {
@@ -188,6 +180,7 @@ a {
 	height: 90px;
 	overflow: hidden;
 	margin: 15px 0;
+	line-height: 1.5;
 }
 
 .blog_title {
@@ -227,10 +220,11 @@ a {
 	margin-left: 20px;
 }
 .button_size {
-	width: 16px;
-	height: 16px;
+	width: 20px;
+	height: 20px;
 	color: $white;
-	line-height: 16px;
+	line-height: 20px;
+	border-radius: 2px;
 }
 
 .page_button:hover,

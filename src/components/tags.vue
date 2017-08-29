@@ -36,7 +36,7 @@ export default {
 .tag_icon {
 	width: 25px;
 	height: 25px;
-    margin-right: 5px;
+	margin-right: 5px;
 }
 .tag_word {
 	font-size: 14px;
@@ -48,6 +48,7 @@ export default {
 	padding: 2px 2px;
 	margin-top: 10px;
 	margin-right: 6px;
+	border-radius: 2px;
 }
 .item_list {
 	height: 16px;

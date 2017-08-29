@@ -1,6 +1,6 @@
 <template>
   <div class="mobile full_height">
-    <mobileNavi class="moblie_navi"></mobileNavi>
+    <mobileHeader v-on:clickButton="this.show"></mobileHeader>
     <con class="cont" 
     :items="this.items" 
     :pages_count="this.pages_count" 
@@ -8,9 +8,13 @@
     v-on:pageUp="PageUp" 
     v-on:pageDown="PageDown">
     </con>
+    <transition name="slide-fade">
+      <mobileNavi class="moblie_navi" v-show="this.showNavi"></mobileNavi>
+    </transition>
   </div>
 </template>
 <script>
+import header from './header'
 import mobileNavi from './mobileNavi'
 import content from './content'
 import FecthSort from '../common/sortMap.js'
@@ -18,6 +22,7 @@ import FecthSort from '../common/sortMap.js'
 export default {
   data() {
     return {
+      showNavi: true,
       items: [],
       page_num: 1,
       kind: 0,
@@ -28,6 +33,7 @@ export default {
     }
   },
   components: {
+    "mobileHeader": header,
     "mobileNavi": mobileNavi,
     "con": content
   },
@@ -41,6 +47,11 @@ export default {
         this.page_num = res.page
         this.blog_num = res.blog_num
       })
+  },
+  methods: {
+    show() {
+      this.showNavi = !this.showNavi
+    }
   }
 }
 </script>
@@ -48,12 +59,26 @@ export default {
 @import '../scss/mobile.scss';
 @import '../scss/utility.scss';
 .moblie_navi {
-  z-index: 3;
-  position: absolute;
+    z-index: 3;
+    // margin-top: 50px;
+    position: relative;
+    /* width: 100%; */
+    // font-size: 0;
+    // height: 100%;
 }
 .mobile {
   min-width: 320px;
   min-height: 560px;
+}
+.slide-fade-enter-active {
+  transition: all .3s ease;
+}
+.slide-fade-leave-active {
+  transition: all .3s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.slide-fade-enter, .slide-fade-leave-to{
+  transform: translateX(10px);
+  opacity: 0;
 }
 </style>
 
