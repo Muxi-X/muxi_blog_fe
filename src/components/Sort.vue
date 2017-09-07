@@ -6,14 +6,13 @@
             <tagBox class="tagBox"></tagBox>
             <archiveBox class="archiveBox"></archiveBox>
         </div>
-        <con class="cont" 
+        <list class="content" 
              :items="this.items" 
              :pages_count="this.pages_count" 
              :blog_num="this.blog_num"
              v-on:pageUp="PageUp" 
              v-on:pageDown="PageDown">
-        </con>
-        
+        </list>
     </div>
 </template>
 <script>
@@ -39,7 +38,7 @@ export default {
     components: {
         "navi": navigation,
         "sign": sign,
-        "con": content,
+        "list": content,
         "tagBox": tags,
         "archiveBox": archive
     },

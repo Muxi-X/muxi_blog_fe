@@ -9,8 +9,8 @@
                 <div class="author inline_block">{{blog.username}}</div>
                 <div class="time inline_block">{{blog.date}}</div>
                 <div class="article">{{blog.body}}</div>
-                <div class="tag inline_block" v-for="tag in tags">{{tag}}</div>
-                <div class="comment" v-for="comment in comments">
+                <div class="tag inline_block" v-for="tag in tags" :key="tags.indexOf(tag)">{{tag}}</div>
+                <div class="comment" v-for="comment in comments" :key="comments.indexOf(comment)">
                     <div>
                         <div class="comment_name inline_block">{{comment.username}}</div>
                         <div class="comment_date">{{comment.date}}</div>

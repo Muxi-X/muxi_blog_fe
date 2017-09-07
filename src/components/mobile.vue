@@ -1,13 +1,13 @@
 <template>
   <div class="mobile full_height">
     <mobileHeader v-on:clickButton="this.show"></mobileHeader>
-    <con class="cont" 
+    <list class="cont" 
     :items="this.items" 
     :pages_count="this.pages_count" 
     :blog_num="this.blog_num" 
     v-on:pageUp="PageUp" 
     v-on:pageDown="PageDown">
-    </con>
+    </list>
     <transition name="slide-fade">
       <mobileNavi class="moblie_navi" v-show="this.showNavi"></mobileNavi>
     </transition>
@@ -35,7 +35,7 @@ export default {
   components: {
     "mobileHeader": header,
     "mobileNavi": mobileNavi,
-    "con": content
+    "list": content
   },
   mounted() {
     fetch('/api/v2.0/?page=' + this.page_num).then(res => {

@@ -19,17 +19,17 @@
                 </label>
             </div>
             <div class="group margin">
-                <input v-model="newTag" @keyup.enter="addTag" placeholder="add tag?" autofocus class="write_tag inline-block">
-                <button v-on:click="addTag" class="add_tag inline-block">ADD</button>
-                <div v-for="tag in tags" class="tag_list inline-block"> {{tag}}
+                <input v-model="newTag" @keyup.enter="addTag" placeholder="add tag?" autofocus class="write_tag inline_block">
+                <button v-on:click="addTag" class="add_tag inline_block">ADD</button>
+                <div v-for="tag in tags" class="tag_list inline_block" :key="tags.indexOf(tag)"> {{tag}}
                     <button v-on:click="removeTag(tag)" class="delete">X</button>
                 </div>
                 <div v-if="this.tip" class="tip">最多五个标签</div>
             </div>
-            <textarea v-model.trim="summary" class="summary" placeholder="Summary...(no more than 200 words)" maxlength="200"></textarea>
+            <textarea v-model.trim="summary" class="summary" placeholder="Summary...(no more than 100 words)" maxlength="100"></textarea>
             <div class="editor">
-                <textarea :value="input" @input="update" class="write"></textarea>
-                <div class="md_box">
+                <textarea :value="input" @input="update" class="write inline_block"></textarea>
+                <div class="md_box inline_block">
                     <div v-html="compiledMarkdown" class="view_md"></div>
                 </div>
             </div>
@@ -161,8 +161,7 @@ code {
 
 .write,
 .md_box {
-    display: inline-block;
-    width: 402px;
+    width: 400px;
     height: 700px;
     vertical-align: top;
     box-sizing: border-box;

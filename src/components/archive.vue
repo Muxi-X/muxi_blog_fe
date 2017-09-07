@@ -7,7 +7,7 @@
             <span class="archive_word">文章归档</span>
         </div>
         <div class="archive_time">
-            <a v-for="item in items" :href="'/archiveBlogs/'+ item.year +'/' + item.month +'/'">
+            <a v-for="item in items" :key="items.indexOf(item)" :href="'/archiveBlogs/'+ item.year +'/' + item.month +'/'">
                 <div class="archive_year inline_block">{{item.year}}
                     <span>年</span>
                     <div class="archive_year inline_block">{{item.month}}</div>

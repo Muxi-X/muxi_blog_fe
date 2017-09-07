@@ -1,8 +1,7 @@
 <template>
 	<div>
 		<div class="blogs_box margin" v-if="this.blog_num">
-			<a :href="/second/+ item.id" v-for="item in items" class="content_box full_width" v-on:click="toSecond">
-
+			<a :href="/second/+ item.id" v-for="item in items" :key="item.id" class="content_box full_width" v-on:click="toSecond">
 				<div class="left_box inline_block full-height">
 					<div class="content_top">
 						<img class="avatar_size inline_block full_height" v-bind:src="item.avatar">
@@ -24,7 +23,7 @@
 						<div class="bottom_right inline_block full_height">
 							<div class="blog_summary min_font">{{item.summary}}</div>
 							<div class="tag_list full_width">
-								<div v-for="onetag in item.tags" class="tag inline_block">{{onetag}}</div>
+								<div v-for="onetag in item.tags" class="tag inline_block" :key="item.tags.indexOf(onetag)">{{onetag}}</div>
 							</div>
 						</div>
 					</div>
