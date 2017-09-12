@@ -29,7 +29,6 @@
 					</div>
 				</div>
 				<img class="right_box inline_block full_height" v-bind:src="item.img_url">
-
 			</a>
 		</div>
 		<div v-if="!this.blog_num" class="show">没有对应的博客</div>

@@ -9,7 +9,7 @@
     v-on:pageDown="PageDown">
     </list>
     <transition name="slide-fade">
-      <mobileNavi class="moblie_navi" v-show="this.showNavi"></mobileNavi>
+      <mobileNavi class="moblie_navi" v-show="this.showNavi" v-on:clickMask="this.show"></mobileNavi>
     </transition>
   </div>
 </template>
@@ -51,6 +51,7 @@ export default {
   methods: {
     show() {
       this.showNavi = !this.showNavi
+      console.log("parent")
     }
   }
 }

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="nav" v-show="showNavi">
+    <div class="nav">
       <div class="navi_col full_height">
         <a href="/" class="link_box_first link full_width">
           <svg class="icon vertical_align inline_block" viewBox="0 0 1024 1024">
@@ -51,27 +51,21 @@
           <span class="class_word vertical_align inline_block">About</span>
         </a>
       </div>
-      <div class="mask" v-on:click="hideNavi"></div>
+      <div class="mask" v-on:click="clickMask"></div>
     </div>
   </div>
 </template>
 <script>
-import { bus } from '../bus.js'
+
 export default {
   data() {
     return {
-      showNavi: true,
+      
     }
   },
-  created() {
-    bus.$on('clickButton', this.showSide)
-  },
   methods: {
-    showSide() {
-      this.showNavi = !this.showNavi
-    },
-    hideNavi() {
-      this.showNavi = false
+    clickMask() {
+      this.$emit('clickMask')
     }
   }
 }
@@ -91,35 +85,25 @@ export default {
 
 .nav {
   position: fixed;
-  top: 0px; // padding-top:50px;
+  top: 0px;
   bottom: 0;
   width: 100%;
 }
 
 .mask {
   background-color: rgba(51, 51, 51, 0.3);
-  width: 60%; // position: relative; // display: inline-block;
-  // height: 100%;
-  vertical-align: middle; // width: 100%;
+  width: 60%; 
+  vertical-align: middle;
   top: 0px;
   left: 40%;
   bottom: 0;
-  position: fixed; // z-index: 1;
+  position: fixed;
 }
 
 .link {
   display: block;
   height: 50px;
   font-size: 14px
-}
-
-.link_box,
-.link_box_first {
-  border-bottom: 2px #d9dcdc solid;
-}
-
-.link_box_first {
-  border-top: 2px #d9dcdc solid;
 }
 
 .icon {
