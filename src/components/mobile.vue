@@ -16,7 +16,7 @@
 <script>
 import header from './header'
 import mobileNavi from './mobileNavi'
-import content from './content'
+import mobileContent from './mobileContent'
 import FecthSort from '../common/sortMap.js'
 
 export default {
@@ -35,7 +35,7 @@ export default {
   components: {
     "mobileHeader": header,
     "mobileNavi": mobileNavi,
-    "list": content
+    "list": mobileContent
   },
   mounted() {
     fetch('/api/v2.0/?page=' + this.page_num).then(res => {

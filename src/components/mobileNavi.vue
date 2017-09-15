@@ -2,49 +2,49 @@
   <div>
     <div class="nav">
       <div class="navi_col full_height">
-        <a href="/" class="link_box_first link full_width">
+        <a href="/" class="link full_width">
           <svg class="icon vertical_align inline_block" viewBox="0 0 1024 1024">
             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#homeIcon"></use>
           </svg>
           <span class="class_word vertical_align inline_block">Home</span>
         </a>
-        <a href="/web" class="link_box link full_width">
+        <a href="/web" class="link full_width">
           <svg class="icon vertical_align inline_block" viewBox="0 0 1024 1024">
             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#webIcon"></use>
           </svg>
           <span class="class_word vertical_align inline_block">Web</span>
         </a>
-        <a href="/design" class="link_box link full_width">
+        <a href="/design" class="link full_width">
           <svg class="icon vertical_align inline_block" viewBox="0 0 1024 1024">
             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#designIcon"></use>
           </svg>
           <span class="class_word vertical_align inline_block">Design</span>
         </a>
-        <a href="/android" class="link_box link full_width">
+        <a href="/android" class="link full_width">
           <svg class="icon vertical_align inline_block" viewBox="0 0 1024 1024">
             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#androidIcon"></use>
           </svg>
           <span class="class_word vertical_align inline_block">Android</span>
         </a>
-        <a href="/product" class="link_box link full_width">
+        <a href="/product" class="link full_width">
           <svg class="icon vertical_align inline_block" viewBox="0 0 1024 1024">
             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#productIcon"></use>
           </svg>
           <span class="class_word vertical_align inline_block">Product</span>
         </a>
-        <a href="/view_tags" class="link_box link full_width">
+        <a href="/view_tags" class="link full_width">
           <svg class="icon vertical_align inline_block" viewBox="0 0 1024 1024">
             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#tagIcon"></use>
           </svg>
           <span class="class_word vertical_align inline_block">Tags</span>
         </a>
-        <a href="/view_archive" class="link_box link full_width">
+        <a href="/view_archive" class="link full_width">
           <svg class="icon vertical_align inline_block" viewBox="0 0 1024 1024">
             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#archiveIcon"></use>
           </svg>
           <span class="class_word vertical_align inline_block">Archive</span>
         </a>
-        <a href="http://muxistudio.com" class="link_box link full_width">
+        <a href="http://muxistudio.com" class="link full_width">
           <svg class="icon vertical_align inline_block" viewBox="0 0 1024 1024">
             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#about"></use>
           </svg>
@@ -73,6 +73,7 @@ export default {
 
 <style lang="scss">
 @import '../scss/utility.scss';
+@import '../scss/mobile.scss';
 .navi_col {
   width: 40%;
   background-color: #ffffff;
@@ -116,9 +117,9 @@ export default {
   line-height: 50px;
 }
 
-.link_box_first:hover,
-.link_box:hover {
-  background: #69cad3;
-  color: #fff;
+.link:hover {
+  background: #fff;
+  // color: #fff;
+  box-shadow: 0 0  10px 1px $green;
 }
 </style>
