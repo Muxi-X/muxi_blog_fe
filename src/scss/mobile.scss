@@ -11,7 +11,7 @@ $green: #69cad3;
 .blogs_box,
 .show {
     height: 70%;
-    width: 80%;
+    width: 90%;
 }
 
 .show {
@@ -45,21 +45,13 @@ a {
 .content_icon {
 	width: 20px;
 	height: 20px;
+	margin: 0 10px;
+	vertical-align: middle;
 }
 
 .content_top {
 	height: 50px;
 	font-size: 0;
-}
-
-.left_box {
-	padding-top: 15px;
-	width: 390px;
-	vertical-align: top;
-}
-
-.right_box {
-	width: 210px;
 }
 
 .content_bottom {
@@ -69,14 +61,6 @@ a {
 .avatar_size,
 .bottom_left {
 	vertical-align: top;
-}
-
-.bottom_left {
-	padding: 15px;
-}
-
-.bottom_right {
-	width: 315px;
 }
 
 .blog_username {
@@ -91,10 +75,7 @@ a {
 
 .blog_title {
 	font-size: 20px;
-}
-
-.comment_num {
-	text-align: center;
+	padding: 2px;
 }
 
 .tag_list {

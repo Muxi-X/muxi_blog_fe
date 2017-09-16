@@ -1,7 +1,7 @@
 <template>
   <div class="mobile full_height">
     <mobileHeader v-on:clickButton="this.show"></mobileHeader>
-    <list class="cont" 
+    <list class="cont full_width" 
     :items="this.items" 
     :pages_count="this.pages_count" 
     :blog_num="this.blog_num" 
