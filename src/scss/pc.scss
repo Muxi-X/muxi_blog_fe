@@ -36,7 +36,7 @@ $green: #69cad3;
 }
 
 .content {
-    width: 604px;
+    width: 600px;
     height: 550px;
     margin-top: 100px;
     padding-left: 250px;
@@ -124,13 +124,30 @@ a {
 }
 
 .content_box {
-	width: 600px;
-	height: 214px;
+	width: 100%;
 	margin-bottom: 30px;
 	font-size: 0;
 	background-color: $white;
 }
-
+.mask {
+	position: relative;
+	width: 100%;
+	height: 210px;
+}
+.mask:before {
+	content: '阅读全文';
+	text-align: center;
+	line-height: 210px;
+	display: block;
+	width: 600px;
+	position: absolute;
+	top: 0;
+}
+.mask:hover::before {
+	background-color:rgba(60,103,115,0.5);
+	font-size: 24px;
+	color: $white;
+}
 .avatar_size {
 	width: 50px;
 }
