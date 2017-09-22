@@ -131,7 +131,7 @@ code {
 .title {
     height: 22px;
     font-size: 22px;
-    width: 800px;
+    width: 796px;
     font-weight: bold;
     text-align: center;
     overflow: hidden;

@@ -3,15 +3,40 @@ $orange: #f29a76;
 $white: #ffffff;
 $grey: #dcdcdc;
 $green: #69cad3;
+
+.moblie_navi {
+	z-index: 3;
+	position: relative;
+}
+
+.mobile {
+	min-width: 320px;
+	min-height: 560px;
+}
+
+.slide-fade-enter-active {
+	transition: all .3s ease;
+}
+
+.slide-fade-leave-active {
+	transition: all .3s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+
+.slide-fade-enter,
+.slide-fade-leave-to {
+	transform: translateX(10px);
+	opacity: 0;
+}
+
 .cont {
-    position: absolute;
-    top: 80px;
+	position: absolute;
+	top: 80px;
 }
 
 .blogs_box,
 .show {
-    height: 70%;
-    width: 90%;
+	height: 70%;
+	width: 90%;
 }
 
 .show {
@@ -28,7 +53,7 @@ a {
 	margin-bottom: 30px;
 	font-size: 0;
 	background-color: $white;
-	border: 2px solid transparent; 
+	border: 2px solid transparent;
 }
 
 .content_box:hover {
@@ -46,7 +71,7 @@ a {
 	width: 20px;
 	height: 20px;
 	margin: 0 10px;
-	vertical-align: middle;
+	vertical-align: bottom;
 }
 
 .content_top {
@@ -54,8 +79,8 @@ a {
 	font-size: 0;
 }
 
-.content_bottom {
-	font-size: 0;
+.comment_num {
+	color: $yellow;
 }
 
 .avatar_size,
@@ -65,6 +90,10 @@ a {
 
 .blog_username {
 	margin-right: 20px;
+}
+
+.bottom_right {
+	padding: 0 10px;
 }
 
 .blog_summary {
@@ -106,6 +135,7 @@ a {
 .right_button {
 	margin-left: 20px;
 }
+
 .button_size {
 	width: 16px;
 	height: 16px;

@@ -51,7 +51,6 @@ export default {
   methods: {
     show() {
       this.showNavi = !this.showNavi
-      console.log("parent")
     }
   }
 }
@@ -59,28 +58,7 @@ export default {
 <style lang="scss">
 @import '../scss/mobile.scss';
 @import '../scss/utility.scss';
-.moblie_navi {
-    z-index: 3;
-    // margin-top: 50px;
-    position: relative;
-    /* width: 100%; */
-    // font-size: 0;
-    // height: 100%;
-}
-.mobile {
-  min-width: 320px;
-  min-height: 560px;
-}
-.slide-fade-enter-active {
-  transition: all .3s ease;
-}
-.slide-fade-leave-active {
-  transition: all .3s cubic-bezier(1.0, 0.5, 0.8, 1.0);
-}
-.slide-fade-enter, .slide-fade-leave-to{
-  transform: translateX(10px);
-  opacity: 0;
-}
+
 </style>
 
 

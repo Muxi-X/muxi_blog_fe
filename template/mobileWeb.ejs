@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}木犀博客{% endblock %}
+{% block body %}
+    {% include "svg.html" %}
+<div id="mobileWeb">
+</div>
+{% endblock %}
+{% block script %}
+	<% for (var chunk in htmlWebpackPlugin.files.chunks) { %>
+  	<script src="<%= htmlWebpackPlugin.files.chunks[chunk].entry %>"></script>
+  <% } %>
+{% endblock %}

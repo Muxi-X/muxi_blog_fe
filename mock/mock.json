@@ -59,9 +59,15 @@
             "async": false
         },
         {
-            "name": "product",
-            "endpoint": "/product",
-            "template": "product",
+            "name": "viewTags",
+            "endpoint": "/viewTags",
+            "template": "viewTags",
+            "async": false
+        },
+        {
+            "name": "viewArchive",
+            "endpoint": "/viewArchive",
+            "template": "viewArchive",
             "async": false
         },
         {

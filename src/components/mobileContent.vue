@@ -16,14 +16,12 @@
                         </div>
                     </div>
                 </div>
-                <div class="content_bottom">
-                    <div class="bottom_right inline_block full_height">
+                    <div class="bottom_right full_height">
                         <div class="blog_summary min_font">{{item.summary}}</div>
                         <div class="tag_list full_width">
                             <div v-for="onetag in item.tags" class="tag inline_block" :key="item.tags.indexOf(onetag)">{{onetag}}</div>
                         </div>
                     </div>
-                </div>
             </a>
         </div>
         <div v-if="!this.blog_num" class="show">没有对应的博客</div>

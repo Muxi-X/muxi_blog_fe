@@ -32,13 +32,13 @@
           </svg>
           <span class="class_word vertical_align inline_block">Product</span>
         </a>
-        <a href="/view_tags" class="link full_width">
+        <a href="/viewTags" class="link full_width">
           <svg class="icon vertical_align inline_block" viewBox="0 0 1024 1024">
             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#tagIcon"></use>
           </svg>
           <span class="class_word vertical_align inline_block">Tags</span>
         </a>
-        <a href="/view_archive" class="link full_width">
+        <a href="/viewArchive" class="link full_width">
           <svg class="icon vertical_align inline_block" viewBox="0 0 1024 1024">
             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#archiveIcon"></use>
           </svg>
@@ -76,7 +76,7 @@ export default {
 @import '../scss/mobile.scss';
 .navi_col {
   width: 40%;
-  background-color: #ffffff;
+  background-color: $white;
   z-index: 5;
   display: inline-block;
   position: fixed;
@@ -118,8 +118,7 @@ export default {
 }
 
 .link:hover {
-  background: #fff;
-  // color: #fff;
-  box-shadow: 0 0  10px 1px $green;
+  background-color: $white;
+  box-shadow: 0 0 10px 1px $green;
 }
 </style>
