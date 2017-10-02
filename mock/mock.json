@@ -8,7 +8,13 @@
         {
             "name": "mobile",
             "endpoint": "/mobile",
-            "template": "mobile",
+            "template": "mobileHome",
+            "async": false
+        },
+        {
+            "name": "mobile",
+            "endpoint": "/mobile",
+            "template": "mobileHome",
             "async": false
         },
         {
@@ -104,6 +110,48 @@
             "name": "find_archive_blog",
             "endpoint": "/api/v2.0/get_month/:id/:id/",
             "async": true
+        },
+        {
+            "name": "mobileWeb",
+            "endpoint": "/mobile_web",
+            "template": "mobileWeb",
+            "async": false
+        },
+        {
+            "name": "mobiledesign",
+            "endpoint": "/mobile_design",
+            "template": "mobileDesign",
+            "async": false
+        },
+        {
+            "name": "mobileandroid",
+            "endpoint": "/mobile_android",
+            "template": "mobileAndroid",
+            "async": false
+        },
+        {
+            "name": "mobileProduct",
+            "endpoint": "/mobile_product",
+            "template": "mobileProduct",
+            "async": false
+        },
+        {
+            "name": "mobileSecond",
+            "endpoint": "/mobile_second",
+            "template": "mobileSecond",
+            "async": false
+        },
+        {
+            "name": "mobileTag",
+            "endpoint": "/mobile_tag",
+            "template": "mobileTag",
+            "async": false
+        },
+        {
+            "name": "mobileArchive",
+            "endpoint": "/mobile_archive",
+            "template": "mobileArchive",
+            "async": false
         }
     ],
     "data": {

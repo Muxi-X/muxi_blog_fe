@@ -30,7 +30,8 @@ module.exports = {
         mobileDesign: './src/mobileDesign.js',
         mobileProduct: './src/mobileProduct.js',
         mobileTag: './src/mobileTag.js',
-        mobileArchive: './src/mobileArchive.js'
+        mobileArchive: './src/mobileArchive.js',
+        mobileSecond: './src/mobileSecond.js',
     },
     output: {
         path: path.join(__dirname, "../"),

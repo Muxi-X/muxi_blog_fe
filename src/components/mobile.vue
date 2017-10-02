@@ -38,6 +38,7 @@ export default {
     "list": mobileContent
   },
   mounted() {
+    console.log("this is mobile")
     fetch('/api/v2.0/?page=' + this.page_num).then(res => {
       return res.json()
     })
