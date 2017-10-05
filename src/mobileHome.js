@@ -3,9 +3,9 @@ import Mobile from './components/Mobile'
 import style from './scss/reset.scss'
 
 const MobileHome = {
-    template: "#mobileHome",
+    template: "#mobile",
     mixins: [Mobile]
 }
 
-MobileHome.el = "#mobileHome"
-const mobileHome = new Vue(MobileHome)
+Mobile.el = "#mobile"
+const mobile = new Vue(Mobile)
