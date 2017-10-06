@@ -3,8 +3,7 @@ $orange: #f29a76;
 $white: #ffffff;
 $grey: #dcdcdc;
 $green: #69cad3;
-
-.moblie_navi {
+.mobile_navi {
 	z-index: 3;
 	position: relative;
 }
@@ -147,4 +146,29 @@ a {
 .right_button:hover {
 	background-color: $yellow;
 	cursor: pointer;
+}
+
+.box_style {
+	width: 80%;
+	margin: 0 auto;
+	background-color: $white;
+	padding: 10px;
+}
+
+.editComment {
+	height: 75px;
+	width: 80%;
+	border: 2px solid #e6e6e6;
+}
+
+.submitComment {
+	background-color: $orange;
+	color: $white;
+	width: 50px;
+	height: 30px;
+	border-radius: 4px;
+}
+
+.buttonBox {
+	margin-top: 15px;
 }

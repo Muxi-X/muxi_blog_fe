@@ -1,10 +1,10 @@
 <template>
-    <div :class="$style.go">
+    <div class="login">
         登录中......
     </div>
+    
 </template>
 <script>
-import 'whatwg-fetch'
 import Cookie from '../common/cookie.js'
 import {
     bus
@@ -17,16 +17,16 @@ export default {
         }
     },
     mounted() {
-        var email = window.location.href.split('?')[1].split('&')[0].split('=')[1]
+        var username = window.location.href.split('?')[1].split('&')[0].split('=')[1]
         Cookie.setCookie('Mt', window.location.href.split('?')[1].split('&')[1].split('=')[1])
-        fetch("/login/", {
+        fetch("/api/v2.0/login/", {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                email: email,
+                username: username,
                 password: btoa("muxistudio@ccnu")
             })
         }).then(res => {
@@ -45,5 +45,4 @@ export default {
 }
 </script>
 <style lang='scss'>
-
 </style>

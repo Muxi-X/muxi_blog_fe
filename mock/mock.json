@@ -12,9 +12,9 @@
             "async": false
         },
         {
-            "name": "mobile",
-            "endpoint": "/mobile",
-            "template": "mobileHome",
+            "name": "landing",
+            "endpoint": "/landing",
+            "template": "landing",
             "async": false
         },
         {
@@ -137,7 +137,7 @@
         },
         {
             "name": "mobileSecond",
-            "endpoint": "/mobile_second",
+            "endpoint": "/mobileSecond/:Int",
             "template": "mobileSecond",
             "async": false
         },

@@ -44,22 +44,5 @@
 <style lang='scss'>
 @import '../scss/pc.scss';
 @import '../scss/utility.scss';
-    .editComment {
-        height: 75px;
-        width: 380px;
-        border: 2px solid #e6e6e6;
-    }
     
-    .submitComment {
-        background-color: $orange;
-        color: $white;
-        width: 50px;
-        height: 30px;
-        border-radius: 4px;
-    }
-    
-    .buttonBox {
-        margin-top: 15px;
-        font-size: 14px;
-    }
 </style>

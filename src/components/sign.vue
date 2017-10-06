@@ -6,6 +6,7 @@
 	</div>
 </template>
 <script>
+import Cookie from '../common/cookie.js'
 export default {
   data() {
         return {
@@ -14,6 +15,7 @@ export default {
 	},
 	methods: {
 		toLogin() {
+			Cookie.setCookie('url', window.location.href)
 			window.location = "http://120.77.246.73:3000?landing=localhost:3000/landing"
 		}
 	}

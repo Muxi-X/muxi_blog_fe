@@ -1,7 +1,8 @@
 <template>
     <div>
         <div class="blogs_box margin" v-if="this.blog_num">
-            <a :href="/second/+ item.id" v-for="item in items" :key="item.id" class="content_box full_width" v-on:click="toSecond">
+            <!-- <a :href="/second/+ item.id" v-for="item in items" :key="item.id" class="content_box full_width" v-on:click="toSecond"> -->
+            <a :href="/mobileSecond/+ item.id" v-for="item in items" :key="item.id" class="content_box full_width" v-on:click="toSecond">
                 <div class="content_top">
                     <img class="avatar_size inline_block full_height" v-bind:src="item.avatar">
                     <div class="top_right inline_block full_height">
@@ -24,7 +25,7 @@
                     </div>
             </a>
         </div>
-        <div v-if="!this.blog_num" class="show">没有对应的博客</div>
+        <div v-if="!this.blog_num" class="show margin">没有对应的博客</div>
         <div class="page_row full_width">
             <button class="page_button button_size" v-on:click="pageDown"> < </button>
             <button class="right_button button_size" v-on:click="pageUp"> > </button>

@@ -1,7 +1,9 @@
 <template>
-  <div class="mobile full_height">
+  <div class="mobile full_height full_width">
     <mobileHeader v-on:clickButton="this.show"></mobileHeader>
-       <tagBox class="tag_box"></tagBox>
+    <div class="full_width cont">
+      <tagBox class="box_style"></tagBox>
+    </div>
     <transition name="slide-fade">
       <mobileNavi class="moblie_navi" v-show="this.showNavi" v-on:clickMask="this.show"></mobileNavi>
     </transition>
@@ -22,9 +24,6 @@ export default {
     "mobileHeader": header,
     "mobileNavi": mobileNavi,
     "tagBox": tags
-  },
-  mounted() {
-
   },
   methods: {
     show() {

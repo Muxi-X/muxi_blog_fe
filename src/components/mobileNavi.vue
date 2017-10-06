@@ -51,7 +51,7 @@
           <span class="class_word vertical_align inline_block">About</span>
         </a>
       </div>
-      <div class="mask" v-on:click="clickMask"></div>
+      <div class="mask full_height" v-on:click="clickMask"></div>
     </div>
   </div>
 </template>

@@ -22,8 +22,7 @@ function clearCookie(name) {
 }
 
 //删除cookie
-function delCookie(name)
-{
+function delCookie(name) {
     var exp = new Date();
     exp.setTime(exp.getTime() - 1);
     var cval=getCookie(name);
