@@ -1,0 +1,26 @@
+{
+    "name": "muxi_blog_fe",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "start": "node index.js"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/Muxi-X/muxi_auth_fe.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+      "url": "https://github.com/Muxi-X/muxi_auth_fe/issues"
+    },
+    "homepage": "https://github.com/Muxi-X/muxi_auth_fe#readme",
+    "dependencies": {
+      "koa": "^2.2.0",
+      "koa-router": "^7.2.0",
+      "koa-send": "^4.1.0",
+      "koa-useragent": "^1.0.0",
+      "swig": "^1.4.2"
+    }
+  }

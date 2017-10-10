@@ -18,6 +18,12 @@
             "async": false
         },
         {
+            "name": "mobileLanding",
+            "endpoint": "/mobileLanding",
+            "template": "mobileLanding",
+            "async": false
+        },
+        {
             "name": "second",
             "endpoint": "/second/:Int",
             "template": "second",

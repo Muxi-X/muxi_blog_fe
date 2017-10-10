@@ -70,7 +70,6 @@ export default {
     methods: {
         show() {
             this.showNavi = !this.showNavi
-            console.log(this.showNavi)
         },
         fetchComments() {
             fetch('/api/v2.0/' + this.id + '/views/').then(res => {

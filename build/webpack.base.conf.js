@@ -32,7 +32,8 @@ module.exports = {
         mobileTag: './src/mobileTag.js',
         mobileArchive: './src/mobileArchive.js',
         mobileSecond: './src/mobileSecond.js',
-        landing: './src/landing.js'
+        landing: './src/landing.js',
+        mobileLanding: './src/mobileLanding.js'
     },
     output: {
         path: path.join(__dirname, "../"),
@@ -252,6 +253,13 @@ module.exports = {
             inject: false,
             template: path.join(__dirname, '../template/landing.ejs'),
             chunks: ['landing']
+        }),
+        new HtmlWebpackPlugin({
+            alwaysWriteToDisk: true,
+            filename: 'template/mobileLanding.html',
+            inject: false,
+            template: path.join(__dirname, '../template/mobileLanding.ejs'),
+            chunks: ['mobileLanding']
         }),
         new HtmlWebpackHarddiskPlugin()
     ]

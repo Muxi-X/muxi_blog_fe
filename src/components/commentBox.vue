@@ -8,41 +8,44 @@
 </template>
 
 <script>
-    export default {
-        data() {
-            return {
-                message: ""
-            }
-        },
-        props: ['id'],
-        methods: {
-            submitComment(e) {
-                e.stopPropagation();
+import Cookie from '../common/cookie.js'
+export default {
+    data() {
+        return {
+            message: ""
+        }
+    },
+    props: ['id'],
+    methods: {
+        submitComment(e) {
+            e.stopPropagation();
+            if (Cookie.getCookie("token")) {
                 if (this.message) {
                     fetch('/api/v2.0/' + this.id + '/add_comment/', {
                         method: 'POST',
                         headers: {
                             'Accept': 'application/json',
                             'Content-Type': 'application/json',
-                            'token': 'eyJhbGciOiJIUzI1NiJ9.eyJpZCI6N30.P5rU9mV7xAVwTKf06RA7o1BOvF9jWLGDpYZ_fohWL6s'
+                            'token': Cookie.getCookie("token")
                         },
                         body: JSON.stringify({
                             id: this.id,
                             comment: this.message
                         })
                     }).then(res => {
-                        this.message=""
-                        //this.$parent.fetchComments()
+                        this.message = ""
                         this.$emit('newComment')
                     })
                 }
+            } else {
+                this.$emit('showTip')
             }
         }
     }
+}
 </script>
 
 <style lang='scss'>
 @import '../scss/pc.scss';
 @import '../scss/utility.scss';
-    
 </style>
