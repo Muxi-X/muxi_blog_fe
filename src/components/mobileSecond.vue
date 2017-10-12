@@ -28,6 +28,7 @@
                 <commentBox class="cBox middle_font full_width" :id="this.id" v-on:newComment="fetchComments">
                 </commentBox>
             </div>
+            <modal v-if="this.tip" class="tip_mask" v-on:toCancel="this.toCancel"></modal>
         </div>
         <transition name="slide-fade">
             <mobileNavi class="mobile_navi" v-show="this.showNavi" v-on:clickMask="this.show"></mobileNavi>
@@ -39,6 +40,8 @@
 import header from './header'
 import mobileNavi from './mobileNavi'
 import commentBox from './commentBox'
+import modal from './modal.vue'
+
 export default {
     data() {
         return {
@@ -48,12 +51,14 @@ export default {
                 type: Object
             },
             id: 0,
+            tip: false
         }
     },
     components: {
         "mobileHeader": header,
         "mobileNavi": mobileNavi,
-        "commentBox": commentBox
+        "commentBox": commentBox,
+        "modal": modal
     },
     mounted() {
         var api = window.location.pathname;
@@ -70,6 +75,7 @@ export default {
     methods: {
         show() {
             this.showNavi = !this.showNavi
+            console.log("click show")
         },
         fetchComments() {
             fetch('/api/v2.0/' + this.id + '/views/').then(res => {
@@ -78,6 +84,12 @@ export default {
                 .then(res => {
                     this.comments = res.comments
                 })
+        },
+        showTip() {
+            this.tip = true
+        },
+        toCancel() {
+            this.tip = false
         }
     }
 }
@@ -163,4 +175,35 @@ export default {
     height: 20px;
     margin-bottom: 10px;
 }
+
+
+.tip_modal {
+    width: 100px;
+    height: 60px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid #dcdcdc;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 4px;
+    font-size: 18px;
+}
+
+.tip_content {
+    margin-bottom: 20px;
+}
+
+
+.tip_button {
+    width: 20px;
+    height: 13px;
+    border-radius: 4px;
+}
+
+.tip_login {
+    margin-right: 10px;
+}
+
 </style>

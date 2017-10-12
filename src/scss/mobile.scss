@@ -1,8 +1,4 @@
-$yellow: #ffc162;
-$orange: #f29a76;
-$white: #ffffff;
-$grey: #dcdcdc;
-$green: #69cad3;
+@import "./color.scss";
 .mobile_navi {
 	z-index: 3;
 	position: relative;
@@ -96,20 +92,21 @@ a {
 }
 
 .blog_summary {
-	height: 90px;
-	overflow: hidden;
-	margin: 15px 0;
+	height: 100px;
+	overflow: scroll;
+	margin: 10px 0;
 }
 
 .blog_title {
 	font-size: 20px;
 	padding: 2px;
+	height: 26px;
 }
 
 .tag_list {
 	font-size: 12px;
 	height: 16px;
-	margin-bottom: 0;
+	margin-bottom: 5px;
 }
 
 .tag {

@@ -21,15 +21,8 @@
                 </commentBox>
             </div>
         </div>
-        <div v-if="this.tip" class="tip_mask">
-            <div class="tip_modal">
-                <div class="tip_content">你还没登录噢~</div>
-                <div class="tip_footer">
-                    <button v-on:click="toLogin" class="tip_login tip_button">登录</button>
-                    <button v-on:click="this.tip = false" class="tip_button tip_cancel">取消</button>
-                </div>
-            </div>
-        </div>
+        <modal v-if="this.tip" class="tip_mask" v-on:toCancel="this.toCancel">
+        </modal>
     </div>
 </template>
 
@@ -38,7 +31,7 @@ import navigation from './navigation.vue'
 import sign from './sign.vue'
 import commentBox from './commentBox.vue'
 import Cookie from '../common/cookie.js'
-
+import modal from './modal.vue'
 export default {
     data() {
         return {
@@ -54,7 +47,8 @@ export default {
     components: {
         "navi": navigation,
         "sign": sign,
-        "commentBox": commentBox
+        "commentBox": commentBox,
+        "modal": modal
     },
     mounted() {
         var api = window.location.pathname;
@@ -80,9 +74,8 @@ export default {
         showTip() {
             this.tip = true
         },
-        toLogin() {
-            Cookie.setCookie('url', window.location.href);
-            window.location = "https://pass.muxixyz.com?landing=blog.muxixyz.com/landing"
+        toCancel() {
+            this.tip = false
         }
     }
 }
@@ -91,7 +84,6 @@ export default {
 <style lang="scss">
 @import '../scss/utility.scss';
 @import '../scss/pc.scss';
-
 .avatar {
     width: 60px;
     height: 60px;
@@ -174,15 +166,6 @@ export default {
     border-radius: 4px;
 }
 
-.tip_mask {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    width: 100%;
-    z-index: 3;
-    background-color: rgba(51, 51, 51, 0.85);
-}
-
 .tip_modal {
     width: 200px;
     height: 100px;
@@ -200,13 +183,15 @@ export default {
 .tip_content {
     margin-bottom: 50px;
 }
-.tip_footer {
-    float: right;
-}
+
 
 .tip_button {
     width: 40px;
     height: 26px;
     border-radius: 4px;
+}
+
+.tip_login {
+    margin-right: 15px;
 }
 </style>

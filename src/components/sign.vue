@@ -8,15 +8,10 @@
 <script>
 import Cookie from '../common/cookie.js'
 export default {
-  data() {
-        return {
-            Url: ""
-        }
-	},
 	methods: {
 		toLogin() {
 			Cookie.setCookie('url', window.location.href)
-			window.location = "http://120.77.246.73:3000?landing=localhost:3000/landing"
+			window.location = "http://pass.muxixyz.com?landing=blog.muxixyz.com/landing"
 		}
 	}
 }
@@ -24,12 +19,14 @@ export default {
 
 <style lang='scss'>
 @import '../scss/utility.scss';
+@import '../scss/color.scss';
 .signup {
 	line-height: 25px;
 }
 .signup_box:hover {
-    background: $yellow;
-	a { 
+	background-color: $yellow;
+	cursor: pointer;
+	.signup { 
 		color: $white;
 	}
 }
