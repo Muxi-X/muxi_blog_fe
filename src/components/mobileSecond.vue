@@ -25,7 +25,7 @@
                     </div>
                     <div class="comment_text">{{comment.comment}}</div>
                 </div>
-                <commentBox class="cBox middle_font full_width" :id="this.id" v-on:newComment="fetchComments">
+                <commentBox class="cBox middle_font full_width" :id="this.id" v-on:newComment="fetchComments" v-on:showTip="showTip">
                 </commentBox>
             </div>
             <modal v-if="this.tip" class="tip_mask" v-on:toCancel="this.toCancel"></modal>
@@ -50,6 +50,7 @@ export default {
             blog: {
                 type: Object
             },
+            showNavi: true,
             id: 0,
             tip: false
         }
@@ -75,7 +76,6 @@ export default {
     methods: {
         show() {
             this.showNavi = !this.showNavi
-            console.log("click show")
         },
         fetchComments() {
             fetch('/api/v2.0/' + this.id + '/views/').then(res => {
@@ -178,7 +178,7 @@ export default {
 
 
 .tip_modal {
-    width: 100px;
+    width: 40%;
     height: 60px;
     position: absolute;
     top: 50%;
@@ -186,20 +186,20 @@ export default {
     transform: translate(-50%, -50%);
     border: 2px solid #dcdcdc;
     background-color: #ffffff;
-    padding: 20px;
+    padding: 10px;
     border-radius: 4px;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .tip_content {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 
 .tip_button {
-    width: 20px;
-    height: 13px;
-    border-radius: 4px;
+    width: 40px;
+    height: 20px;
+    border-radius: 2px;
 }
 
 .tip_login {
