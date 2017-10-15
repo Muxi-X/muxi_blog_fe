@@ -38,32 +38,23 @@ export default {
     "list": mobileContent
   },
   mounted() {
-    fetch('/api/v2.0/?page=' + this.page_num).then(res => {
-      return res.json()
-    })
-      .then(res => {
-        this.items = res.blogs
-        this.pages_count = res.pages_count
-        this.page_num = res.page
-        this.blog_num = res.blog_num
-      })
-    // var api = window.location.pathname
-    // var find = api.split('/')[1]
-    // this.kind = FecthSort.SortMap[find];
+    var api = window.location.pathname
+    var find = api.split('/')[1]
+    this.kind = FecthSort.SortMap[find];
 
-    // if (this.kind == 0) {
-    //   this.Url = "";
-    // } else if (this.kind == 5) {
-    //   this.tag = api.split('/')[2];
-    //   this.Url = "/" + this.tag + "/find_blogs";
-    // } else if (this.kind == 6) {
-    //   this.year = api.split('/')[2];
-    //   this.month = api.split('/')[3];
-    //   this.Url = "/get_month/" + this.year + "/" + this.month;
-    // } else {
-    //   this.Url = "/sort/?sort=" + this.kind;
-    // }
-    // this.FetchUrl()
+    if (this.kind == 0) {
+      this.Url = "";
+    } else if (this.kind == 5) {
+      this.tag = api.split('/')[2];
+      this.Url = "/" + this.tag + "/find_blogs";
+    } else if (this.kind == 6) {
+      this.year = api.split('/')[2];
+      this.month = api.split('/')[3];
+      this.Url = "/get_month/" + this.year + "/" + this.month;
+    } else {
+      this.Url = "/sort/?sort=" + this.kind;
+    }
+    this.FetchUrl()
   },
   methods: {
     show() {
