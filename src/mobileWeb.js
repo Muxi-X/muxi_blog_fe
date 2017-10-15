@@ -7,5 +7,5 @@ const MobileWeb = {
     mixins: [Mobile]
 }
 
-MobileArchive.el = "#mobileWeb"
+MobileWeb.el = "#mobileWeb"
 const mobileWeb = new Vue(MobileWeb)
