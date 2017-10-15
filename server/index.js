@@ -19,7 +19,7 @@ router.get('/', function (ctx, next) {
         let template = swig.compileFile(path.resolve(templateRoot, "index.html"));
         ctx.body = template({})
     } else {
-        let template = swig.compileFile(path.resolve(templateRoot, "mobile.html"));
+        let template = swig.compileFile(path.resolve(templateRoot, "mobileHome.html"));
         ctx.body = template({})
     }
 });
