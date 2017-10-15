@@ -207,13 +207,6 @@ module.exports = {
         }),
         new HtmlWebpackPlugin({
             alwaysWriteToDisk: true,
-            filename: 'template/mobileWeb.html',
-            inject: false,
-            template: path.join(__dirname, '../template/mobileWeb.ejs'),
-            chunks: ['mobileCommon','mobileWeb']
-        }),
-        new HtmlWebpackPlugin({
-            alwaysWriteToDisk: true,
             filename: 'template/mobileDesign.html',
             inject: false,
             template: path.join(__dirname, '../template/mobileDesign.ejs'),
