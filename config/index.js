@@ -5,8 +5,8 @@ module.exports = {
   build: {
     env: require('./prod.env'),
     assetsRoot: path.resolve(__dirname, '../dist'),
-    assetsSubDirectory: 'static',
-    assetsPublicPath: 'http://cdn.com/dist/',
+    assetsSubDirectory: '/static/',
+    assetsPublicPath: '/static/',
     productionSourceMap: false,
     bundleAnalyzerReport: false
   },
