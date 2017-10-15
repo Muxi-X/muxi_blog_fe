@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import Sort from './components/Sort'
+import Sort from './components/Sort.vue'
 import style from './scss/reset.scss'
 
 const TagBlogs = {

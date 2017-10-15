@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import ViewTags from './components/ViewTags'
+import ViewTags from './components/ViewTags.vue'
 import style from './scss/reset.scss'
 
 new Vue({

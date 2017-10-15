@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import Mobile from './components/Mobile'
+import Mobile from './components/Mobile.vue'
 import style from './scss/reset.scss'
 
 const MobileDesign = {
