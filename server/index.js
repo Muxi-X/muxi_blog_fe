@@ -79,7 +79,7 @@ router.get('/product', function (ctx, next) {
         let template = swig.compileFile(path.resolve(templateRoot, "product.html"));
         ctx.body = template({})
     } else {
-        let template = swig.compileFile(path.resolve(templateRoot, "mobileProductn.html"));
+        let template = swig.compileFile(path.resolve(templateRoot, "mobileProduct.html"));
         ctx.body = template({})
     }
 });
