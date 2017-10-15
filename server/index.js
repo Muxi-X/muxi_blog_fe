@@ -21,9 +21,7 @@ router.get('/', function (ctx, next) {
     } else {
         let template = swig.compileFile(path.resolve(templateRoot, "mobileHome.html"));
         ctx.body = template({})
-        console.log("mobilehome ",ctx.path)
     }
-    console.log("home ",ctx.path)
 });
 
 router.get('/second', function (ctx, next) {

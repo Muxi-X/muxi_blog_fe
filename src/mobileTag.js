@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import Mobile from './components/Mobile.vue'
+import Mobile from './components/mobile.vue'
 import style from './scss/reset.scss'
 
 const MobileTag = {
