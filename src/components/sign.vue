@@ -12,6 +12,7 @@ export default {
 		toLogin() {
 			Cookie.setCookie('url', window.location.href)
 			window.location = "http://pass.muxixyz.com?landing=blog.muxixyz.com/landing"
+			// window.location = "http://120.77.246.73:4000?landing=localhost:3000/landing"
 		}
 	}
 }

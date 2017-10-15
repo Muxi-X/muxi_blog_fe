@@ -11,60 +11,62 @@ export default {
     data() {
         return {
             url: "",
-            login: false
+            login: false,
+            username: ""
         }
     },
     mounted() {
-        var username = window.location.href.split('?')[1].split('&')[0].split('=')[1]
+        this.username = window.location.href.split('?')[1].split('&')[0].split('=')[1]
         Cookie.setCookie('Mt', window.location.href.split('?')[1].split('&')[1].split('=')[1])
-        toLogin();
-        if (this.login == false) {
-            fetch("/api/register/", {
-                method: 'POST',
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    username: this.username,
-                    password: "muxistudio@ccnu"
-                })
-            }).then(res => {
-                if (res.ok) {
-                    toLogin();
-                }
+        fetch("/api/v2.0/login/", {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                username: this.username,
+                password: btoa("muxistudio@ccnu")
             })
-        }
-
-    },
-    methods: {
-        toLogin() {
-            fetch("/api/v2.0/login/", {
-                method: 'POST',
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    username: username,
-                    password: btoa("muxistudio@ccnu")
+        }).then(res => {
+            if (res.ok) {
+                console.log("first login")
+                return res.json()
+            } else {
+                fetch("/api/v2.0/signup/", {
+                    method: 'POST',
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        username: this.username,
+                        password: "muxistudio@ccnu"
+                    })
+                }).then(value => {
+                    console.log("finish blog register")
+                    fetch("/api/v2.0/login/", {
+                        method: 'POST',
+                        headers: {
+                            'Accept': 'application/json',
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            username: this.username,
+                            password: btoa("muxistudio@ccnu")
+                        })
+                    })
                 })
-            }).then(res => {
-                if (res.ok) {
-                    this.login = true
-                    return res.json()
-                }
-            }).then(value => {
-                Cookie.setCookie("token", value.token)
-                Cookie.setCookie("uid", value.uid)
-            })
-            if (this.login) {
-                this.url = Cookie.getCookie("url")
-                setTimeout(() => {
-                    window.location = this.url;
-                }, 1000)
             }
-        }
-    }
+        }).then(value => {
+            Cookie.setCookie("token", value.token)
+            Cookie.setCookie("uid", value.uid)
+            console.log("success")
+        })
+        this.url = Cookie.getCookie("url")
+        setTimeout(() => {
+            window.location = this.url;
+        }, 1000)
+    },
 }
 </script>

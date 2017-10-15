@@ -9,7 +9,7 @@
                         <div class="title inline_block">{{blog.title}}</div>
                         <div class="author_time">
                             <div class="author inline_block middle_font">{{blog.username}}</div>
-                            <div class="time inline_block middle_font">{{new Date(blog.date).toLocaleDateString("ja-JP")}}</div>
+                            <div class="time inline_block middle_font">{{new Date(blog.date).toLocaleDateString()}}</div>
                         </div>
                     </div>
                 </div>
@@ -21,7 +21,7 @@
                 <div class="comment min_font" v-for="comment in comments" :key="comments.indexOf(comment)">
                     <div>
                         <div class="comment_name inline_block">{{comment.username}}</div>
-                        <div class="comment_date">{{new Date(comment.date).toLocaleDateString("ja-JP")}}</div>
+                        <div class="comment_date">{{new Date(comment.date).toLocaleDateString()}}</div>
                     </div>
                     <div class="comment_text">{{comment.comment}}</div>
                 </div>

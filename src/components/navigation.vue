@@ -41,11 +41,11 @@
 			</svg>
 			<span class="class_word vertical_align inline_block">About</span>
 		</a>
-		<a href="/send" class="logo_box margin">
+		<!-- <a href="/send" class="logo_box margin">
 			<svg class="send" viewBox="0 0 1024 1024">
 				<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#sendIcon"></use>
 			</svg>
-		</a>
+		</a> -->
 	</div>
 </template>
 <script>
