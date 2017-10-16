@@ -4,12 +4,15 @@
         <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#naviButton"></use>
       </svg>
       <img src="../assets/blog_logo.png" class="blog_logo">
+      <div v-on:click="toLogin">
       <svg viewBox="0 0 2707 768" class="mobile_sign pos">
         <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#mobileSign"></use>
       </svg>
+      </div>
     </div>
 </template>
 <script>
+import Cookie from '../common/cookie.js'
 export default {
   data() {
       return{
@@ -18,7 +21,12 @@ export default {
   methods: {
     showSide() {
         this.$emit('clickButton')
-    }
+    },
+    toLogin() {
+			Cookie.setCookie('url', window.location.href)
+			window.location = "http://pass.muxixyz.com?landing=blog.muxixyz.com/landing"
+			// window.location = "http://120.77.246.73:4000?landing=localhost:3000/landing"
+		}
   }
 }
 </script>
