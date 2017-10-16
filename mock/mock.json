@@ -24,6 +24,12 @@
             "async": false
         },
         {
+            "name": "mobileWeb",
+            "endpoint": "/mobileWeb",
+            "template": "mobileWeb",
+            "async": false
+        },
+        {
             "name": "second",
             "endpoint": "/second/:Int",
             "template": "second",

@@ -196,7 +196,7 @@ module.exports = {
             filename: 'template/mobileWeb.html',
             inject: false,
             template: path.join(__dirname, '../template/mobileWeb.ejs'),
-            chunks: ['mobileCommon, mobileWeb']
+            chunks: ['mobileCommon','mobileWeb']
         }),
         new HtmlWebpackPlugin({
             alwaysWriteToDisk: true,
