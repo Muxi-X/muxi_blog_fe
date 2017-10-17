@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="tip_mask">
         <div class="tip_modal">
             <div class="tip_content">你还没登录噢~</div>
             <div class="tip_footer">
@@ -37,7 +37,6 @@ export default {
     z-index: 3;
     background-color: rgba(51, 51, 51, 0.85);
 }
-
 .tip_footer {
     float: right;
 }

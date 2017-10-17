@@ -18,9 +18,7 @@
 			<span class="class_word vertical_align inline_block">Web</span>
 		</a>
 		<a href="/design" class="link_box link">
-			<svg class="icon inline_block vertical_align" viewBox="0 0 1024 1024">
-				<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#designIcon"></use>
-			</svg>
+			<img class="icon inline_block vertical_align" src="../assets/MED.png">
 			<span class="class_word vertical_align inline_block">Design</span>
 		</a>
 		<a href="/android" class="link_box link">
@@ -41,11 +39,11 @@
 			</svg>
 			<span class="class_word vertical_align inline_block">About</span>
 		</a>
-		<!-- <a href="/send" class="logo_box margin">
+		<a href="/send" class="logo_box margin">
 			<svg class="send" viewBox="0 0 1024 1024">
 				<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#sendIcon"></use>
 			</svg>
-		</a> -->
+		</a>
 	</div>
 </template>
 <script>

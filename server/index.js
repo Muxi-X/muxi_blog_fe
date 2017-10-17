@@ -111,6 +111,12 @@ router.get('/viewArchive', function (ctx, next) {
     let template = swig.compileFile(path.resolve(templateRoot, "viewArchive.html"));
     ctx.body = template({})
 });
+
+router.get('/send', function (ctx, next) {
+    let template = swig.compileFile(path.resolve(templateRoot, "send.html"));
+    ctx.body = template({})
+});
+
 router.get(/^\/static(?:\/|$)/, async(ctx) => {
     let filepath = ctx.path.replace(/static\//, "")
     await send(ctx, filepath, {
