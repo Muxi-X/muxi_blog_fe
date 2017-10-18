@@ -116,7 +116,6 @@
                             'Accept': 'application/json',
                             'Content-Type': 'application/json',
                             'token': Cookie.getCookie("token")
-                            // 'token' : 'eyJhbGciOiJIUzI1NiJ9.eyJpZCI6N30.P5rU9mV7xAVwTKf06RA7o1BOvF9jWLGDpYZ_fohWL6s'
                         },
                         body: JSON.stringify({
                             title: this.title, // 博客的标题
