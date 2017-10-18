@@ -8,7 +8,7 @@
                 <div class="title full-width">{{blog.title}}</div>
                 <div class="author inline_block">{{blog.username}}</div>
                 <div class="time inline_block">{{blog.date}}</div>
-                <div class="article">{{blog.body}}</div>
+                <div v-html="compiledMarkdown" class="article"></div>
                 <div class="second_tag_list full_width">
                     <div class="tag inline_block" v-for="tag in tags" :key="tags.indexOf(tag)">{{tag}}</div>
                 </div>
@@ -34,6 +34,20 @@
     import commentBox from './commentBox.vue'
     import Cookie from '../common/cookie.js'
     import modal from './modal.vue'
+    var _ = require('lodash');
+    var marked = require('marked')
+    
+    marked.setOptions({
+        renderer: new marked.Renderer(),
+        gfm: true,
+        tables: true,
+        breaks: false,
+        pedantic: false,
+        sanitize: true,
+        smartLists: true,
+        smartypants: false
+    });
+
     export default {
         data() {
             return {
@@ -43,7 +57,8 @@
                     type: Object
                 },
                 id: 0,
-                LoginTip: false
+                LoginTip: false,
+                body: ""
             }
         },
         components: {
@@ -60,9 +75,17 @@
                 })
                 .then(res => {
                     this.blog = res.blog
+                    this.body = res.blog.body
                     this.comments = res.comments
                     this.tags = this.blog.tags
                 })
+        },
+        computed: {
+            compiledMarkdown: function() {
+                return marked(this.body, {
+                    sanitize: true
+                })
+            }
         },
         methods: {
             fetchComments() {

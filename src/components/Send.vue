@@ -116,6 +116,7 @@
                             'Accept': 'application/json',
                             'Content-Type': 'application/json',
                             'token': Cookie.getCookie("token")
+                            // 'token' : 'eyJhbGciOiJIUzI1NiJ9.eyJpZCI6N30.P5rU9mV7xAVwTKf06RA7o1BOvF9jWLGDpYZ_fohWL6s'
                         },
                         body: JSON.stringify({
                             title: this.title, // 博客的标题
@@ -125,8 +126,9 @@
                             type_id: this.group, // 1是web ， 2 是设计 ， 3 是安卓，4是产品  
                             tags: this.tags
                         })
-                    }).then(value => {
-                        window.location.pathname = "/"
+                    }).then(res => {
+                        if (res.ok)
+                           window.location.pathname = "/"
                     })
                 } else {
                     this.LoginTip = true
@@ -135,7 +137,6 @@
             update: _.debounce(function(e) {
                 this.input = e.target.value
             }, 300)
-    
         }
     }
 </script>

@@ -34,6 +34,16 @@ router.get('/second', function (ctx, next) {
     }
 });
 
+router.get('/tagBlogs/frontend', function (ctx, next) {
+    if (!ctx.userAgent.isMobile) {
+        let template = swig.compileFile(path.resolve(templateRoot, "tagBlogs.html"));
+        ctx.body = template({})
+    } else {
+        let template = swig.compileFile(path.resolve(templateRoot, "mobileTag.html"));
+        ctx.body = template({})
+    }
+});
+
 router.get('/web', function (ctx, next) {
     if (!ctx.userAgent.isMobile) {
         let template = swig.compileFile(path.resolve(templateRoot, "web.html"));
