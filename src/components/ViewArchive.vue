@@ -1,11 +1,11 @@
 <template>
     <div class="mobile full_height full_width">
-        <mobileHeader v-on:clickButton="this.show"></mobileHeader>
+        <mobile-header v-on:clickButton="this.show"></mobile-header>
         <div class="full_width cont">
-                <archiveBox class="box_style"></archiveBox>
+            <archive-box class="box_style"></archive-box>
         </div>
         <transition name="slide-fade">
-            <mobileNavi class="moblie_navi" v-show="this.showNavi" v-on:clickMask="this.show"></mobileNavi>
+            <mobile-navi class="moblie_navi" v-show="this.show_navi" v-on:click_mask="this.show"></mobile-navi>
         </transition>
     </div>
 </template>
@@ -17,17 +17,17 @@ import archive from './archive.vue'
 export default {
     data() {
         return {
-            showNavi: true
+            show_navi: true
         }
     },
     components: {
-        "mobileHeader": header,
-        "mobileNavi": mobileNavi,
-        "archiveBox": archive
+        "mobile-header": header,
+        "mobile-navi": mobileNavi,
+        "archive-box": archive
     },
     methods: {
         show() {
-            this.showNavi = !this.showNavi
+            this.show_navi = !this.show_navi
         }
     }
 }

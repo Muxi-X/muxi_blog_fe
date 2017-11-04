@@ -51,7 +51,7 @@
           <span class="class_word vertical_align inline_block">About</span>
         </a>
       </div>
-      <div class="mask full_height" v-on:click="clickMask"></div>
+      <div class="mask full_height" v-on:click="click_mask"></div>
     </div>
   </div>
 </template>
@@ -64,8 +64,8 @@ export default {
     }
   },
   methods: {
-    clickMask() {
-      this.$emit('clickMask')
+    click_mask() {
+      this.$emit('click_mask')
     }
   }
 }

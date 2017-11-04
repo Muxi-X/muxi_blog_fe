@@ -1,6 +1,6 @@
 <template>
     <div class="mobile full_height">
-        <mobileHeader v-on:clickButton="this.show"></mobileHeader>
+        <mobile-header v-on:click_button="this.show"></mobile-header>
         <div class="cont full_width">
             <div class="view_blog margin">
                 <div class="info full_width">
@@ -24,13 +24,13 @@
                     </div>
                     <div class="comment_text">{{comment.comment}}</div>
                 </div>
-                <commentBox class="cBox middle_font full_width" :id="this.id" v-on:newComment="fetchComments" v-on:showTip="showTip">
-                </commentBox>
+                <comment-box class="cBox middle_font full_width" :id="this.id" v-on:comment="fetch_comments" v-on:show_tip="show_tip">
+                </comment-box>
             </div>
-            <modal v-if="this.tip" class="tip_mask" v-on:toCancel="this.toCancel"></modal>
+            <modal v-if="this.tip" class="tip_mask" v-on:cancel="this.cancel"></modal>
         </div>
         <transition name="slide-fade">
-            <mobileNavi class="mobile_navi" v-show="this.showNavi" v-on:clickMask="this.show"></mobileNavi>
+            <mobile-navi class="mobile_navi" v-show="this.show_navi" v-on:click_mask="this.show"></mobile-navi>
         </transition>
     </div>
 </template>
@@ -62,16 +62,16 @@
                 blog: {
                     type: Object
                 },
-                showNavi: true,
+                show_navi: true,
                 id: 0,
                 tip: false,
                 body: ""
             }
         },
         components: {
-            "mobileHeader": header,
-            "mobileNavi": mobileNavi,
-            "commentBox": commentBox,
+            "mobile-header": header,
+            "mobile-navi": mobileNavi,
+            "comment-box": commentBox,
             "modal": modal
         },
         mounted() {
@@ -96,9 +96,9 @@
         },
         methods: {
             show() {
-                this.showNavi = !this.showNavi
+                this.show_navi = !this.show_navi
             },
-            fetchComments() {
+            fetch_comments() {
                 fetch('/api/v2.0/' + this.id + '/views/').then(res => {
                         return res.json()
                     })
@@ -106,10 +106,10 @@
                         this.comments = res.comments
                     })
             },
-            showTip() {
+            show_tip() {
                 this.tip = true
             },
-            toCancel() {
+            cancel() {
                 this.tip = false
             }
         }
@@ -159,6 +159,7 @@
     .article {
         margin-top: 35px;
         margin-bottom: 50px;
+        overflow: scroll;
     }
     
     .tag {

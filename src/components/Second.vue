@@ -1,6 +1,6 @@
 <template>
     <div>
-        <navi class="navi"></navi>
+        <!-- <navi class="navi"></navi> -->
         <sign class="sign"></sign>
         <div class="main">
             <img class="avatar inline_block" :src="blog.avatar">
@@ -19,17 +19,17 @@
                     </div>
                     <div class="comment_text">{{comment.comment}}</div>
                 </div>
-                <commentBox class="cBox" :id="this.id" v-on:newComment="fetchComments" v-on:showTip="showTip">
-                </commentBox>
+                <comment-box class="cBox" :id="this.id" v-on:new_comment="fetch_comments" v-on:show_tip="show_tip">
+                </comment-box>
             </div>
         </div>
-        <modal v-if="this.LoginTip" v-on:toCancel="this.toCancel">
+        <modal v-if="this.login_tip" v-on:cancel="this.cancel">
         </modal>
     </div>
 </template>
 
 <script>
-    import navigation from './navigation.vue'
+    //import navigation from './navigation.vue'
     import sign from './sign.vue'
     import commentBox from './commentBox.vue'
     import Cookie from '../common/cookie.js'
@@ -57,14 +57,14 @@
                     type: Object
                 },
                 id: 0,
-                LoginTip: false,
+                login_tip: false,
                 body: ""
             }
         },
         components: {
-            "navi": navigation,
+            // "navi": navigation,
             "sign": sign,
-            "commentBox": commentBox,
+            "comment-box": commentBox,
             "modal": modal
         },
         mounted() {
@@ -88,7 +88,7 @@
             }
         },
         methods: {
-            fetchComments() {
+            fetch_comments() {
                 fetch('/api/v2.0/' + this.id + '/views/').then(res => {
                         return res.json()
                     })
@@ -96,11 +96,11 @@
                         this.comments = res.comments
                     })
             },
-            showTip() {
-                this.LoginTip = true
+            show_tip() {
+                this.login_tip = true
             },
-            toCancel() {
-                this.LoginTip = false
+            cancel() {
+                this.login_tip = false
             }
         }
     }
@@ -142,6 +142,7 @@
     .article {
         margin-top: 35px;
         margin-bottom: 50px;
+        overflow-x: scroll;
     }
     .second_tag_list {
         margin-bottom: 10px;
@@ -178,14 +179,14 @@
         border-top: 2px solid #e6e6e6;
     }
     
-    .editComment {
+    .edit_comment {
         height: 75px;
         width: 380px;
         border: 2px solid #e6e6e6;
         font-size: 14px;
     }
     
-    .submitComment {
+    .submit_comment {
         background-color: #ffc162;
         color: #fff;
         width: 50px;

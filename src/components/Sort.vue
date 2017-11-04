@@ -1,22 +1,22 @@
 <template>
     <div class="wrap">
         <sign class="sign"></sign>
-        <navi class="navi"></navi>
-        <div class="boxs">
-            <tagBox class="tagBox"></tagBox>
-            <archiveBox class="archiveBox"></archiveBox>
-        </div>
+        <!-- <navi class="navi"></navi> -->
         <list class="content" 
              :items="this.items" 
              :pages_count="this.pages_count" 
              :blog_num="this.blog_num"
-             v-on:pageUp="PageUp" 
-             v-on:pageDown="PageDown">
+             v-on:page_up="page_up" 
+             v-on:page_down="page_down">
         </list>
+         <div class="boxs">
+            <tag-box class="tagBox"></tag-box>
+            <archive-box class="archiveBox"></archive-box>
+        </div>
     </div>
 </template>
 <script>
-import navigation from './navigation.vue'
+// import navigation from './navigation.vue'
 import sign from './sign.vue'
 import content from './content.vue'
 import tags from './tags.vue'
@@ -36,11 +36,11 @@ export default {
         }
     },
     components: {
-        "navi": navigation,
+        // "navi": navigation,
         "sign": sign,
         "list": content,
-        "tagBox": tags,
-        "archiveBox": archive
+        "tag-box": tags,
+        "archive-box": archive
     },
     mounted() {
         var api = window.location.pathname
@@ -59,22 +59,22 @@ export default {
         } else {
             this.Url = "/sort/?sort=" + this.kind;
         }
-        this.FetchUrl()
+        this.fetch_url()
     },
     methods: {
-        PageUp() {
+        page_up() {
             if (this.page_num != this.pages_count) {
                 this.page_num += 1;
-                this.FetchUrl()
+                this.fetch_url()
             }
         },
-        PageDown() {
+        page_down() {
             if (this.page_num != 1) {
                 this.page_num -= 1;
-                this.FetchUrl()
+                this.fetch_url()
             }
         },
-        FetchUrl() {
+        fetch_url() {
             fetch('/api/v2.0' + this.Url + '/?page=' + this.page_num).then(res => {
                 return res.json()
             })

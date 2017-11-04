@@ -1,29 +1,29 @@
 <template>
     <div>
-        <navi class="navi"></navi>
+        <!-- <navi class="navi"></navi> -->
         <sign class="sign"></sign>
         <div class="main">
             <textarea v-model="title" class="title margin" placeholder="文章标题"></textarea>
             <div class="group margin">
-                <label for="Web">
-                        <input type="radio" id="Web" value="1" v-model="group"> Web
+                <label for="web">
+                        <input type="radio" id="web" value="1" v-model="group"> Web
                     </label>
-                <label for="Android">
-                        <input type="radio" id="Android" value="3" v-model="group"> Android
+                <label for="android">
+                        <input type="radio" id="android" value="3" v-model="group"> Android
                     </label>
-                <label for="Design">
-                        <input type="radio" id="Design" value="2" v-model="group"> Design
+                <label for="design">
+                        <input type="radio" id="design" value="2" v-model="group"> Design
                     </label>
-                <label for="Product">
-                        <input type="radio" id="Product" value="4" v-model="group"> Product
+                <label for="product">
+                        <input type="radio" id="product" value="4" v-model="group"> Product
                     </label>
             </div>
             <div class="group margin">
                 <input v-model="this.image" placeholder="博客的封面图" class="image">
-                <input v-model="newTag" @keyup.enter="addTag" placeholder="标签" autofocus class="write_tag inline_block">
-                <button v-on:click="addTag" class="add_tag inline_block">ADD</button>
+                <input v-model="new_tag" @keyup.enter="add_tag" placeholder="标签" autofocus class="write_tag inline_block">
+                <button v-on:click="add_tag" class="add_tag inline_block">ADD</button>
                 <div v-for="tag in tags" class="tag_list inline_block" :key="tags.indexOf(tag)"> {{tag}}
-                    <button v-on:click="removeTag(tag)" class="delete">X</button>
+                    <button v-on:click="remove_tag(tag)" class="delete">X</button>
                 </div>
                 <div v-if="this.tip" class="tip">最多五个标签</div>
             </div>
@@ -36,13 +36,13 @@
             </div>
             <button v-on:click="submit" class="submit">POST</button>
         </div>
-        <modal v-if="this.LoginTip" v-on:toCancel="this.toCancel">
+        <modal v-if="this.login_tip" v-on:cancel="this.cancel">
         </modal>
     </div>
 </template>
 
 <script>
-    import navigation from './navigation.vue'
+    // import navigation from './navigation.vue'
     import sign from './sign.vue'
     import modal from './modal.vue'
     import Cookie from '../common/cookie.js'
@@ -68,14 +68,14 @@
                 title: "",
                 summary: "",
                 tip: false,
-                newTag: "",
+                new_tag: "",
                 tags: [],
-                LoginTip: false,
+                login_tip: false,
                 image: ""
             }
         },
         components: {
-            "navi": navigation,
+            // "navi": navigation,
             "sign": sign,
             "modal": modal
         },
@@ -88,23 +88,23 @@
         },
         methods: {
             addTag() {
-                var tag = this.newTag.trim();
+                var tag = this.new_tag.trim();
                 if (tag && this.tags.length < 5) {
                     this.tags.push(tag);
-                    this.newTag = "";
-                } else if (this.tags.length >= 5 && this.newTag) {
+                    this.new_tag = "";
+                } else if (this.tags.length >= 5 && this.new_tag) {
                     this.tip = true
                 }
             },
-            removeTag(tag) {
+            remove_tag(tag) {
                 var index = this.tags.indexOf(tag);
                 this.tags.splice(index, 1);
             },
-            showTip() {
-                this.LoginTip = true
+            show_tip() {
+                this.login_tip = true
             },
-            toCancel() {
-                this.LoginTip = false
+            cancel() {
+                this.login_tip = false
             },
             submit() {
                 if (this.image == "")
@@ -130,7 +130,7 @@
                            window.location.pathname = "/"
                     })
                 } else {
-                    this.LoginTip = true
+                    this.login_tip = true
                 }
             },
             update: _.debounce(function(e) {

@@ -33,7 +33,8 @@ module.exports = {
         mobileArchive: './src/mobileArchive.js',
         mobileSecond: './src/mobileSecond.js',
         landing: './src/landing.js',
-        mobileLanding: './src/mobileLanding.js'
+        mobileLanding: './src/mobileLanding.js',
+        navigation: './src/navigation.js'
     },
     output: {
         path: path.join(__dirname, "../"),
@@ -119,56 +120,63 @@ module.exports = {
             filename: 'template/index.html',
             inject: false,
             template: path.join(__dirname, '../template/index.ejs'),
-            chunks: ['common','home']
+            chunks: ['common','home','navigation']
         }),
         new HtmlWebpackPlugin({
             alwaysWriteToDisk: true,
             filename: 'template/second.html',
             inject: false,
             template: path.join(__dirname, '../template/second.ejs'),
-            chunks: ['second']
+            chunks: ['second','navigation']
         }),
         new HtmlWebpackPlugin({
             alwaysWriteToDisk: true,
             filename: 'template/web.html',
             inject: false,
             template: path.join(__dirname, '../template/web.ejs'),
-            chunks: ['common','web']
+            chunks: ['common','web','navigation']
+        }),
+        new HtmlWebpackPlugin({
+            alwaysWriteToDisk: true,
+            filename: 'template/send.html',
+            inject: false,
+            template: path.join(__dirname, '../template/send.ejs'),
+            chunks: ['common','send','navigation']
         }),
         new HtmlWebpackPlugin({
             alwaysWriteToDisk: true,
             filename: 'template/design.html',
             inject: false,
             template: path.join(__dirname, '../template/design.ejs'),
-            chunks: ['common','design']
+            chunks: ['common','design','navigation']
         }),
         new HtmlWebpackPlugin({
             alwaysWriteToDisk: true,
             filename: 'template/android.html',
             inject: false,
             template: path.join(__dirname, '../template/android.ejs'),
-            chunks: ['common','android']
+            chunks: ['common','android','navigation']
         }),
         new HtmlWebpackPlugin({
             alwaysWriteToDisk: true,
             filename: 'template/product.html',
             inject: false,
             template: path.join(__dirname, '../template/product.ejs'),
-            chunks: ['common','product']
+            chunks: ['common','product','navigation']
         }),
         new HtmlWebpackPlugin({
             alwaysWriteToDisk: true,
             filename: 'template/tagBlogs.html',
             inject: false,
             template: path.join(__dirname, '../template/tagBlogs.ejs'),
-            chunks: ['common','tagBlogs']
+            chunks: ['common','tagBlogs','navigation']
         }),
         new HtmlWebpackPlugin({
             alwaysWriteToDisk: true,
             filename: 'template/archiveBlogs.html',
             inject: false,
             template: path.join(__dirname, '../template/archiveBlogs.ejs'),
-            chunks: ['common','archiveBlogs']
+            chunks: ['common','archiveBlogs','navigation']
         }),
         new HtmlWebpackPlugin({
             alwaysWriteToDisk: true,
@@ -253,6 +261,13 @@ module.exports = {
             inject: false,
             template: path.join(__dirname, '../template/mobileLanding.ejs'),
             chunks: ['mobileLanding']
+        }),
+        new HtmlWebpackPlugin({
+            alwaysWriteToDisk: true,
+            filename: 'template/navi.html',
+            inject: false, 
+            template: path.join(__dirname, '../template/navi.ejs'),
+            chunks: ['navigation']
         }),
         new HtmlWebpackHarddiskPlugin()
     ]

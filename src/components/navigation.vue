@@ -1,7 +1,7 @@
 <template>
 	<div>
-		<a href="/" class="logo_box margin">
-			<svg class="logo" viewBox="0 0 93 93">
+		<a href="/" class="logo_box margin logo">
+		<svg class="logo" viewBox="0 0 1024 1024">
 				<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use>
 			</svg>
 		</a>
@@ -18,7 +18,9 @@
 			<span class="class_word vertical_align inline_block">Web</span>
 		</a>
 		<a href="/design" class="link_box link">
-			<img class="icon inline_block vertical_align" src="../assets/MED.png">
+			<svg class="icon inline_block vertical_align" viewBox="0 0 1024 1024">
+				<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#designIcon"></use>
+			</svg>
 			<span class="class_word vertical_align inline_block">Design</span>
 		</a>
 		<a href="/android" class="link_box link">

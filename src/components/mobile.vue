@@ -1,15 +1,15 @@
 <template>
   <div class="mobile full_height">
-    <mobileHeader v-on:clickButton="this.show"></mobileHeader>
+    <mobile-header v-on:click_button="this.show"></mobile-header>
     <list class="cont full_width" 
          :items="this.items" 
          :pages_count="this.pages_count" 
          :blog_num="this.blog_num" 
-         v-on:pageUp="PageUp" 
-         v-on:pageDown="PageDown">
+         v-on:page_up="page_up" 
+         v-on:page_down="page_down">
     </list>
     <transition name="slide-fade">
-      <mobileNavi class="mobile_navi" v-show="this.showNavi" v-on:clickMask="this.show"></mobileNavi>
+      <mobile-navi class="mobile_navi" v-show="this.show_navi" v-on:click_mask="this.show"></mobile-navi>
     </transition>
   </div>
 </template>
@@ -22,7 +22,7 @@ import FecthSort from '../common/sortMap.js'
 export default {
   data() {
     return {
-      showNavi: true,
+      show_navi: true,
       items: [],
       page_num: 1,
       kind: 0,
@@ -33,8 +33,8 @@ export default {
     }
   },
   components: {
-    "mobileHeader": header,
-    "mobileNavi": mobileNavi,
+    "mobile-header": header,
+    "mobile-navi": mobileNavi,
     "list": mobileContent
   },
   mounted() {
@@ -54,25 +54,25 @@ export default {
     } else {
       this.Url = "/sort/?sort=" + this.kind;
     }
-    this.FetchUrl()
+    this.fetch_url()
   },
   methods: {
     show() {
-      this.showNavi = !this.showNavi
+      this.show_navi = !this.show_navi
     },
-    PageUp() {
+    page_up() {
       if (this.page_num != this.pages_count) {
         this.page_num += 1;
-        this.FetchUrl()
+        this.fetch_url()
       }
     },
-    PageDown() {
+    page_down() {
       if (this.page_num != 1) {
         this.page_num -= 1;
-        this.FetchUrl()
+        this.fetch_url()
       }
     },
-    FetchUrl() {
+    fetch_url() {
       fetch('/api/v2.0' + this.Url + '/?page=' + this.page_num).then(res => {
         return res.json()
       })

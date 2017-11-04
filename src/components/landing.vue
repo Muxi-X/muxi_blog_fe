@@ -30,7 +30,6 @@ export default {
             })
         }).then(res => {
             if (res.ok) {
-                console.log("first login")
                 return res.json()
             } else {
                 fetch("/api/v2.0/signup/", {
@@ -61,7 +60,6 @@ export default {
         }).then(value => {
             Cookie.setCookie("token", value.token)
             Cookie.setCookie("uid", value.uid)
-            console.log("success")
         })
         this.url = Cookie.getCookie("url")
         setTimeout(() => {

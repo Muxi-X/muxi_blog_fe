@@ -3,8 +3,8 @@
         <div class="tip_modal">
             <div class="tip_content">你还没登录噢~</div>
             <div class="tip_footer">
-                <button v-on:click="toLogin" class="tip_login tip_button">登录</button>
-                <button v-on:click="toCancel" class="tip_button tip_cancel">取消</button>
+                <button v-on:click="login" class="tip_login tip_button">登录</button>
+                <button v-on:click="cancel" class="tip_button tip_cancel">取消</button>
             </div>
         </div>
     </div>
@@ -16,13 +16,13 @@ export default {
         return {}
     },
     methods: {
-        toLogin() {
+        login() {
             Cookie.setCookie('url', window.location.href);
             window.location = "https://pass.muxixyz.com?landing=blog.muxixyz.com/landing"
             // window.location = "http://120.77.246.73:4000?landing=localhost:3000/landing"
         },
-        toCancel() {
-            this.$emit('toCancel')
+        cancel() {
+            this.$emit('cancel')
         }
     }
 }

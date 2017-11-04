@@ -2,7 +2,12 @@
 .wrap {
     height: 100%;
     clear: both;
-    min-width: 1200px;
+	min-width: 1200px;
+	display: flex;
+	-webkit-align-items: center;
+	align-items: center;
+	-webkit-justify-content: center;
+	justify-content:  center;
 }
 .link {
     height: 70px;
@@ -17,7 +22,8 @@
     left: 0px;
     top: 0px;
     background: #ffffff;
-    overflow: hidden;
+	overflow: hidden;
+	z-index: 3;
 }
 .sign {
     height: 30px;
@@ -34,14 +40,18 @@
 .content {
     width: 600px;
     height: 550px;
-    margin-top: 100px;
-    padding-left: 250px;
-    overflow: hidden;
+    margin-left: 100px;
+	overflow: hidden;
+}
+
+.boxs {
+	margin-left: 80px;
 }
 
 .logo_box {
 	width: 100%;
 	height: 100px;
+	//background-image: url('../assets/blog_logo.png');
 }
 
 .logo {
@@ -79,10 +89,6 @@
 	color: $white;
 }
 
-.boxs {
-    float: right;
-    margin-right: 100px;
-}
 .archiveBox, .tagBox {
     width: 185px; 
     background-color: $white;
@@ -242,25 +248,24 @@ a {
 	background-color: $yellow;
 	cursor: pointer;
 }
-.editComment {
-	height: 75px;
-	width: 380px;
-	border: 2px solid #e6e6e6;
-}
+// .edit_comment {
+// 	height: 75px;
+// 	width: 380px;
+// 	border: 2px solid #e6e6e6;
+// }
 
-.submitComment {
-	background-color: $orange;
-	color: $white;
-	width: 50px;
-	height: 30px;
-	border-radius: 4px;
-}
+// .submit_comment {
+// 	background-color: $orange;
+// 	color: $white;
+// 	width: 50px;
+// 	height: 30px;
+// 	border-radius: 4px;
+// }
 
-.buttonBox {
+.button_box {
 	margin-top: 15px;
 	font-size: 14px;
 }
-
 
 .tip_modal {
     width: 200px;

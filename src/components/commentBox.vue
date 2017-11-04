@@ -1,8 +1,8 @@
 <template>
     <div>
-        <textarea v-model.trim="message" class="editComment" placeholder="你的看法是？"></textarea>
-        <div class="buttonBox full_width">
-            <button v-on:click="submitComment" class="submitComment">评论</button>
+        <textarea v-model.trim="message" class="edit_comment" placeholder="你的看法是？"></textarea>
+        <div class="button_box full_width">
+            <button v-on:click="submit_comment" class="submit_comment">评论</button>
         </div>
     </div>
 </template>
@@ -17,7 +17,7 @@ export default {
     },
     props: ['id'],
     methods: {
-        submitComment(e) {
+        submit_comment(e) {
             e.stopPropagation();
             if (Cookie.getCookie("token")) {
                 if (this.message) {
@@ -34,11 +34,11 @@ export default {
                         })
                     }).then(res => {
                         this.message = ""
-                        this.$emit('newComment')
+                        this.$emit('new_comment')
                     })
                 }
             } else {
-                this.$emit('showTip')
+                this.$emit('show_tip')
             }
         }
     }

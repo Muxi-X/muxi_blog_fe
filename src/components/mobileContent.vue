@@ -1,8 +1,8 @@
 <template>
     <div>
         <div class="blogs_box margin" v-if="this.blog_num">
-            <!-- <a :href="/second/+ item.id" v-for="item in items" :key="item.id" class="content_box full_width" v-on:click="toSecond"> -->
-            <a :href="/mobileSecond/+ item.id" v-for="item in items" :key="item.id" class="content_box full_width" v-on:click="toSecond">
+            <!-- <a :href="/second/+ item.id" v-for="item in items" :key="item.id" class="content_box full_width" v-on:click="to_second"> -->
+            <a :href="/mobileSecond/+ item.id" v-for="item in items" :key="item.id" class="content_box full_width" v-on:click="to_second">
                 <div class="content_top">
                     <img class="avatar_size inline_block full_height" v-bind:src="item.avatar">
                     <div class="top_right inline_block full_height">
@@ -27,8 +27,8 @@
         </div>
         <div v-if="!this.blog_num" class="show margin">没有对应的博客</div>
         <div class="page_row full_width">
-            <button class="page_button button_size" v-on:click="pageDown"> < </button>
-            <button class="right_button button_size" v-on:click="pageUp"> > </button>
+            <button class="page_button button_size" v-on:click="page_down"> < </button>
+            <button class="right_button button_size" v-on:click="page_up"> > </button>
         </div>
     </div>
 </template>
@@ -42,11 +42,11 @@
         },
         props: ['items', 'blog_num'],
         methods: {
-            pageDown() {
-                this.$emit('pageDown')
+            page_down() {
+                this.$emit('page_down')
             },
-            pageUp() {
-                this.$emit('pageUp')
+            page_up() {
+                this.$emit('page_up')
             }
         }
     }
