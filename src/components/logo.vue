@@ -1,9 +1,6 @@
 <template>
 <div>
     <!-- <a href="/" class="logo_box margin logo"> -->
-		<!-- <svg class="logo" viewBox="0 0 1024 1024">
-			<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use>
-		</svg> -->
 		<img src="../assets/blog_logo.png" class="logo">
 	<!-- </a> -->
 	<a  class="logo_box margin logo">
