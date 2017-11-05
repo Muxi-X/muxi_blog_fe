@@ -6,6 +6,7 @@ export default {
         "android": 3,
         "product": 4,
         "tagBlogs": 5,
-        "archiveBlogs": 6
+        "archiveBlogs": 6,
+        "second": 7
     }
 }
