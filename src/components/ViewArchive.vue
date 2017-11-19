@@ -35,6 +35,7 @@ export default {
 <style lang="scss">
 @import '../scss/mobile.scss';
 @import '../scss/utility.scss';
+@import "../scss/color.scss";
 </style>
 
 

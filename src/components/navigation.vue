@@ -51,5 +51,5 @@
 <script>
 </script>
 <style lang='scss'>
-@import '../scss/pc.scss';
+// @import '../scss/pc.scss';
 </style>

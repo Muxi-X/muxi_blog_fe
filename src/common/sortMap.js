@@ -7,6 +7,7 @@ export default {
         "product": 4,
         "tagBlogs": 5,
         "archiveBlogs": 6,
-        "second": 7
+        "second": 7,
+        "send": 8
     }
 }

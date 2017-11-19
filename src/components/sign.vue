@@ -19,7 +19,7 @@ export default {
 </script>
 
 <style lang='scss'>
-@import '../scss/utility.scss';
+// @import '../scss/utility.scss';
 @import '../scss/color.scss';
 .signup {
 	line-height: 25px;

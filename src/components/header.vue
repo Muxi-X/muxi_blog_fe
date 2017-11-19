@@ -32,7 +32,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import '../scss/utility.scss';
+// @import '../scss/utility.scss';
 .pos {
   height: 20px;
   position: absolute;

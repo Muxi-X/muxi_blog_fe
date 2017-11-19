@@ -37,8 +37,8 @@ export default {
 </script>
 
 <style lang="scss">
-@import '../scss/pc.scss';
-@import '../scss/utility.scss';
+// @import '../scss/pc.scss';
+// @import '../scss/utility.scss';
 .archive_icon {
     width: 25px;
     height: 25px;

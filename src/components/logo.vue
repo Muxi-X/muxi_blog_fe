@@ -1,27 +1,30 @@
 <template>
 	<div>
-		<a href="/" class="margin logo" v-if="this.kind == 0">
+		<a href="/" class="margin logo muxi_logo" v-if="this.kind == 0">
 			<img src="../assets/blog_logo.png" class="logo">
 		</a>
-		<a href="/web" class="margin logo" v-else-if="this.kind == 1">
+		<a href="/web" class="margin logo muxi_logo"  v-else-if="this.kind == 1">
 			<img src="../assets/blog_logo.png" class="logo">
 		</a>
 		<a href="/design" class="margin logo" v-else-if="this.kind == 2">
-			<img src="../assets/MED.png" class="logo">
+			<img src="../assets/MED.png" class="logo design_logo">
 		</a>
-		<a href="/android" class="margin logo" v-else-if="this.kind == 3">
+		<a href="/android" class="margin logo muxi_logo" v-else-if="this.kind == 3">
 			<img src="../assets/blog_logo.png" class="logo">
 		</a>
-		<a href="/product" class="margin logo" v-else-if="this.kind == 4">
+		<a href="/product" class="margin logo muxi_logo" v-else-if="this.kind == 4">
 			<img src="../assets/blog_logo.png" class="logo">
 		</a>
-		<a :href="/tagBlogs/ + this.tag" class="margin logo" v-else-if="this.kind == 5">
+		<a :href="/tagBlogs/ + this.tag" class="margin logo muxi_logo" v-else-if="this.kind == 5">
 			<img src="../assets/blog_logo.png" class="logo">
 		</a>
-		<a :href="/archiveBlogs/ + this.year + '/' + this.month" class="margin logo" v-else-if="this.kind == 6">
+		<a :href="/archiveBlogs/ + this.year + '/' + this.month" class="margin logo muxi_logo" v-else-if="this.kind == 6">
 			<img src="../assets/blog_logo.png" class="logo">
 		</a>
-		<a href="/" class="margin logo" v-else-if="this.kind == 7">
+		<a href="/" class="margin logo muxi_logo" v-else-if="this.kind == 7">
+			<img src="../assets/blog_logo.png" class="logo">
+		</a>
+		<a href="/" class="margin logo muxi_logo" v-else-if="this.kind == 8">
 			<img src="../assets/blog_logo.png" class="logo">
 		</a>
 	</div>
@@ -53,3 +56,13 @@
 		}
 	}
 </script>
+<style lang="scss">
+.muxi_logo {
+	height: 40px;
+}
+
+.design_logo {
+	height: 120px;
+	border-radius: 24px;
+}
+</style>

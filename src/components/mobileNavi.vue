@@ -72,8 +72,9 @@ export default {
 </script>
 
 <style lang="scss">
-@import '../scss/utility.scss';
-@import '../scss/mobile.scss';
+// @import '../scss/utility.scss';
+// @import '../scss/mobile.scss';
+@import "../scss/color.scss";
 .navi_col {
   width: 40%;
   background-color: $white;

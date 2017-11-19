@@ -46,6 +46,6 @@ export default {
 </script>
 
 <style lang='scss'>
-@import '../scss/pc.scss';
-@import '../scss/utility.scss';
+// @import '../scss/pc.scss';
+// @import '../scss/utility.scss';
 </style>
