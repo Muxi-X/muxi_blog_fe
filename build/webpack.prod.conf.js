@@ -13,8 +13,7 @@ var webpackConfig = merge(baseWebpackConfig, {
     resolve: {
         extensions: ['.js', '.vue', '.json'],
         alias: {
-            'vue$': 'vue/dist/vue.runtime.min.js',
-            'marked$': 'marked/marked.min.js'
+            'vue$': 'vue/dist/vue.runtime.min.js'
         }
     },
     module: {
