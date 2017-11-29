@@ -57,12 +57,12 @@
 	}
 </script>
 <style lang="scss">
-.muxi_logo {
-	height: 40px;
-}
+// .muxi_logo {
+// 	height: 40px;
+// }
 
-.design_logo {
-	height: 120px;
-	border-radius: 24px;
-}
+// .design_logo {
+// 	height: 120px;
+// 	border-radius: 24px;
+// }
 </style>
