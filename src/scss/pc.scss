@@ -25,17 +25,6 @@
 	overflow: hidden;
 	z-index: 3;
 }
-.sign {
-    height: 30px;
-    width: 100px;
-    color: #959595;
-    background: $grey;
-    margin: 0px -2px;
-    font-size: 14px;
-    position: fixed;
-    right: 0px;
-    top: 0px;
-}
 
 .content {
     width: 600px;
@@ -242,51 +231,8 @@ a {
 	background-color: $yellow;
 	cursor: pointer;
 }
-// .edit_comment {
-// 	height: 75px;
-// 	width: 380px;
-// 	border: 2px solid #e6e6e6;
-// }
-
-// .submit_comment {
-// 	background-color: $orange;
-// 	color: $white;
-// 	width: 50px;
-// 	height: 30px;
-// 	border-radius: 4px;
-// }
 
 .button_box {
 	margin-top: 15px;
 	font-size: 14px;
-}
-
-.tip_modal {
-    width: 200px;
-    height: 100px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border: 2px solid #dcdcdc;
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 4px;
-	font-size: 18px;
-	z-index: 10;
-}
-
-.tip_content {
-	margin-bottom: 50px;
-}
-
-
-.tip_button {
-    width: 40px;
-    height: 26px;
-	border-radius: 4px;
-}
-
-.tip_login {
-    margin-right: 15px;
 }

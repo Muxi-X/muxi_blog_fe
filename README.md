@@ -13,7 +13,6 @@
 ➜  muxi_blog_fe `cd server`
 
 ➜  server `npm install`
- 
-➜  server `node index.js` (Node version is v8.5.0)
 
+➜  server `node index.js` (Node version is v8.5.0)
 

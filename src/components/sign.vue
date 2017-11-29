@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="sign">
         <button class="signup_box full_width full_height">
 	        <div v-on:click="login" class="signup full_width full_height">登录 / 注册</div>
 	    </button>
@@ -21,6 +21,17 @@ export default {
 <style lang='scss'>
 // @import '../scss/utility.scss';
 @import '../scss/color.scss';
+.sign {
+    height: 30px;
+    width: 100px;
+    color: #959595;
+    background: $grey;
+    margin: 0px -2px;
+    font-size: 14px;
+    position: fixed;
+    right: 0px;
+    top: 0px;
+}
 .signup {
 	line-height: 25px;
 }

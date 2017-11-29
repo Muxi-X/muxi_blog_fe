@@ -9,47 +9,87 @@
         </div>
     </div>
 </template>
+
 <script>
-import Cookie from '../common/cookie.js'
-export default {
-    data() {
-        return {}
-    },
-    methods: {
-        login() {
-            Cookie.setCookie('url', window.location.href);
-            window.location = "https://pass.muxixyz.com?landing=blog.muxixyz.com/landing"
-            // window.location = "http://120.77.246.73:4000?landing=localhost:3000/landing"
+    import Cookie from '../common/cookie.js'
+    import FecthSort from '../common/sortMap.js'
+    
+    export default {
+        data() {
+            return {}
         },
-        cancel() {
-            this.$emit('cancel')
+        methods: {
+            login() {
+                Cookie.setCookie('url', window.location.href);
+                window.location = "https://pass.muxixyz.com?landing=blog.muxixyz.com/landing"
+                // window.location = "http://120.77.246.73:4000?landing=localhost:3000/landing"
+            },
+            cancel() {
+                var api = window.location.pathname;
+                var find = api.split('/')[1];
+                this.kind = FecthSort.SortMap[find];
+                if (this.kind != 8) {
+                    this.$emit('cancel')
+                } else {
+                    window.location.href = "/"
+                }
+            }
         }
     }
-}
 </script>
+
 <style lang="scss">
-@import "../scss/color.scss";
-.tip_mask {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    width: 100%;
-    z-index: 3;
-    background-color: rgba(51, 51, 51, 0.85);
-}
-.tip_footer {
-    float: right;
-}
-
-.tip_button:hover {
-    color: $white;
-}
-
-.tip_login:hover {
-    background-color: $orange;
-}
-
-.tip_cancel:hover {
-    background-color: $yellow;
-}
+    @import "../scss/color.scss";
+    .tip_mask {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+        z-index: 3;
+        background-color: rgba(51, 51, 51, 0.85);
+    }
+    
+    .tip_footer {
+        float: right;
+    }
+    
+    .tip_cancel {
+        background-color: $grey;
+    }
+    
+    .tip_modal {
+        width: 200px;
+        height: 100px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border: 2px solid #dcdcdc;
+        background-color: #ffffff;
+        padding: 20px;
+        border-radius: 4px;
+        font-size: 18px;
+        z-index: 10;
+    }
+    
+    .tip_content {
+        margin-bottom: 50px;
+    }
+    
+    .tip_button {
+        color: $white;
+        width: 40px;
+        height: 26px;
+        border-radius: 4px;
+    }
+    
+    .tip_button:hover {
+        color: $white;
+        background-color: $yellow;
+    }
+    
+    .tip_login {
+        margin-right: 15px;
+        background-color: $orange;
+    }
 </style>

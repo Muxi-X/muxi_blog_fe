@@ -1,29 +1,28 @@
 <template>
     <div>
-        <!-- <navi class="navi"></navi> -->
-        <sign class="sign"></sign>
+        <!-- <sign class="sign"></sign> -->
         <div class="main">
             <textarea v-model="title" class="title margin" placeholder="文章标题"></textarea>
             <div class="group margin">
                 <label for="web">
-                        <input type="radio" id="web" value="1" v-model="group"> Web
-                    </label>
+                    <input type="radio" id="web" value="1" v-model="group"> Web
+                </label>
                 <label for="android">
-                        <input type="radio" id="android" value="3" v-model="group"> Android
-                    </label>
+                    <input type="radio" id="android" value="3" v-model="group"> Android
+                </label>
                 <label for="design">
-                        <input type="radio" id="design" value="2" v-model="group"> Design
-                    </label>
+                    <input type="radio" id="design" value="2" v-model="group"> Design
+                </label>
                 <label for="product">
-                        <input type="radio" id="product" value="4" v-model="group"> Product
-                    </label>
+                    <input type="radio" id="product" value="4" v-model="group"> Product
+                </label>
             </div>
             <div class="group margin">
                 <input v-model="this.image" placeholder="博客的封面图" class="image">
-                <input v-model="new_tag" @keyup.enter="add_tag" placeholder="标签" autofocus class="write_tag inline_block">
-                <button v-on:click="add_tag" class="add_tag inline_block">ADD</button>
+                <input v-model="new_tag" @keyup.enter="addTag" placeholder="标签" autofocus class="write_tag inline_block">
+                <button v-on:click="addTag" class="add_tag inline_block">ADD</button>
                 <div v-for="tag in tags" class="tag_list inline_block" :key="tags.indexOf(tag)"> {{tag}}
-                    <button v-on:click="remove_tag(tag)" class="delete">X</button>
+                    <button v-on:click="removeTag(tag)" class="delete">X</button>
                 </div>
                 <div v-if="this.tip" class="tip">最多五个标签</div>
             </div>
@@ -43,7 +42,7 @@
 
 <script>
     // import navigation from './navigation.vue'
-    import sign from './sign.vue'
+    // import sign from './sign.vue'
     import modal from './modal.vue'
     import Cookie from '../common/cookie.js'
     var _ = require('lodash');
@@ -76,8 +75,13 @@
         },
         components: {
             // "navi": navigation,
-            "sign": sign,
+            // "sign": sign,
             "modal": modal
+        },
+        mounted() {
+            if (!Cookie.getCookie("token")) {
+                this.login_tip = true
+            }
         },
         computed: {
             compiledMarkdown: function() {
@@ -96,13 +100,13 @@
                     this.tip = true
                 }
             },
-            remove_tag(tag) {
+            removeTag(tag) {
                 var index = this.tags.indexOf(tag);
                 this.tags.splice(index, 1);
             },
-            show_tip() {
-                this.login_tip = true
-            },
+            // showTip() {
+            //     this.login_tip = true
+            // },
             cancel() {
                 this.login_tip = false
             },
@@ -208,7 +212,7 @@
         height: 36px;
         border-radius: 2px;
         color: #fff;
-        background-color: #ffc162;
+        background-color: $orange;
         margin-left: 100px;
         margin-top: 30px;
     }
@@ -218,44 +222,45 @@
         width: 80px;
         height: 20px;
         font-size: 16px;
-        border: 2px solid #ffc162;
+        border: 2px solid $yellow;
         margin-right: 20px;
     }
     
     .add_tag {
         color: #fff;
-        background-color: #ffc162;
+        background-color: $yellow;
         border-radius: 2px;
     }
     
     .add_tag:hover {
-        background-color: #f29a76;
+        background-color: $orange;
         cursor: pointer;
     }
     
-    .tag_list {
+    .tag_list{
         margin-left: 20px;
-        color: #ffc162;
+        color: $yellow;
     }
     
-    .tip {
-        color: #f29a76;
+    .tip{
+        color: $orange;
     }
     
     .delete {
         border-radius: 2px;
         font-size: 12px;
-        color: #ffffff;
+        color: $white;
         width: 14px;
         height: 14px;
         vertical-align: middle;
         text-align: center;
+        background-color: $yellow;
     }
     
     .delete:hover {
         cursor: pointer;
-        background-color: #f29a76;
-        color: #fff;
+        background-color: $orange;
+        color: $white;
     }
     
     .image {

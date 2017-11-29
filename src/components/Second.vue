@@ -1,7 +1,7 @@
 <template>
     <div>
         <!-- <navi class="navi"></navi> -->
-        <sign class="sign"></sign>
+        <!-- <sign class="sign"></sign> -->
         <div class="main">
             <img class="avatar inline_block" :src="blog.avatar">
             <div class="right inline_block">
@@ -30,7 +30,7 @@
 
 <script>
     //import navigation from './navigation.vue'
-    import sign from './sign.vue'
+    // import sign from './sign.vue'
     import commentBox from './commentBox.vue'
     import Cookie from '../common/cookie.js'
     import modal from './modal.vue'
@@ -63,7 +63,7 @@
         },
         components: {
             // "navi": navigation,
-            "sign": sign,
+            // "sign": sign,
             "comment-box": commentBox,
             "modal": modal
         },

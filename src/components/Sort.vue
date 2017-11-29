@@ -1,6 +1,6 @@
 <template>
     <div class="wrap">
-        <sign class="sign"></sign>
+        <!-- <sign class="sign"></sign> -->
         <!-- <navi class="navi"></navi> -->
         <list class="content" 
              :items="this.items" 
@@ -17,7 +17,7 @@
 </template>
 <script>
 // import navigation from './navigation.vue'
-import sign from './sign.vue'
+// import sign from './sign.vue'
 import content from './content.vue'
 import tags from './tags.vue'
 import archive from './archive.vue'
@@ -37,7 +37,7 @@ export default {
     },
     components: {
         // "navi": navigation,
-        "sign": sign,
+        // "sign": sign,
         "list": content,
         "tag-box": tags,
         "archive-box": archive

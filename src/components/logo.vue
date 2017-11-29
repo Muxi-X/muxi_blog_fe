@@ -1,31 +1,31 @@
 <template>
 	<div>
-		<a href="/" class="margin logo muxi_logo" v-if="this.kind == 0">
-			<img src="../assets/blog_logo.png" class="logo">
+		<a href="/" class="margin logo" v-if="this.kind == 0">
+			<img src="../assets/blog_logo.png" class="logo muxi_logo">
 		</a>
 		<a href="/web" class="margin logo muxi_logo"  v-else-if="this.kind == 1">
-			<img src="../assets/blog_logo.png" class="logo">
+			<img src="../assets/blog_logo.png" class="logo muxi_logo">
 		</a>
 		<a href="/design" class="margin logo" v-else-if="this.kind == 2">
 			<img src="../assets/MED.png" class="logo design_logo">
 		</a>
 		<a href="/android" class="margin logo muxi_logo" v-else-if="this.kind == 3">
-			<img src="../assets/blog_logo.png" class="logo">
+			<img src="../assets/blog_logo.png" class="logo muxi_logo">
 		</a>
 		<a href="/product" class="margin logo muxi_logo" v-else-if="this.kind == 4">
-			<img src="../assets/blog_logo.png" class="logo">
+			<img src="../assets/blog_logo.png" class="logo muxi_logo">
 		</a>
 		<a :href="/tagBlogs/ + this.tag" class="margin logo muxi_logo" v-else-if="this.kind == 5">
-			<img src="../assets/blog_logo.png" class="logo">
+			<img src="../assets/blog_logo.png" class="logo muxi_logo">
 		</a>
 		<a :href="/archiveBlogs/ + this.year + '/' + this.month" class="margin logo muxi_logo" v-else-if="this.kind == 6">
-			<img src="../assets/blog_logo.png" class="logo">
+			<img src="../assets/blog_logo.png" class="logo muxi_logo">
 		</a>
 		<a href="/" class="margin logo muxi_logo" v-else-if="this.kind == 7">
-			<img src="../assets/blog_logo.png" class="logo">
+			<img src="../assets/blog_logo.png" class="logo muxi_logo">
 		</a>
 		<a href="/" class="margin logo muxi_logo" v-else-if="this.kind == 8">
-			<img src="../assets/blog_logo.png" class="logo">
+			<img src="../assets/blog_logo.png" class="logo muxi_logo">
 		</a>
 	</div>
 </template>
