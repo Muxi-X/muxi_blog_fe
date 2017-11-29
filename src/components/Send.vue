@@ -78,11 +78,11 @@
             // "sign": sign,
             "modal": modal
         },
-        mounted() {
-            if (!Cookie.getCookie("token")) {
-                this.login_tip = true
-            }
-        },
+        // mounted() {
+        //     if (!Cookie.getCookie("token")) {
+        //         this.login_tip = true
+        //     }
+        // },
         computed: {
             compiledMarkdown: function() {
                 return marked(this.input, {
