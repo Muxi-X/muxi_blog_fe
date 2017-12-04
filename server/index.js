@@ -102,7 +102,7 @@ router.get('/tagBlogs/:id', function (ctx, next) {
         ctx.body = template({})
     }
 });
-router.get('/archiveBlogs/:id', function (ctx, next) {
+router.get('/archiveBlogs/:id/:id', function (ctx, next) {
     if (!ctx.userAgent.isMobile) {
         let template = swig.compileFile(path.resolve(templateRoot, "archiveBlogs.html"));
         ctx.body = template({})
