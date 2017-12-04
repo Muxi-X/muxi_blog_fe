@@ -24,7 +24,7 @@ router.get('/', function (ctx, next) {
     }
 });
 
-router.get('/second', function (ctx, next) {
+router.get('/second/:id', function (ctx, next) {
     if (!ctx.userAgent.isMobile) {
         let template = swig.compileFile(path.resolve(templateRoot, "second.html"));
         ctx.body = template({})
@@ -93,7 +93,7 @@ router.get('/product', function (ctx, next) {
         ctx.body = template({})
     }
 });
-router.get('/tagBlogs', function (ctx, next) {
+router.get('/tagBlogs/:id', function (ctx, next) {
     if (!ctx.userAgent.isMobile) {
         let template = swig.compileFile(path.resolve(templateRoot, "tagBlogs.html"));
         ctx.body = template({})
@@ -102,7 +102,7 @@ router.get('/tagBlogs', function (ctx, next) {
         ctx.body = template({})
     }
 });
-router.get('/archiveBlogs', function (ctx, next) {
+router.get('/archiveBlogs/:id', function (ctx, next) {
     if (!ctx.userAgent.isMobile) {
         let template = swig.compileFile(path.resolve(templateRoot, "archiveBlogs.html"));
         ctx.body = template({})

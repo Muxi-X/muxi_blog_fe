@@ -43,7 +43,7 @@ export default {
                         password: "muxistudio@ccnu"
                     })
                 }).then(value => {
-                    console.log("finish blog register")
+                    // console.log("finish blog register")
                     fetch("/api/v2.0/login/", {
                         method: 'POST',
                         headers: {
