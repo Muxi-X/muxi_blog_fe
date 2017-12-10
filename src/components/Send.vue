@@ -73,11 +73,11 @@
         components: {
             "modal": modal
         },
-        // mounted() {
-        //     if (!Cookie.getCookie("token")) {
-        //         this.login_tip = true
-        //     }
-        // },
+        mounted() {
+            if (!Cookie.getCookie("token")) {
+                this.login_tip = true
+            }
+        },
         computed: {
             compiledMarkdown: function() {
                 return marked(this.input, {
@@ -99,9 +99,6 @@
                 var index = this.tags.indexOf(tag);
                 this.tags.splice(index, 1);
             },
-            // showTip() {
-            //     this.login_tip = true
-            // },
             cancel() {
                 this.login_tip = false
             },
