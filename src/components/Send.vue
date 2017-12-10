@@ -1,6 +1,5 @@
 <template>
     <div>
-        <!-- <sign class="sign"></sign> -->
         <div class="main">
             <textarea v-model="title" class="title margin" placeholder="文章标题"></textarea>
             <div class="group margin">
@@ -41,8 +40,6 @@
 </template>
 
 <script>
-    // import navigation from './navigation.vue'
-    // import sign from './sign.vue'
     import modal from './modal.vue'
     import Cookie from '../common/cookie.js'
     var _ = require('lodash');
@@ -74,15 +71,13 @@
             }
         },
         components: {
-            // "navi": navigation,
-            // "sign": sign,
             "modal": modal
         },
-        mounted() {
-            if (!Cookie.getCookie("token")) {
-                this.login_tip = true
-            }
-        },
+        // mounted() {
+        //     if (!Cookie.getCookie("token")) {
+        //         this.login_tip = true
+        //     }
+        // },
         computed: {
             compiledMarkdown: function() {
                 return marked(this.input, {
@@ -145,8 +140,9 @@
 </script>
 
 <style lang="scss">
-    @import '../scss/utility.scss';
-    @import '../scss/pc.scss';
+   // @import '../scss/utility.scss';
+   // @import '../scss/pc.scss';
+   @import '../scss/color.scss';
     code {
         color: #f29a76;
     }

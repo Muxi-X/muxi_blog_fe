@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="nav">
+    <div class="nav full_width">
       <div class="navi_col full_height">
         <a href="/" class="link full_width">
           <svg class="icon vertical_align inline_block" viewBox="0 0 1024 1024">
@@ -72,8 +72,6 @@ export default {
 </script>
 
 <style lang="scss">
-// @import '../scss/utility.scss';
-// @import '../scss/mobile.scss';
 @import "../scss/color.scss";
 .navi_col {
   width: 40%;
@@ -89,7 +87,6 @@ export default {
   position: fixed;
   top: 0px;
   bottom: 0;
-  width: 100%;
 }
 
 .mask {

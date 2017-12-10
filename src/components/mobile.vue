@@ -29,7 +29,9 @@ export default {
       tag: "",
       year: 0,
       month: 0,
-      Url: ""
+      Url: "",
+      pages_count: 0,
+      blog_num: 0
     }
   },
   components: {
@@ -73,7 +75,8 @@ export default {
       }
     },
     fetch_url() {
-      fetch('/api/v2.0' + this.Url + '/?page=' + this.page_num).then(res => {
+      // fetch('/api/v2.0' + this.Url + '/?page=' + this.page_num).then(res => {
+        fetch('/api/v2.0/?page=' + this.page_num).then(res => {
         return res.json()
       })
         .then(res => {
@@ -87,9 +90,6 @@ export default {
 }
 </script>
 <style lang="scss">
-@import '../scss/mobile.scss';
-@import '../scss/utility.scss';
-@import "../scss/color.scss";
+@import "../scss/mobile.scss";
 </style>
-
 

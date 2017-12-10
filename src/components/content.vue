@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<div class="blogs_box margin" v-if="this.blog_num">
-			<a :href="/second/+ item.id" v-for="item in items" :key="item.id" class="content_box full_width" v-on:click="toSecond">
+			<a :href="/second/+ item.id" v-for="item in items" :key="item.id" class="content_box full_width">
 			 <div class="mask">
 				<div class="left_box inline_block full-height">
 					<div class="content_top">

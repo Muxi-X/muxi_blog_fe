@@ -17,29 +17,3 @@ export default {
 	}
 }
 </script>
-
-<style lang='scss'>
-// @import '../scss/utility.scss';
-@import '../scss/color.scss';
-// .sign {
-//     height: 30px;
-//     width: 100px;
-//     color: #959595;
-//     background: $grey;
-//     margin: 0px -2px;
-//     font-size: 14px;
-//     position: fixed;
-//     right: 0px;
-//     top: 0px;
-// }
-// .signup {
-// 	line-height: 25px;
-// }
-// .signup_box:hover {
-// 	background-color: $yellow;
-// 	cursor: pointer;
-// 	.signup { 
-// 		color: $white;
-// 	}
-// }
-</style>

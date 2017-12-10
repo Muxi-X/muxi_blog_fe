@@ -17,7 +17,7 @@ import tags from './tags.vue'
 export default {
   data() {
     return {
-      showNavi: true
+      show_navi: true
     }
   },
   components: {
@@ -34,8 +34,6 @@ export default {
 </script>
 <style lang="scss">
 @import '../scss/mobile.scss';
-@import '../scss/utility.scss';
-@import "../scss/color.scss";
 </style>
 
 

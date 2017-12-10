@@ -1,6 +1,6 @@
 <template>
     <div class="mobile full_height full_width">
-        <mobile-header v-on:clickButton="this.show"></mobile-header>
+        <mobile-header v-on:click_button="this.show"></mobile-header>
         <div class="full_width cont">
             <archive-box class="box_style"></archive-box>
         </div>
@@ -34,8 +34,7 @@ export default {
 </script>
 <style lang="scss">
 @import '../scss/mobile.scss';
-@import '../scss/utility.scss';
-@import "../scss/color.scss";
 </style>
+
 
 

@@ -118,7 +118,7 @@
 
 <style lang="scss">
     @import '../scss/mobile.scss';
-    @import '../scss/utility.scss';
+    @import '../scss/color.scss';
     .view_blog {
         width: 75%;
         background-color: $white;

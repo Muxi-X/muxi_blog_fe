@@ -19,7 +19,10 @@ module.exports = merge(baseWebpackConfig, {
     // },
     // cheap-module-eval-source-map is faster for development
     resolve: {
-        extensions: ['.js', '.vue', '.json']
+        extensions: ['.js', '.vue', '.json'],
+        alias: {
+            'vue$': 'vue/dist/vue.js'
+        }
     },
     devtool: '#cheap-module-eval-source-map',
     plugins: [

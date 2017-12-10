@@ -1,7 +1,5 @@
 <template>
     <div class="wrap">
-        <!-- <sign class="sign"></sign> -->
-        <!-- <navi class="navi"></navi> -->
         <list class="content" 
              :items="this.items" 
              :pages_count="this.pages_count" 
@@ -16,8 +14,6 @@
     </div>
 </template>
 <script>
-// import navigation from './navigation.vue'
-// import sign from './sign.vue'
 import content from './content.vue'
 import tags from './tags.vue'
 import archive from './archive.vue'
@@ -32,12 +28,12 @@ export default {
             tag: "",
             year: 0,
             month: 0,
-            Url: ""
+            Url: "",
+            pages_count: 0,
+            blog_num: 0,
         }
     },
     components: {
-        // "navi": navigation,
-        // "sign": sign,
         "list": content,
         "tag-box": tags,
         "archive-box": archive
@@ -88,8 +84,8 @@ export default {
     }
 }
 </script>
-<style lang='scss'>
-@import '../scss/pc.scss';
-@import '../scss/utility.scss';
+ <style lang='scss'>
+// @import '../scss/pc.scss';
+// @import '../scss/utility.scss';
 
-</style>
+ </style>

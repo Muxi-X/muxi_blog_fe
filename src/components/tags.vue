@@ -36,8 +36,6 @@ export default {
 }
 </script>
 <style lang="scss">
-// @import '../scss/pc.scss';
-// @import '../scss/utility.scss';
 @import "../scss/color.scss";
 .tag_icon {
 	width: 25px;
@@ -57,7 +55,6 @@ export default {
 	border-radius: 2px;
 }
 .item_list {
-	height: 16px;
 	font-size: 14px;
 	height: 180px;
 	overflow: hidden;
