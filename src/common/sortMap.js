@@ -8,6 +8,7 @@ export default {
         "tagBlogs": 5,
         "archiveBlogs": 6,
         "second": 7,
-        "send": 8
+        "send": 8,
+        "edit": 9
     }
 }

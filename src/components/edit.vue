@@ -1,20 +1,20 @@
 <template>
     <div>
-        <send-blog :flag = "this.edit_flag"></send-blog>
+        <edit-blog :flag = "this.edit_flag"></edit-blog>
     </div>
 </template>
 <script>
 import Cookie from '../common/cookie.js'
-import send from './EditSend.vue'
+import edit from './EditSend.vue'
 
 export default {
     data() {
         return {
-            edit_flag: false
+            edit_flag: true
         }
     },
     components: {
-        "send-blog": send
+        "edit-blog": edit
     }
 }
 </script>

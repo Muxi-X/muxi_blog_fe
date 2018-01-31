@@ -1,8 +1,8 @@
 <template>
     <div>
         <div class="blogs_box margin" v-if="this.blog_num">
-            <!-- <a :href="/second/+ item.id" v-for="item in items" :key="item.id" class="content_box full_width"> -->
-            <a :href="/mobileSecond/+ item.id" v-for="item in items" :key="item.id" class="content_box full_width">
+            <a :href="/second/+ item.id" v-for="item in items" :key="item.id" class="content_box full_width">
+            <!-- <a :href="/mobileSecond/+ item.id" v-for="item in items" :key="item.id" class="content_box full_width"> -->
                 <div class="content_top">
                     <img class="avatar_size inline_block full_height" v-bind:src="item.avatar">
                     <div class="top_right inline_block full_height">

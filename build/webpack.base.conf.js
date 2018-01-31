@@ -23,6 +23,7 @@ module.exports = {
         second: './src/second.js',
         mobileHome: './src/mobileHome.js',
         send: './src/send.js',
+        edit: './src/edit.js',
         viewTags: './src/viewTags.js',
         viewArchive: './src/viewArchive.js',
         mobileWeb: './src/mobileWeb.js',
@@ -268,6 +269,13 @@ module.exports = {
             inject: false, 
             template: path.join(__dirname, '../template/navi.ejs'),
             chunks: ['navigation']
+        }),
+        new HtmlWebpackPlugin({
+            alwaysWriteToDisk: true,
+            filename: 'template/edit.html',
+            inject: false, 
+            template: path.join(__dirname, '../template/edit.ejs'),
+            chunks: ['common','edit','navigation']
         }),
         new HtmlWebpackHarddiskPlugin()
     ]

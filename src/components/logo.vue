@@ -27,6 +27,9 @@
 		<a href="/" class="logo muxi_logo" v-else-if="this.kind == 8">
 			<img src="../assets/blog_logo.png" class="logo muxi_logo">
 		</a>
+		<a href="/" class="logo muxi_logo" v-else-if="this.kind == 9">
+			<img src="../assets/blog_logo.png" class="logo muxi_logo">
+		</a>
 	</div>
 </template>
 

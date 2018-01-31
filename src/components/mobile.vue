@@ -75,8 +75,7 @@ export default {
       }
     },
     fetch_url() {
-      // fetch('/api/v2.0' + this.Url + '/?page=' + this.page_num).then(res => {
-        fetch('/api/v2.0/?page=' + this.page_num).then(res => {
+      fetch('/api/v2.0' + this.Url + '/?page=' + this.page_num).then(res => {
         return res.json()
       })
         .then(res => {

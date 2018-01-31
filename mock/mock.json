@@ -36,6 +36,12 @@
             "async": false
         },
         {
+            "name": "edit",
+            "endpoint": "/edit/:Int",
+            "template": "edit",
+            "async": false
+        },
+        {
             "name": "send",
             "endpoint": "/send",
             "template": "send",

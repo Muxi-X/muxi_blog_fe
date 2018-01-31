@@ -6,6 +6,8 @@
                 <div class="title full_width">{{blog.title}}</div>
                 <div class="author inline_block">{{blog.username}}</div>
                 <div class="time inline_block">{{blog.date}}</div>
+                <div class="author inline_block delete_blog" v-on:click="edit_blog">编辑</div>
+                <div class="author inline_block delete_blog" v-on:click="delete_blog">删除</div>
                 <div v-html="compiledMarkdown" class="article"></div>
                 <div class="second_tag_list full_width">
                     <div class="tag inline_block" v-for="tag in tags" :key="tags.indexOf(tag)">{{tag}}</div>
@@ -54,7 +56,8 @@
                 },
                 id: 0,
                 login_tip: false,
-                body: ""
+                body: "",
+                token: ""
             }
         },
         components: {
@@ -62,6 +65,8 @@
             "modal": modal
         },
         mounted() {
+            this.token = Cookie.getCookie("token");
+
             var api = window.location.pathname;
             this.id = api.split('/')[2];
             fetch('/api/v2.0/' + this.id + '/views/').then(res => {
@@ -95,6 +100,24 @@
             },
             cancel() {
                 this.login_tip = false
+            },
+            delete_blog() {
+                fetch('/api/v2.0/' + this.id + '/delete/', {
+                    method: 'DELETE',
+                    header: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json',
+                        'token': this.token
+                    }
+                }).then(res => {
+                    if (res.ok)
+                        window.location.pathname = "/";
+                    else
+                        this.login_tip = true
+                })
+            },
+            edit_blog() {
+                window.location.pathname = "/edit/" + this.id
             }
         }
     }

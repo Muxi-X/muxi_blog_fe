@@ -1,11 +1,11 @@
 <template>
     <div class="wrap">
         <list class="content" 
-             :items="this.items" 
-             :pages_count="this.pages_count" 
-             :blog_num="this.blog_num"
-             v-on:page_up="page_up" 
-             v-on:page_down="page_down">
+            :items="this.items" 
+            :pages_count="this.pages_count" 
+            :blog_num="this.blog_num"
+            v-on:page_up="page_up" 
+            v-on:page_down="page_down">
         </list>
          <div class="boxs">
             <tag-box class="tagBox"></tag-box>

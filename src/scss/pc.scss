@@ -161,6 +161,10 @@ a {
 .bottom_left {
 	vertical-align: top;
 }
+.avatar_size {
+	margin: 0 10px;
+	border-radius: 2px;
+}
 
 .bottom_left {
 	padding: 15px;
@@ -183,6 +187,9 @@ a {
 
 .blog_title {
 	font-size: 20px;
+	overflow-x: hidden;
+    width: 320px;
+    height: 30px;
 }
 
 .comment_num {
@@ -241,14 +248,17 @@ a {
     width: 100px;
     color: #959595;
     background: $grey;
-    margin: 0px -2px;
+    margin: 0 -2px;
     font-size: 14px;
     position: fixed;
-    right: 0px;
-    top: 0px;
+    right: 0;
+	top: 0;
 }
 .signup {
 	line-height: 25px;
+}
+.signup_box,.sign {
+	border-radius: 4px;
 }
 .signup_box:hover {
 	background-color: $yellow;
@@ -265,4 +275,8 @@ a {
 .design_logo {
 	height: 120px;
 	border-radius: 24px;
+}
+.delete_blog {
+	margin-left: 5px;
+	cursor: pointer;
 }

@@ -1,13 +1,13 @@
 <template>
-  <div class="mobile full_height full_width">
-    <mobile-header v-on:click_button="this.show"></mobile-header>
-    <div class="full_width cont">
-      <tag-box class="box_style"></tag-box>
+    <div class="mobile full_height full_width">
+        <mobile-header v-on:click_button="this.show"></mobile-header>
+        <div class="full_width cont">
+            <tag-box class="box_style"></tag-box>
+        </div>
+        <transition name="slide-fade">
+          <mobile-navi class="moblie_navi" v-show="this.show_navi" v-on:click_mask="this.show"></mobile-navi>
+       </transition>
     </div>
-    <transition name="slide-fade">
-      <mobile-navi class="moblie_navi" v-show="this.show_navi" v-on:click_mask="this.show"></mobile-navi>
-    </transition>
-  </div>
 </template>
 <script>
 import header from './header'
