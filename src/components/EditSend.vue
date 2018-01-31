@@ -158,7 +158,10 @@
                             tags: this.tags
                         })
                     }).then(res => {
-                        if (res.ok) return res.json()
+                        if (res.ok)
+                            return res.json()
+                        else 
+                            this.login_tip = true;
                     }).then(res => {
                         window.location.pathname = "/second/" + res.id
                     })                         
