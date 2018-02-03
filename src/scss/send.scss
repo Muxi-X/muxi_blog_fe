@@ -27,8 +27,8 @@
         padding: 10px 20px;
         border-bottom: 2px solid #d9dcdc;
         width: 764px;
+        
     }
-    
     .editor {
         font-size: 0;
         overflow: scroll;
@@ -74,11 +74,15 @@
         width: 80px;
         height: 20px;
         font-size: 16px;
-        border: 2px solid $yellow;
         margin-right: 20px;
+    }
+
+    .write_tag {
+        border-bottom: 1px solid $yellow;
     }
     
     .add_tag {
+        padding: 2px 2px;
         color: #fff;
         background-color: $yellow;
         border-radius: 2px;
@@ -89,13 +93,15 @@
         cursor: pointer;
     }
     
-    .tag_list{
+    .new_tag{
         margin-left: 20px;
         color: $yellow;
+        font-size: 14px;
     }
     
     .tip{
         color: $orange;
+        font-size: 12px;
     }
     
     .delete {

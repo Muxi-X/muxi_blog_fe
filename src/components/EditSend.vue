@@ -17,20 +17,22 @@
                 </label>
             </div>
             <div class="group margin">
-                <input v-model="this.image" placeholder="博客的封面图" class="image">
-                <input v-model="new_tag" @keyup.enter="addTag" placeholder="标签" autofocus class="write_tag inline_block">
-                <button v-on:click="addTag" class="add_tag inline_block">ADD</button>
-                <div v-for="tag in tags" class="tag_list inline_block" :key="tags.indexOf(tag)"> {{tag}}
-                    <button v-on:click="removeTag(tag)" class="delete">X</button>
-                </div>
-                <div v-if="this.tip" class="tip">最多五个标签</div>
+                <input v-model="this.image" placeholder="博客的封面图url（选填）" class="image">
             </div>
-            <textarea v-model.trim="summary" class="summary" placeholder="Summary...(no more than 100 words)" maxlength="100"></textarea>
+            <textarea v-model.trim="summary" class="summary" placeholder="Summary (不超过100字)" maxlength="100"></textarea>
             <div class="editor">
                 <textarea :value="input" @input="update" class="write inline_block"></textarea>
                 <div class="md_box inline_block">
                     <div v-html="compiledMarkdown" class="view_md"></div>
                 </div>
+            </div>
+            <div class="group">
+                <input v-model="new_tag" @blur="isBlur" @keyup.enter="addTag" placeholder="标签" autofocus class="write_tag inline_block">
+                <button v-on:click="addTag" class="add_tag inline_block">ADD</button>
+                <div v-for="tag in tags" class="new_tag inline_block" :key="tags.indexOf(tag)"> {{tag}}
+                    <button v-on:click="removeTag(tag)" class="delete">X</button>
+                </div>
+                <div v-if="this.tip" class="tip">最多五个标签</div>
             </div>
             <button v-on:click="submit" class="submit">POST</button>
         </div>
@@ -98,6 +100,9 @@
             }
         },
         methods: {
+            isBlur() {
+                this.tip = false
+            },
             get_blog() {
                 this.id = window.location.pathname.split('/')[2];
                 fetch('/api/v2.0/' + this.id + '/views/').then(res => {

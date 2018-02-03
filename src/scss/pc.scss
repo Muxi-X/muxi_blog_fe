@@ -1,7 +1,7 @@
 @import "./color.scss";
 .wrap {
-    height: 100%;
-    clear: both;
+  height: 100%;
+  clear: both;
 	min-width: 1200px;
 	display: flex;
 	-webkit-align-items: center;
@@ -187,9 +187,11 @@ a {
 
 .blog_title {
 	font-size: 20px;
-	overflow-x: hidden;
-    width: 320px;
-    height: 30px;
+  width: 300px;
+	height: 30px;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
 }
 
 .comment_num {
