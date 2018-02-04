@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import ViewArchive from './components/ViewArchive.vue'
+import ViewArchive from './components/mobile/ViewArchive.vue'
 import style from './scss/reset.scss'
 
 new Vue({

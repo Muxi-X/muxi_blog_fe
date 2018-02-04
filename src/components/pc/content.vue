@@ -9,7 +9,7 @@
 						<div class="top_right inline_block full_height">
 							<div class="blog_title">{{item.title}}</div>
 							<div>
-								<div class="blog_username inline_block min_font">{{item.username}}</div>
+								<div class="blog_username inline_block min_font">{{decodeURIComponent(item.username)}}</div>
 								<div class="blog_word inline_block min_font">{{new Date(item.date).toLocaleDateString("ja-JP")}}</div>
 							</div>
 						</div>

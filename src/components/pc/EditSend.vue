@@ -17,7 +17,7 @@
                 </label>
             </div>
             <div class="group margin">
-                <input v-model="this.image" placeholder="博客的封面图url（选填）" class="image">
+                <input v-model="image" placeholder="博客的封面图url（选填）" class="image">
             </div>
             <textarea v-model.trim="summary" class="summary" placeholder="Summary (不超过100字)" maxlength="100"></textarea>
             <div class="editor">
@@ -42,8 +42,8 @@
 </template>
 
 <script>
-    import modal from './modal.vue'
-    import Cookie from '../common/cookie.js'
+    import modal from '../modal.vue'
+    import Cookie from '../../common/cookie.js'
     var _ = require('lodash');
     var marked = require('marked')
     
@@ -182,6 +182,6 @@
 </script>
 
 <style lang="scss">
-@import '../scss/send.scss';
+@import '../../scss/send.scss';
 </style>
 

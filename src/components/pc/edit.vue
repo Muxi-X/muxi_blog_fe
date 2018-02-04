@@ -4,7 +4,7 @@
     </div>
 </template>
 <script>
-import Cookie from '../common/cookie.js'
+import Cookie from '../../common/cookie.js'
 import edit from './EditSend.vue'
 
 export default {

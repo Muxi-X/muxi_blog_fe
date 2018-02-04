@@ -12,7 +12,7 @@
 <script>
 import header from './header'
 import mobileNavi from './mobileNavi'
-import archive from './archive.vue'
+import archive from '../archive.vue'
 
 export default {
     data() {
@@ -33,7 +33,7 @@ export default {
 }
 </script>
 <style lang="scss">
-@import '../scss/mobile.scss';
+@import '../../scss/mobile.scss';
 </style>
 
 

@@ -17,7 +17,7 @@
 import header from './header'
 import mobileNavi from './mobileNavi'
 import mobileContent from './mobileContent'
-import FecthSort from '../common/sortMap.js'
+import FecthSort from '../../common/sortMap.js'
 
 export default {
   data() {
@@ -89,6 +89,6 @@ export default {
 }
 </script>
 <style lang="scss">
-@import "../scss/mobile.scss";
+@import "../../scss/mobile.scss";
 </style>
 

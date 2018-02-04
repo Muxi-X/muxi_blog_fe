@@ -3,7 +3,7 @@
       <svg class="navi_button pos" viewBox="0 0 93 93" v-on:click="show_side">
         <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#naviButton"></use>
       </svg>
-      <img src="../assets/blog_logo.png" class="blog_logo">
+      <img src="../../assets/blog_logo.png" class="blog_logo">
       <div v-on:click="login">
       <svg viewBox="0 0 2707 768" class="mobile_sign pos">
         <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#mobileSign"></use>
@@ -12,7 +12,7 @@
     </div>
 </template>
 <script>
-import Cookie from '../common/cookie.js'
+import Cookie from '../../common/cookie.js'
 export default {
   data() {
       return{

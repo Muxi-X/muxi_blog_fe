@@ -19,7 +19,7 @@
                 </div>
                 <div class="comment min_font" v-for="comment in comments" :key="comments.indexOf(comment)">
                     <div>
-                        <div class="comment_name inline_block">{{comment.username}}</div>
+                        <div class="comment_name inline_block">{{decodeURIComponent(comment.username)}}</div>
                         <div class="comment_date">{{new Date(comment.date).toLocaleDateString()}}</div>
                     </div>
                     <div class="comment_text">{{comment.comment}}</div>
@@ -38,8 +38,8 @@
 <script>
     import header from './header'
     import mobileNavi from './mobileNavi'
-    import commentBox from './commentBox'
-    import modal from './modal.vue'
+    import commentBox from '../commentBox'
+    import modal from '../modal.vue'
     var _ = require('lodash');
     var marked = require('marked')
     
@@ -117,8 +117,9 @@
 </script>
 
 <style lang="scss">
-    @import '../scss/mobile.scss';
-    @import '../scss/color.scss';
+    @import '../../scss/mobile.scss';
+    @import '../../scss/color.scss';
+
     .view_blog {
         width: 75%;
         background-color: $white;

@@ -15,9 +15,9 @@
 </template>
 <script>
 import content from './content.vue'
-import tags from './tags.vue'
-import archive from './archive.vue'
-import FecthSort from '../common/sortMap.js'
+import tags from '../tags.vue'
+import archive from '../archive.vue'
+import FecthSort from '../../common/sortMap.js'
 
 export default {
     data() {
@@ -84,8 +84,3 @@ export default {
     }
 }
 </script>
- <style lang='scss'>
-// @import '../scss/pc.scss';
-// @import '../scss/utility.scss';
-
- </style>

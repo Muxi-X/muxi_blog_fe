@@ -72,7 +72,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import "../scss/color.scss";
+@import "../../scss/color.scss";
 .navi_col {
   width: 40%;
   background-color: $white;

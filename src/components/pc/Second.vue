@@ -4,8 +4,8 @@
             <img class="avatar inline_block" :src="blog.avatar">
             <div class="right inline_block">
                 <div class="title full_width">{{blog.title}}</div>
-                <div class="author inline_block">{{blog.username}}</div>
-                <div class="time inline_block">{{blog.date}}</div>
+                <div class="author inline_block">{{decodeURIComponent(blog.username)}}</div>
+                <div class="time inline_block">{{new Date(blog.date).toLocaleDateString("ja-JP")}}</div>
                 <div class="author inline_block delete_blog" v-on:click="edit_blog">编辑</div>
                 <div class="author inline_block delete_blog" v-on:click="delete_blog">删除</div>
                 <div v-html="compiledMarkdown" class="article"></div>
@@ -14,8 +14,8 @@
                 </div>
                 <div class="comment" v-for="comment in comments" :key="comments.indexOf(comment)">
                     <div>
-                        <div class="comment_name inline_block">{{comment.username}}</div>
-                        <div class="comment_date">{{comment.date}}</div>
+                        <div class="comment_name inline_block">{{decodeURIComponent(comment.username)}}</div>
+                        <div class="comment_date">{{new Date(comment.date).toLocaleDateString("ja-JP")}}</div>
                     </div>
                     <div class="comment_text">{{comment.comment}}</div>
                 </div>
@@ -29,9 +29,9 @@
 </template>
 
 <script>
-    import commentBox from './commentBox.vue'
-    import Cookie from '../common/cookie.js'
-    import modal from './modal.vue'
+    import commentBox from '../commentBox.vue'
+    import Cookie from '../../common/cookie.js'
+    import modal from '../modal.vue'
     var _ = require('lodash');
     var marked = require('marked')
     
@@ -138,7 +138,6 @@
     }
     
     .title {
-        height: 60px;
         font-size: 24px;
         font-weight: bold;
         color: #545866;
@@ -186,7 +185,6 @@
     }
     
     .comment_text {
-        width: 516px;
         margin-top: 10px;
     }
     

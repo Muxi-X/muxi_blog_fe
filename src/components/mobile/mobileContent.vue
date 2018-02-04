@@ -8,7 +8,7 @@
                     <div class="top_right inline_block full_height">
                         <div class="blog_title">{{item.title}}</div>
                         <div class="full_width">
-                            <div class="blog_username inline_block min_font">{{item.username}}</div>
+                            <div class="blog_username inline_block min_font">{{decodeURIComponent(item.username)}}</div>
                             <div class="blog_word inline_block min_font">{{new Date(item.date).toLocaleDateString("ja-JP")}}</div>
                             <svg class="content_icon inline_block" viewBox="0 0 1024 1024">
             					<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#commentIcon"></use>
