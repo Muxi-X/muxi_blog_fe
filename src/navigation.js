@@ -1,5 +1,4 @@
 import Vue from 'vue'
-import style from './scss/pc.scss' 
 import Logo from './components/pc/logo.vue'
 import SendButton from './components/pc/sendButton.vue'
 import Sign from './components/pc/sign.vue'

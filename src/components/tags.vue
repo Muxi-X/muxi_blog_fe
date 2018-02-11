@@ -7,9 +7,9 @@
 			<span class="tag_word">文章标签</span>
 		</div>
 		<div class="item_list">
-		<a v-for="item in items" 
-		   :href="'/tagBlogs/' + item" 
-		   class="item inline_block" 
+		<a v-for="item in items"
+		   :href="'/tagBlogs/' + item"
+		   class="item inline_block"
 		   :key="items.indexOf(item)">
 		   {{item}}
 		   </a>

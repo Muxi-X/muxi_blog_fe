@@ -10,6 +10,7 @@
 <!--      -->
     {% block header %}{% endblock %}
     {% block css %}{% endblock %}
+    <link rel="stylesheet" type="text/css" href="/static/css/commonStyle.css">
     <title>{% block title %}{% endblock %}</title>
 </head>
 
@@ -20,6 +21,8 @@
         <script src="/dist/manifest.js"></script>
     
         <script src="/dist/vendor.js"></script>
+    
+        <script src="/dist/commonStyle.js"></script>
     
     {% block script %}{% endblock %}
 </body>
