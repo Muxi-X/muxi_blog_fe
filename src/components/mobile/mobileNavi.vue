@@ -60,7 +60,7 @@
 export default {
   data() {
     return {
-      
+
     }
   },
   methods: {
@@ -84,14 +84,14 @@ export default {
 }
 
 .nav {
+  background-color: rgba(51, 51, 51, 0.3);
   position: fixed;
   top: 0px;
   bottom: 0;
 }
 
 .mask {
-  background-color: rgba(51, 51, 51, 0.3);
-  width: 60%; 
+  width: 60%;
   vertical-align: middle;
   top: 0px;
   left: 40%;
