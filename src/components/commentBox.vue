@@ -12,27 +12,22 @@ import Cookie from '../common/cookie.js'
 export default {
     data() {
         return {
-            message: ""
+            message: "",
+            token: ""
         }
     },
     props: ['id'],
     methods: {
         submit_comment(e) {
             e.stopPropagation();
-            if (Cookie.getCookie("token")) {
+            this.token = Cookie.getCookie("token")
+            if (this.token) {
                 if (this.message) {
-                    fetch('/api/v2.0/' + this.id + '/add_comment/', {
-                        method: 'POST',
-                        headers: {
-                            'Accept': 'application/json',
-                            'Content-Type': 'application/json',
-                            'token': Cookie.getCookie("token")
-                        },
-                        body: JSON.stringify({
-                            id: this.id,
-                            comment: this.message
-                        })
-                    }).then(res => {
+                    var body = {
+                        id: this.id,
+                        comment: this.message
+                    }
+                    Service.add_comment(this.id, this.token, body).then(res => {
                         this.message = ""
                         this.$emit('new_comment')
                     })

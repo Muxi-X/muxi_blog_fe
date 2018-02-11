@@ -6,6 +6,7 @@
 
 <script>
 import Cookie from '../common/cookie.js'
+import Service from '../common/service.js'
 
 export default {
     data() {
@@ -17,44 +18,19 @@ export default {
     },
     mounted() {
         this.username = window.location.href.split('?')[1].split('&')[0].split('=')[1]
-        Cookie.setCookie('Mt', window.location.href.split('?')[1].split('&')[1].split('=')[1])
-        fetch("/api/v2.0/login/", {
-            method: 'POST',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                username: this.username,
-                password: btoa("muxistudio@ccnu")
-            })
-        }).then(res => {
-            if (res.ok) {
-                return res.json()
+        Cookie.setCookie('username', this.username)
+        Cookie.setCookie('passToken', window.location.href.split('?')[1].split('&')[1].split('=')[1])
+        
+        let body = {
+            username: this.username,
+            passToken: btoa("muxistudio@ccnu")
+        }
+        Service.login(body).then(res => {
+            if (res !== null && res !== undefined){
+                return res;
             } else {
-                fetch("/api/v2.0/signup/", {
-                    method: 'POST',
-                    headers: {
-                        'Accept': 'application/json',
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({
-                        username: this.username,
-                        password: "muxistudio@ccnu"
-                    })
-                }).then(value => {
-                    // console.log("finish blog register")
-                    fetch("/api/v2.0/login/", {
-                        method: 'POST',
-                        headers: {
-                            'Accept': 'application/json',
-                            'Content-Type': 'application/json'
-                        },
-                        body: JSON.stringify({
-                            username: this.username,
-                            password: btoa("muxistudio@ccnu")
-                        })
-                    })
+                Service.register(body).then(value => {
+                    Service.login(body)
                 })
             }
         }).then(value => {

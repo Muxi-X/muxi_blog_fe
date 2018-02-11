@@ -18,7 +18,7 @@ import content from './content.vue'
 import tags from '../tags.vue'
 import archive from '../archive.vue'
 import FecthSort from '../../common/sortMap.js'
-
+import Service from '../../common/service.js'
 export default {
     data() {
         return {
@@ -55,25 +55,23 @@ export default {
         } else if (this.kind != 7) {
             this.Url = "/sort/?sort=" + this.kind;
         }
-        this.fetch_url()
+        this.get_Blogs()
     },
     methods: {
         page_up() {
             if (this.page_num != this.pages_count) {
                 this.page_num += 1;
-                this.fetch_url()
+                this.get_Blogs()
             }
         },
         page_down() {
             if (this.page_num != 1) {
                 this.page_num -= 1;
-                this.fetch_url()
+                this.get_Blogs()
             }
         },
-        fetch_url() {
-            fetch('/api/v2.0' + this.Url + '/?page=' + this.page_num).then(res => {
-                return res.json()
-            })
+        get_Blogs() {
+            Service.fetch_url(this.Url, this.page_num)
                 .then(res => {
                     this.items = res.blogs
                     this.pages_count = res.pages_count

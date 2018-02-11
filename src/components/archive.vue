@@ -19,6 +19,8 @@
 </template>
 
 <script>
+import Service from '../common/service.js'
+
 export default {
     data() {
         return {
@@ -26,12 +28,9 @@ export default {
         }
     },
     mounted() {
-        fetch('/api/v2.0/get_time/').then(res => {
-            return res.json()
+        Service.archive().then(res => {
+            this.items = res.time
         })
-            .then(res => {
-                this.items = res.time
-            })
     }
 }
 </script>

@@ -17,6 +17,7 @@
 	</div>
 </template>
 <script>
+import Service from '../common/service.js'
 export default {
 		data() {
 			return {
@@ -25,13 +26,10 @@ export default {
 			}
 		},
 		mounted() {
-			fetch('/api/v2.0/all_tags/').then(res => {
-                    return res.json()
-                })
-                .then(res => {
-                    this.items = res.tags
-                    this.num = res.tag_num
-                })
+			Service.all_tags().then(res => {
+        this.items = res.tags
+        this.num = res.tag_num
+    	})
 		}
 }
 </script>

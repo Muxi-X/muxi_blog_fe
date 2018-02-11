@@ -44,6 +44,8 @@
 <script>
     import modal from '../modal.vue'
     import Cookie from '../../common/cookie.js'
+    import Service from '../../common/service.js'
+
     var _ = require('lodash');
     var marked = require('marked')
     
@@ -75,7 +77,15 @@
                     type: Object
                 },
                 url: "",
-                used_method: ""
+                used_method: "",
+                body: {
+                    title: this.title, // 博客的标题
+                    summary: this.summary, // 博客小结
+                    body: this.input, // 博客的内容
+                    img_url: this.image, //图片  
+                    type_id: this.group, // 1是web ， 2 是设计 ， 3 是安卓，4是产品  
+                    tags: this.tags
+                }
             }
         },
         props: ['flag'],
@@ -105,9 +115,7 @@
             },
             get_blog() {
                 this.id = window.location.pathname.split('/')[2];
-                fetch('/api/v2.0/' + this.id + '/views/').then(res => {
-                return res.json()
-            }).then(res => {
+                Service.view(this.id).then(res => {
                 this.blog = res.blog
 
                 this.input = this.blog.body
@@ -139,36 +147,12 @@
                     this.image = "http://upload-images.jianshu.io/upload_images/4938344-0b55e372b7787ed3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"
 
                 if (this.token) {
-                    if (this.flag) { // edit
-                        this.url = '/api/v2.0/' + this.id + '/edit/';
-                        this.used_method = 'PUT';
-                    } else { // send
-                        this.url = '/api/v2.0/send/';
-                        this.used_method = 'POST';
-                    }
-
-                    fetch(this.url, {
-                        method: this.used_method,
-                        headers: {
-                            'Accept': 'application/json',
-                            'Content-Type': 'application/json',
-                            'token': this.token
-                        },
-                        body: JSON.stringify({
-                            title: this.title, // 博客的标题
-                            summary: this.summary, // 博客小结
-                            body: this.input, // 博客的内容
-                            img_url: this.image, //图片  
-                            type_id: this.group, // 1是web ， 2 是设计 ， 3 是安卓，4是产品  
-                            tags: this.tags
-                        })
-                    }).then(res => {
-                        if (res.ok)
-                            return res.json()
-                        else 
-                            this.login_tip = true;
-                    }).then(res => {
-                        window.location.pathname = "/second/" + res.id
+                    Service.edit_send(this.flag, this.token, this.used_method, this.body).then(res => {
+                        if (res.id) {
+                            window.location.pathname = "/second/" + res.id
+                        } else {
+                            this.login_tip = true
+                        }
                     })                         
                 } else {
                     this.login_tip = true
