@@ -1,6 +1,10 @@
 import Vue from 'vue'
 import Sort from './components/Sort'
-import style from './scss/reset.scss'
+
+import { Button, Select } from 'element-ui'
+
+Vue.component(Button.name, Button)
+Vue.component(Select.name, Select)
 
 const App = {
     template: "#app",

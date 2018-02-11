@@ -14,9 +14,18 @@ module.exports = merge(baseWebpackConfig, {
     // module: {
     //       noParse: /vue\.esm/
     // },
-    // module: {
-    //   rules: utils.styleLoaders({ sourceMap: config.dev.cssSourceMap })
-    // },
+    module: {
+      rules: [
+        {
+          test: /\.scss$/,
+          loaders: ["style-loader", "css-loader", "sass-loader"],
+        },
+        {
+          test: /\.css$/,
+          loaders: ["style-loader", "css-loader"],
+        },
+      ]
+    },
     // cheap-module-eval-source-map is faster for development
     resolve: {
         extensions: ['.js', '.vue', '.json'],

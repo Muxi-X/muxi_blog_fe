@@ -15,7 +15,7 @@ module.exports = {
     entry: {
         home: './src/home.js',
         web: './src/web.js',
-        android: './src/android.js', 
+        android: './src/android.js',
         design: './src/design.js',
         product: './src/product.js',
         archiveBlogs: './src/archiveBlogs.js',
@@ -34,7 +34,8 @@ module.exports = {
         mobileSecond: './src/mobileSecond.js',
         landing: './src/landing.js',
         mobileLanding: './src/mobileLanding.js',
-        navigation: './src/navigation.js'
+        navigation: './src/navigation.js',
+        commonStyle: './src/commonStyle.js'
     },
     output: {
         path: path.join(__dirname, "../"),
@@ -52,10 +53,8 @@ module.exports = {
             test: /\.js$/,
             loader: 'babel-loader',
             include: [resolve('src')]
-        }, {
-            test: /\.scss$/,
-            loaders: ["style-loader", "css-loader", "sass-loader"]
-        }, {
+        },
+        {
             test: /\.html$/,
             loader: "html-loader"
         }, {
@@ -106,7 +105,7 @@ module.exports = {
             filename: 'template/base.html',
             inject: false,
             template: path.join(__dirname, '../template/base.ejs'),
-            chunks: ['manifest', 'vendor']
+            chunks: ['manifest', 'vendor', 'commonStyle']
         }),
         new HtmlWebpackPlugin({
             alwaysWriteToDisk: true,
@@ -265,7 +264,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             alwaysWriteToDisk: true,
             filename: 'template/navi.html',
-            inject: false, 
+            inject: false,
             template: path.join(__dirname, '../template/navi.ejs'),
             chunks: ['navigation']
         }),

@@ -8,6 +8,7 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
 var env = config.build.env
 var faviconsWebpackPlugin = require('favicons-webpack-plugin')
+const extractCSS = new ExtractTextPlugin('css/[name].css');
 
 var webpackConfig = merge(baseWebpackConfig, {
     resolve: {
@@ -17,7 +18,14 @@ var webpackConfig = merge(baseWebpackConfig, {
         }
     },
     module: {
-        noParse: /vue\.runtime\.min\.js/
+        noParse: /vue\.runtime\.min\.js/,
+        rules: [{
+          test: /\.scss$/,
+          use: extractCSS.extract({
+            fallback: "style-loader",
+            use: ['css-loader','sass-loader'],
+          }),
+        }]
     },
     output: {
         path: config.build.assetsRoot,
@@ -40,11 +48,7 @@ var webpackConfig = merge(baseWebpackConfig, {
             },
             sourceMap: true
         }),
-        // extract css into its own file
-        new ExtractTextPlugin({
-            // filename: 'css/[name].[contenthash].css'
-            filename: 'css/[name].css'
-        }),
+        extractCSS,
         // Compress extracted CSS. We are using this plugin so that possible
         // duplicated CSS from different components can be deduped.
         new OptimizeCSSPlugin({

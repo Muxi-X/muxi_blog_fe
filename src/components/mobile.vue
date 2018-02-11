@@ -1,11 +1,11 @@
 <template>
   <div class="mobile full_height">
     <mobile-header v-on:click_button="this.show"></mobile-header>
-    <list class="cont full_width" 
-         :items="this.items" 
-         :pages_count="this.pages_count" 
-         :blog_num="this.blog_num" 
-         v-on:page_up="page_up" 
+    <list class="cont full_width"
+         :items="this.items"
+         :pages_count="this.pages_count"
+         :blog_num="this.blog_num"
+         v-on:page_up="page_up"
          v-on:page_down="page_down">
     </list>
     <transition name="slide-fade">
