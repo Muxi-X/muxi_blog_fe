@@ -1,5 +1,3 @@
-import { read } from "fs";
-
 function Fetch(url, opt = {}){
   opt.method = opt.method || 'GET';
   opt.headers = {

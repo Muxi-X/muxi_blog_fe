@@ -79,12 +79,7 @@
                 url: "",
                 used_method: "",
                 body: {
-                    title: this.title, // 博客的标题
-                    summary: this.summary, // 博客小结
-                    body: this.input, // 博客的内容
-                    img_url: this.image, //图片  
-                    type_id: this.group, // 1是web ， 2 是设计 ， 3 是安卓，4是产品  
-                    tags: this.tags
+                    type: Object
                 }
             }
         },
@@ -144,8 +139,17 @@
             },
             submit() {
                 if (this.image == "")
-                    this.image = "http://upload-images.jianshu.io/upload_images/4938344-0b55e372b7787ed3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"
-
+                    this.image = "http://7xtb8m.com1.z0.glb.clouddn.com/img.png"
+                    
+                this.body = {
+                    title: this.title, // 博客的标题
+                    summary: this.summary, // 博客小结
+                    body: this.input, // 博客的内容
+                    img_url: this.image, //图片  
+                    type_id: this.group, // 1是web ， 2 是设计 ， 3 是安卓，4是产品  
+                    tags: this.tags
+                }
+                
                 if (this.token) {
                     Service.edit_send(this.flag, this.token, this.used_method, this.body).then(res => {
                         if (res.id) {

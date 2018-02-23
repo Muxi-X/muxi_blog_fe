@@ -9,6 +9,7 @@
 
 <script>
 import Cookie from '../common/cookie.js'
+import Service from '../common/service.js'
 export default {
     data() {
         return {

@@ -12,6 +12,7 @@ const templateRoot = path.join(__dirname, "../dist/template")
 app.use(userAgent);
 
 router.get('/', function (ctx, next) {
+    console.log(userAgent)
     ctx.cookies.set("landing", ctx.request.query.landing, {
         httpOnly: false,
     })

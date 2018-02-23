@@ -27,7 +27,7 @@
 							</svg>
 							<div class="comment_num min_font">{{item.likes}}</div>
 						</div>
-						<div class="bottom_right inline_block full_height">
+						<div class="bottom_right inline_block">
 							<div class="blog_summary min_font">{{item.summary}}</div>
 							<div class="tag_list full_width">
 								<div v-for="onetag in item.tags" class="tag inline_block" :key="item.tags.indexOf(onetag)">{{onetag}}</div>

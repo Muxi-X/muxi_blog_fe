@@ -23,7 +23,7 @@ export default {
         
         let body = {
             username: this.username,
-            passToken: btoa("muxistudio@ccnu")
+            password: btoa("muxistudio@ccnu")
         }
         Service.login(body).then(res => {
             if (res !== null && res !== undefined){

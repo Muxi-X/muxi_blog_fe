@@ -10,7 +10,7 @@
                 <div v-if = "is_author" class="author inline_block delete_blog" v-on:click="delete_blog">删除</div>
                 <div v-html="compiledMarkdown" class="article"></div>
                 <div class="second_tag_list full_width">
-                    <div class="tag inline_block" v-for="tag in tags" :key="tags.indexOf(tag)">{{tag}}</div>
+                    <div class="second_tag inline_block" v-for="tag in tags" :key="tags.indexOf(tag)">{{tag}}</div>
                 </div>
                 <div class="comment" v-for="comment in comments" :key="comments.indexOf(comment)">
                     <div>
@@ -70,20 +70,20 @@
         mounted() {
             this.token = Cookie.getCookie("token");
             this.username = Cookie.getCookie("username")
-            
+
             var api = window.location.pathname;
             this.id = api.split('/')[2];
-            
+
             Service.view(this.id).then(res => {
                 this.blog = res.blog
                 this.body = res.blog.body
                 this.comments = res.comments
                 this.tags = this.blog.tags
-            })
 
-            if (this.username == this.blog.username) {
-                this.is_author = true
-            }
+                if (this.username == res.blog.username) {
+                    this.is_author = true
+                }
+            })
         },
         computed: {
             compiledMarkdown: function() {
@@ -120,7 +120,6 @@
 </script>
 
 <style lang="scss">
-    //@import '../scss/utility.scss';
     .avatar {
         width: 60px;
         height: 60px;
@@ -159,7 +158,7 @@
     .second_tag_list {
         margin-bottom: 10px;
     }
-    .tag {
+    .second_tag {
         color: #ffc162;
         font-size: 14px;
         margin-right: 10px;
