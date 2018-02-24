@@ -13,7 +13,7 @@ function Fetch(url, opt = {}){
   return fetch(url,opt)
 
   .then(response =>{
-      return response.json().then((json) => { 
+      return response.json().then((json) => {
           switch (response.status) {
             case 200:
               return json;

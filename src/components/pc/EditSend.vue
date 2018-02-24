@@ -80,7 +80,7 @@
                 used_method: "",
                 body: {
                     type: Object
-                }
+                },
             }
         },
         props: ['flag'],
@@ -89,6 +89,7 @@
         },
         mounted() {
             this.token = Cookie.getCookie("token");
+            // edit
             if (this.flag) {
                 this.get_blog();
             }
@@ -117,7 +118,7 @@
                 this.title = this.blog.title
                 this.group = this.blog.type
                 this.tags = this.blog.tags
-                this.image = this.blog.img_url,
+                this.image = this.blog.img_url
                 this.summary = this.blog.summary
             })
             },
@@ -152,6 +153,7 @@
                 
                 if (this.token) {
                     Service.edit_send(this.flag, this.token, this.used_method, this.body).then(res => {
+                        console.log("hah")
                         if (res.id) {
                             window.location.pathname = "/second/" + res.id
                         } else {

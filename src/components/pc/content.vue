@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<div class="blogs_box margin" v-if="this.blog_num">
-			<a :href="/second/+ item.id" v-for="item in items" :key="item.id" class="content_box full_width">
+			<a :href="/second/+ item.id" v-for="item in items" :key="items.indexOf(item)" class="content_box full_width">
 				<div class="left_box inline_block full-height">
 					<div class="content_top">
 						<img class="avatar_size inline_block full_height" v-bind:src="item.avatar">
@@ -19,11 +19,11 @@
 								<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#commentIcon"></use>
 							</svg>
 							<div class="comment_num min_font">{{item.comment_num}}</div>
-							<svg v-if="!is_like" class="content_icon inline_block" viewBox="0 0 1024 1024">
-								<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="likeIcon"></use>
+							<svg v-if="!item.is_like" class="content_icon inline_block" viewBox="0 0 1024 1024">
+								<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#likeIcon"></use>
 							</svg>
-							<svg v-if="is_like" class="content_icon inline_block" viewBox="0 0 1024 1024">
-								<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="red_like"></use>
+							<svg v-if="item.is_like" class="content_icon inline_block" viewBox="0 0 1024 1024">
+								<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#red_like"></use>
 							</svg>
 							<div class="comment_num min_font">{{item.likes}}</div>
 						</div>
@@ -52,17 +52,10 @@ export default {
 	data() {
 		return {
 			page_num: 1,
-			is_like: false,
 			username: ""
 		}
 	},
 	props: ['items', 'blog_num'],
-	// mounted() {
-	// 	if (this.username = Cookie.getCookie('username')) {
-			
-	// 	}
-
-	// },
 	methods: {
 		page_down() {
 			this.$emit('page_down')

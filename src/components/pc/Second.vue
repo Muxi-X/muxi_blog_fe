@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="main">
+        <div v-if="!this.loading" class="main">
             <img class="avatar inline_block" :src="blog.avatar">
             <div class="right inline_block">
                 <div class="title full_width">{{blog.title}}</div>
@@ -25,6 +25,7 @@
         </div>
         <modal v-if="this.login_tip" v-on:cancel="this.cancel">
         </modal>
+        <loading v-if="this.loading" class="loading main">Loading...</loading>
     </div>
 </template>
 
@@ -33,6 +34,7 @@
     import Cookie from '../../common/cookie.js'
     import modal from '../modal.vue'
     import Service from '../../common/service.js'
+    import Loading from '../loading.vue'
 
     var _ = require('lodash');
     var marked = require('marked')
@@ -60,12 +62,14 @@
                 login_tip: false,
                 body: "",
                 token: "",
-                is_author: false
+                is_author: false,
+                loading: true
             }
         },
         components: {
             "comment-box": commentBox,
-            "modal": modal
+            "modal": modal,
+            "loading": Loading
         },
         mounted() {
             this.token = Cookie.getCookie("token");
@@ -83,6 +87,8 @@
                 if (this.username == res.blog.username) {
                     this.is_author = true
                 }
+
+                this.loading = false
             })
         },
         computed: {
@@ -202,5 +208,9 @@
         width: 50px;
         height: 30px;
         border-radius: 4px;
+    }
+    .loading {
+        text-align: center;
+        background: transparent;
     }
 </style>
