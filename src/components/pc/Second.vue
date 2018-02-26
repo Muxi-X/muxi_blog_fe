@@ -8,6 +8,12 @@
                 <div class="time inline_block">{{new Date(blog.date).toLocaleDateString("ja-JP")}}</div>
                 <div v-if = "is_author" class="author inline_block delete_blog" v-on:click="edit_blog">编辑</div>
                 <div v-if = "is_author" class="author inline_block delete_blog" v-on:click="delete_blog">删除</div>
+                <svg v-on:click = "this.like" v-if="!this.is_liked" class="content_icon inline_block" viewBox="0 0 1024 1024">
+					<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#likeIcon"></use>
+				</svg>
+				<svg v-on:click = "this.cancel_like" v-if="this.is_liked" class="content_icon inline_block" viewBox="0 0 1024 1024">
+					<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#red_like"></use>
+				</svg>
                 <div v-html="compiledMarkdown" class="article"></div>
                 <div class="second_tag_list full_width">
                     <div class="second_tag inline_block" v-for="tag in tags" :key="tags.indexOf(tag)">{{tag}}</div>
@@ -63,7 +69,8 @@
                 body: "",
                 token: "",
                 is_author: false,
-                loading: true
+                loading: true,
+                is_liked: true
             }
         },
         components: {
@@ -89,6 +96,10 @@
                 }
 
                 this.loading = false
+                if (this.token) {
+                    if (this.blog.likes_users.indexOf(this.username) == -1)
+                        this.is_liked = false
+                }
             })
         },
         computed: {
@@ -120,6 +131,22 @@
             },
             edit_blog() {
                 window.location.pathname = "/edit/" + this.id
+            },
+            like() {
+                var body = {
+                    blog_id: this.id
+                }
+                Service.like(this.token, body).then(res => {
+                    this.is_liked = true
+                })
+            },
+            cancel_like() {
+                var body = {
+                    blog_id: this.id
+                }
+                Service.cancel_like(this.token, body).then(res => {
+                    this.is_liked = false
+                })
             }
         }
     }

@@ -19,10 +19,10 @@
 								<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#commentIcon"></use>
 							</svg>
 							<div class="comment_num min_font">{{item.comment_num}}</div>
-							<svg v-if="!item.is_like" class="content_icon inline_block" viewBox="0 0 1024 1024">
+							<svg v-if="!item.is_liked" class="content_icon inline_block" viewBox="0 0 1024 1024">
 								<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#likeIcon"></use>
 							</svg>
-							<svg v-if="item.is_like" class="content_icon inline_block" viewBox="0 0 1024 1024">
+							<svg v-if="item.is_liked" class="content_icon inline_block" viewBox="0 0 1024 1024">
 								<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#red_like"></use>
 							</svg>
 							<div class="comment_num min_font">{{item.likes}}</div>

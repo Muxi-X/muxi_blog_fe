@@ -19,6 +19,8 @@ import tags from '../tags.vue'
 import archive from '../archive.vue'
 import FecthSort from '../../common/sortMap.js'
 import Service from '../../common/service.js'
+import Cookie from '../../common/cookie.js'
+
 export default {
     data() {
         return {
@@ -77,6 +79,19 @@ export default {
                     this.pages_count = res.pages_count
                     this.page_num = res.page
                     this.blog_num = res.blog_num
+
+                    if (Cookie.getCookie("token")) {
+                        for (var i = 0; i < 2; i++) {
+                            this.items[i].is_liked = true
+                            if (this.items[i].likes_users.indexOf(Cookie.getCookie("username") === -1)) {
+                                this.items[i].is_liked = false
+                            }
+                        }
+                    } else {
+                        // have not registered
+                        for (var i = 0; i < 1; i++)
+                            this.items[i].is_liked = false
+                    }
                 })
         }
     }
