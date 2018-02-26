@@ -96,7 +96,7 @@ let Service = {
 
   // like a blog
   like(token, body) {
-    return Fetch("/api/v2.0/like", {
+    return Fetch("/api/v2.0/like/", {
       method: 'POST',
       token: token,
       data: body
@@ -105,7 +105,7 @@ let Service = {
 
   // cancel like a blog
   cancel_like(token, body) {
-    return Fetch("/api/v2.0/unlike", {
+    return Fetch("/api/v2.0/unlike/", {
       method: 'POST',
       token: token,
       data: body

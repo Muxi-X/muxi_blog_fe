@@ -82,14 +82,14 @@ export default {
 
                     if (Cookie.getCookie("token")) {
                         for (var i = 0; i < 2; i++) {
-                            this.items[i].is_liked = true
-                            if (this.items[i].likes_users.indexOf(Cookie.getCookie("username") === -1)) {
-                                this.items[i].is_liked = false
+                            this.items[i].is_liked = false
+                            if (this.items[i].likes_users.indexOf(Cookie.getCookie("username")) !== -1) {
+                                this.items[i].is_liked = true
                             }
                         }
                     } else {
                         // have not registered
-                        for (var i = 0; i < 1; i++)
+                        for (var i = 0; i < 2; i++)
                             this.items[i].is_liked = false
                     }
                 })
