@@ -8,10 +8,10 @@
                 <div class="time inline_block">{{new Date(blog.date).toLocaleDateString("ja-JP")}}</div>
                 <div v-if = "is_author" class="author inline_block delete_blog" v-on:click="edit_blog">编辑</div>
                 <div v-if = "is_author" class="author inline_block delete_blog" v-on:click="delete_blog">删除</div>
-                <svg v-on:click = "this.like" v-if="!this.is_liked" class="content_icon inline_block" viewBox="0 0 1024 1024">
+                <svg v-on:click = "this.like" v-if="!this.is_liked" class="second_like content_icon inline_block" viewBox="0 0 1024 1024">
 					<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#likeIcon"></use>
 				</svg>
-				<svg v-on:click = "this.cancel_like" v-if="this.is_liked" class="content_icon inline_block" viewBox="0 0 1024 1024">
+				<svg v-on:click = "this.cancel_like" v-if="this.is_liked" class="second_like content_icon inline_block" viewBox="0 0 1024 1024">
 					<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#red_like"></use>
 				</svg>
                 <div v-html="compiledMarkdown" class="article"></div>
@@ -70,7 +70,7 @@
                 token: "",
                 is_author: false,
                 loading: true,
-                is_liked: true
+                is_liked: false
             }
         },
         components: {
@@ -97,8 +97,8 @@
 
                 this.loading = false
                 if (this.token) {
-                    if (this.blog.likes_users.indexOf(this.username) == -1)
-                        this.is_liked = false
+                    if (this.blog.likes_users.indexOf(this.username) !== -1)
+                        this.is_liked = true
                 }
             })
         },
@@ -180,6 +180,7 @@
     .time {
         font-size: 14px;
         color: #898989;
+        margin-right: 10px;
     }
     
     .article {
@@ -239,5 +240,8 @@
     .loading {
         text-align: center;
         background: transparent;
+    }
+    .second_like {
+        vertical-align: bottom;
     }
 </style>
