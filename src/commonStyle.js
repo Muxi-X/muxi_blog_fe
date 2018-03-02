@@ -1,2 +1,2 @@
-import './scss/reset.scss'
-import './scss/pc.scss'
+import "./scss/reset.scss";
+import "./scss/pc.scss";

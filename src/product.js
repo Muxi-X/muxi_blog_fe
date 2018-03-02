@@ -1,10 +1,10 @@
-import Vue from 'vue'
-import Sort from './components/pc/Sort.vue'
+import Vue from "vue";
+import Sort from "./components/pc/Sort.vue";
 
 const Product = {
-    template: "#product",
-    mixins: [Sort]
-}
+  template: "#product",
+  mixins: [Sort]
+};
 
-Product.el = "#product"
-const product = new Vue(Product)
+Product.el = "#product";
+const product = new Vue(Product);

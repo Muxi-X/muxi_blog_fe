@@ -1,9 +1,9 @@
-import Vue from 'vue'
-import Sort from './components/pc/Sort.vue'
+import Vue from "vue";
+import Sort from "./components/pc/Sort.vue";
 
 const Web = {
-    mixins: [Sort]
-}
+  mixins: [Sort]
+};
 
-Web.el = "#web"
-const web = new Vue(Web)
+Web.el = "#web";
+const web = new Vue(Web);

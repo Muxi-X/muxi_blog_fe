@@ -1,7 +1,7 @@
-import Vue from 'vue'
-import MobileLanding from './components/landing'
+import Vue from "vue";
+import MobileLanding from "./components/landing";
 
 new Vue({
-  el: '#mobileLanding',
+  el: "#mobileLanding",
   render: h => h(MobileLanding)
-})
+});

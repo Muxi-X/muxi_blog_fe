@@ -1,7 +1,7 @@
-import Vue from 'vue'
-import Edit from './components/pc/edit'
+import Vue from "vue";
+import Edit from "./components/pc/edit";
 
 new Vue({
-  el: '#edit',
+  el: "#edit",
   render: h => h(Edit)
-})
+});

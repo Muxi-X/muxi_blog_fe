@@ -1,7 +1,7 @@
-import Vue from 'vue'
-import Landing from './components/landing'
+import Vue from "vue";
+import Landing from "./components/landing";
 
 new Vue({
-  el: '#landing',
+  el: "#landing",
   render: h => h(Landing)
-})
+});

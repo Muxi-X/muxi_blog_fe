@@ -1,7 +1,7 @@
-import Vue from 'vue'
-import Send from './components/pc/Send'
+import Vue from "vue";
+import Send from "./components/pc/Send";
 
 new Vue({
-    el: '#send',
-    render: h => h(Send)
-})
+  el: "#send",
+  render: h => h(Send)
+});
