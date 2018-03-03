@@ -2,273 +2,278 @@
 .wrap {
   height: 100%;
   clear: both;
-	min-width: 1200px;
-	display: flex;
-	-webkit-align-items: center;
-	align-items: center;
-	-webkit-justify-content: center;
-	justify-content:  center;
+  min-width: 1200px;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
 }
 .link {
   height: 70px;
-	width: 100%;
-	display: block;
-	font-size: 16px;
+  width: 100%;
+  display: block;
+  font-size: 16px;
 }
 .navi {
-    height: 100%;
-    width: 200px;
-    position: fixed;
-    left: 0px;
-    top: 0px;
-    background: #ffffff;
-	overflow: hidden;
-	z-index: 3;
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  background: #ffffff;
+  overflow: hidden;
+  z-index: 3;
 }
 
 .content {
-    width: 600px;
-    height: 550px;
-    margin-left: 100px;
-	overflow: hidden;
+  width: 600px;
+  height: 550px;
+  margin-left: 100px;
+  overflow: hidden;
 }
 
 .boxs {
-	margin-left: 80px;
+  margin-left: 80px;
 }
 
 .logo {
-	width: 120px;
+  width: 120px;
 }
-.send, .logo {
-	margin: 22px auto;
-	display: block;
+.send,
+.logo {
+  margin: 22px auto;
+  display: block;
 }
 .send {
-	height: 45px;
-    margin-top: 50px;
+  height: 45px;
+  margin-top: 50px;
 }
-.link_box,.link_box_first {
-	border-bottom: 1px #d9dcdc solid;
+.link_box,
+.link_box_first {
+  border-bottom: 1px #d9dcdc solid;
 }
 
 .link_box_first {
-	border-top: 1px #d9dcdc solid;
+  border-top: 1px #d9dcdc solid;
 }
 
 .icon {
-	margin-left: 30px;
-	width: 39px;
-	margin-right: 15px;
+  margin-left: 30px;
+  width: 39px;
+  margin-right: 15px;
 }
 
 .class_word {
-	line-height: 70px;
+  line-height: 70px;
 }
 
-.link_box_first:hover,.link_box:hover {
-	background: $green;
-	color: $white;
+.link_box_first:hover,
+.link_box:hover {
+  background: $green;
+  color: $white;
 }
 
-.archiveBox, .tagBox {
-    width: 185px; 
-    background-color: $white;
-    height: 226px;
-    padding: 15px;
+.archiveBox,
+.tagBox {
+  width: 185px;
+  background-color: $white;
+  height: 226px;
+  padding: 15px;
 }
 
 .archiveBox {
-    margin-top: 30px;
+  margin-top: 30px;
 }
 
 .main {
-    width: 800px;
-    background: $white;
-    margin-left: 250px;
-    margin-top: 100px;
-    padding-top: 30px;
-    padding-bottom: 90px;
+  width: 800px;
+  background: $white;
+  margin-left: 250px;
+  margin-top: 100px;
+  padding-top: 30px;
+  padding-bottom: 90px;
 }
 .blogs_box,
 .show {
-	height: 530px;
+  height: 530px;
 }
 
 .show {
-	text-align: center;
-	font-size: 14px;
+  text-align: center;
+  font-size: 14px;
 }
 
 a {
-	display: block;
+  display: block;
 }
 
 .content_box {
-	width: 100%;
-	margin-bottom: 30px;
-	font-size: 0;
-	background-color: $white;
-	border: 2px solid #ebf0f0;
+  width: 100%;
+  margin-bottom: 30px;
+  font-size: 0;
+  background-color: $white;
+  border: 2px solid #ebf0f0;
 }
 .content_box:hover {
-	border: 2px solid $yellow;
-	.blog_title {
-		color: $yellow;
-	}
+  border: 2px solid $yellow;
+  .blog_title {
+    color: $yellow;
+  }
 }
 
 .content_icon {
-	width: 20px;
-	height: 20px;
+  width: 20px;
+  height: 20px;
 }
 
 .content_top {
-	height: 60px;
-	font-size: 0;
+  height: 60px;
+  font-size: 0;
 }
 
 .left_box {
-	padding-top: 15px;
-	width: 390px;
-	vertical-align: top;
+  padding-top: 15px;
+  width: 390px;
+  vertical-align: top;
 }
 
 .right_box {
-	width: 210px;
-	height: 210px;
+  width: 210px;
+  height: 210px;
 }
 
 .content_bottom {
-	font-size: 0;
+  font-size: 0;
 }
 
 .avatar_size,
 .bottom_left {
-	vertical-align: top;
+  vertical-align: top;
 }
 
 .avatar_size {
-	margin: 0 10px;
-	border-radius: 2px;
-	width: 60px;
+  margin: 0 10px;
+  border-radius: 2px;
+  width: 60px;
 }
 
 .bottom_left {
-	padding: 25px;
+  padding: 25px;
 }
 
 .bottom_right {
-	width: 315px;
+  width: 315px;
 }
 
 .blog_username {
-	margin-right: 20px;
-	margin-top: 4px;
+  margin-right: 20px;
+  margin-top: 4px;
 }
 
 .blog_summary {
-	height: 80px;
-	overflow: hidden;
-	margin: 15px 0 15px 10px;
-	line-height: 1.5;
+  height: 88px;
+  overflow: hidden;
+  margin: 15px 0 10px 10px;
+  line-height: 1.5;
 }
 
 .blog_title {
-	font-size: 20px;
+  font-size: 20px;
   width: 300px;
-	height: 38px;
-	overflow: hidden;
-	line-height: 1;
+  height: 38px;
+  overflow: hidden;
+  line-height: 1;
 }
 
 .comment_num {
-	text-align: center;
+  text-align: center;
 }
 
 .tag_list {
-	font-size: 12px;
-	height: 16px;
-	margin-bottom: 0;
-	margin-left: 10px;
-	overflow: hidden;
+  font-size: 12px;
+  height: 16px;
+  margin-bottom: 0;
+  margin-left: 10px;
+  overflow: hidden;
 }
 
 .tag {
-	background-color: $yellow;
-	color: $white;
-	font-size: 12px;
-	line-height: 16px;
-	margin-right: 15px;
-	border-radius: 2px;
-	padding: 0 3px;
+  background-color: $yellow;
+  color: $white;
+  font-size: 12px;
+  line-height: 16px;
+  margin-right: 15px;
+  border-radius: 2px;
+  padding: 0 3px;
 }
 
 .page_row {
-	display: flex;
-	-webkit-align-items: center;
-	align-items: center;
-	-webkit-justify-content: center;
-	justify-content: center;
-	margin-bottom: 10px;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  margin-bottom: 10px;
 }
 
 .right_button {
-	margin-left: 20px;
+  margin-left: 20px;
 }
 .button_size {
-	width: 20px;
-	height: 20px;
-	color: $white;
-	line-height: 20px;
-	border-radius: 2px;
-	background-color: $grey;
+  width: 20px;
+  height: 20px;
+  color: $white;
+  line-height: 20px;
+  border-radius: 2px;
+  background-color: $grey;
 }
 
 .page_button:hover,
 .right_button:hover {
-	background-color: $yellow;
-	cursor: pointer;
+  background-color: $yellow;
+  cursor: pointer;
 }
 
 .button_box {
-	margin-top: 15px;
-	font-size: 14px;
+  margin-top: 15px;
+  font-size: 14px;
 }
 .sign {
-    height: 30px;
-    width: 100px;
-    color: #959595;
-    background: $grey;
-    margin: 0 -2px;
-    font-size: 14px;
-    position: fixed;
-    right: 0;
-	top: 0;
+  height: 30px;
+  width: 100px;
+  color: #959595;
+  background: $grey;
+  margin: 0 -2px;
+  font-size: 14px;
+  position: fixed;
+  right: 0;
+  top: 0;
 }
 .signup {
-	line-height: 25px;
+  line-height: 25px;
 }
-.signup_box,.sign {
-	border-radius: 4px;
+.signup_box,
+.sign {
+  border-radius: 4px;
 }
 .signup_box:hover {
-	background-color: $yellow;
-	cursor: pointer;
-	.signup { 
-		color: $white;
-	}
+  background-color: $yellow;
+  cursor: pointer;
+  .signup {
+    color: $white;
+  }
 }
 
 .muxi_logo {
-	height: 40px;
+  height: 40px;
 }
 
 .design_logo {
-	height: 120px;
-	border-radius: 24px;
+  height: 120px;
+  border-radius: 24px;
 }
 .delete_blog {
-	margin-left: 5px;
-	cursor: pointer;
+  margin-left: 5px;
+  cursor: pointer;
 }

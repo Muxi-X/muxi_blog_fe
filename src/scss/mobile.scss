@@ -1,20 +1,20 @@
 @import "./color.scss";
 .mobile_navi {
-	z-index: 3;
-	position: relative;
+  z-index: 3;
+  position: relative;
 }
 
 .mobile {
-	min-width: 320px;
-	min-height: 560px;
+  min-width: 320px;
+  min-height: 560px;
 }
 
 .slide-fade-enter-active {
-	transition: all .5s ease;
+  transition: all 0.5s ease;
 }
 
 .slide-fade-leave-active {
-	transition: all .5s ease;
+  transition: all 0.5s ease;
 }
 
 .slide-fade-enter,
@@ -22,167 +22,157 @@
   opacity: 0;
 }
 
-.slide-fade-enter-active  .navi_col{
-	transition: all .5s ease;
+.slide-fade-enter-active .navi_col {
+  transition: all 0.5s ease;
 }
 
-.slide-fade-leave-active  .navi_col{
-	transition: all .5s ease;
+.slide-fade-leave-active .navi_col {
+  transition: all 0.5s ease;
 }
 
 .slide-fade-enter .navi_col,
-.slide-fade-leave-to .navi_col,{
+.slide-fade-leave-to .navi_col {
   transform: translateX(-100%);
 }
 
-.navi_col{
+.navi_col {
   transform: translateX(0);
 }
 
-
 .cont {
-	position: absolute;
-	top: 80px;
+  position: absolute;
+  top: 80px;
 }
 
-.blogs_box,
+.mobile_blogs_box,
 .show {
-	height: 70%;
-	width: 90%;
+  height: 70%;
+  width: 90%;
 }
 
 .show {
-	text-align: center;
-	font-size: 14px;
+  text-align: center;
+  font-size: 14px;
 }
 
 a {
-	display: block;
+  display: block;
 }
 
-.content_box {
-	height: 40%;
-	margin-bottom: 30px;
-	font-size: 0;
-	background-color: $white;
-	border: 2px solid transparent;
+.mobile_content_box {
+  height: 200px;
+  margin-bottom: 30px;
+  font-size: 0;
+  background-color: $white;
+  border: 2px solid transparent;
 }
 
-.content_box:hover {
-	border: 2px solid $yellow;
-	.blog_title {
-		color: $yellow;
-	}
+.mobile_content_box:hover {
+  border: 2px solid $yellow;
+  .mobile_blog_title {
+    color: $yellow;
+  }
 }
 
-.avatar_size {
-	width: 50px;
+.mobile_content_icon {
+  width: 20px;
+  height: 20px;
+  margin: 0 10px;
+  vertical-align: bottom;
 }
 
-.content_icon {
-	width: 20px;
-	height: 20px;
-	margin: 0 10px;
-	vertical-align: bottom;
+.mobile_content_top {
+  height: 50px;
+  font-size: 0;
 }
 
-.content_top {
-	height: 50px;
-	font-size: 0;
+.mobile_avatar_size {
+  vertical-align: top;
+  width: 16%;
 }
 
-.comment_num {
-	color: $yellow;
+.mobile_top_right {
+  width: 82%;
+  margin-left: 2%;
+}
+.mobile_blog_username {
+  margin-right: 20px;
 }
 
-.avatar_size,
-.bottom_left {
-	vertical-align: top;
+.mobile_bottom {
+  padding: 0 10px;
+  margin-bottom: 10px;
 }
 
-.blog_username {
-	margin-right: 20px;
+.mobile_blog_summary {
+  height: 100px;
+  overflow: hidden;
+  margin: 10px 0;
 }
 
-.bottom_right {
-	padding: 0 10px;
+.mobile_blog_title {
+  font-size: 14px;
+  padding: 2px;
+  height: 30px;
+  overflow: scroll;
 }
 
-.blog_summary {
-	height: 100px;
-	overflow: scroll;
-	margin: 10px 0;
+.mobile_tag {
+  background-color: $yellow;
+  color: $white;
+  font-size: 12px;
+  line-height: 16px;
+  margin-right: 15px;
+  border-radius: 2px;
+  padding: 0 3px;
 }
 
-.blog_title {
-	font-size: 20px;
-	padding: 2px;
-	height: 26px;
+.mobile_page_row {
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  margin-bottom: 10px;
 }
 
-.tag_list {
-	font-size: 12px;
-	height: 16px;
-	margin-bottom: 5px;
+.mobile_right_button {
+  margin-left: 20px;
 }
 
-.tag {
-	background-color: $yellow;
-	color: $white;
-	font-size: 12px;
-	line-height: 16px;
-	margin-right: 15px;
-	border-radius: 2px;
-	padding: 0 3px;
+.mobile_button_size {
+  width: 16px;
+  height: 16px;
+  color: $white;
+  line-height: 16px;
 }
 
-.page_row {
-	display: flex;
-	-webkit-align-items: center;
-	align-items: center;
-	-webkit-justify-content: center;
-	justify-content: center;
-	margin-bottom: 10px;
-}
-
-.right_button {
-	margin-left: 20px;
-}
-
-.button_size {
-	width: 16px;
-	height: 16px;
-	color: $white;
-	line-height: 16px;
-}
-
-.page_button:hover,
-.right_button:hover {
-	background-color: $yellow;
-	cursor: pointer;
+.mobile_page_button:hover,
+.mobile_right_button:hover {
+  background-color: $yellow;
 }
 
 .box_style {
-	width: 80%;
-	margin: 0 auto;
-	background-color: $white;
-	padding: 10px;
+  width: 80%;
+  margin: 0 auto;
+  background-color: $white;
+  padding: 10px;
 }
 
 .editComment {
-	height: 75px;
-	width: 80%;
-	border: 2px solid #e6e6e6;
+  height: 75px;
+  width: 80%;
+  border: 2px solid #e6e6e6;
 }
 
 .submitComment {
-	background-color: $orange;
-	color: $white;
-	width: 50px;
-	height: 30px;
-	border-radius: 4px;
+  background-color: $orange;
+  color: $white;
+  width: 50px;
+  height: 30px;
+  border-radius: 4px;
 }
 
 .buttonBox {
-	margin-top: 15px;
+  margin-top: 15px;
 }
