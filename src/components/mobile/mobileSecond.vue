@@ -10,10 +10,10 @@
                         <div class="time_like">
                             <div class="full_height inline_block time middle_font inline_block">{{new Date(blog.date).toLocaleDateString()}}</div>
                             <svg v-on:click="this.like" v-if="!this.is_liked" class="second_like content_icon inline_block vertical_align" viewBox="0 0 1024 1024">
-                            	<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#likeIcon"></use>
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#likeIcon"></use>
                             </svg>
                             <svg v-on:click="this.cancel_like" v-if="this.is_liked" class="second_like content_icon inline_block vertical_align" viewBox="0 0 1024 1024">
-                            	<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#red_like"></use>
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#red_like"></use>
                             </svg>
                         </div>
                     </div>
@@ -35,11 +35,9 @@
             </div>
             <modal v-if="this.tip" class="tip_mask" v-on:cancel="this.cancel"></modal>
         </div>
-        <div v-if="!this.loading">
-            <transition name="slide-fade">
-                <mobile-navi class="mobile_navi" v-show="this.show_navi" v-on:click_mask="this.show"></mobile-navi>
-            </transition>
-        </div>
+        <transition name="slide-fade">
+            <mobile-navi class="mobile_navi" v-show="this.show_navi" v-on:click_mask="this.show"></mobile-navi>
+        </transition>
         <loading v-if="this.loading" class="mobile_loading">Loading...</loading>
     </div>
 </template>
@@ -142,9 +140,13 @@ export default {
       var body = {
         blog_id: this.id
       };
-      Service.like(this.token, body).then(res => {
-        this.is_liked = true;
-      });
+      if (this.token) {
+        Service.like(this.token, body).then(res => {
+          this.is_liked = true;
+        });
+      } else {
+        this.login_tip = true;
+      }
     },
     cancel_like() {
       var body = {
@@ -277,6 +279,7 @@ export default {
   width: 90%;
   padding: 5px;
 }
+
 .submit_comment {
   background-color: $yellow;
   color: #fff;
