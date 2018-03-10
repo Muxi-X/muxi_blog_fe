@@ -18,9 +18,9 @@ function Fetch(url, opt = {}) {
         case 502:
           util.message(response.statusText, "err");
         case 403:
-          throw response.statusText;
+          util.message(json.message, "err");
         case 401:
-          throw response.status;
+          return response.status;
           break;
       }
     });
@@ -38,7 +38,7 @@ let Service = {
     return Fetch("/api/v2.0/" + id + "/views/");
   },
   delete_blog(id, token) {
-    return Fetch("/api/v2.0/" + this.id + "/delete/", {
+    return Fetch("/api/v2.0/" + id + "/delete/", {
       method: "DELETE",
       token: token
     });

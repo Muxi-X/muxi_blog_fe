@@ -142,7 +142,11 @@ export default {
       };
       if (this.token) {
         Service.like(this.token, body).then(res => {
-          this.is_liked = true;
+          if (res == "401") {
+            this.login_tip = true;
+          } else {
+            this.is_liked = true;
+          }
         });
       } else {
         this.login_tip = true;

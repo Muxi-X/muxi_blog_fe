@@ -8,35 +8,39 @@
 </template>
 
 <script>
-import Cookie from '../common/cookie.js'
-import Service from '../common/service.js'
+import Cookie from "../common/cookie.js";
+import Service from "../common/service.js";
 export default {
-    data() {
-        return {
-            message: "",
-            token: ""
-        }
-    },
-    props: ['id'],
-    methods: {
-        submit_comment(e) {
-            e.stopPropagation();
-            this.token = Cookie.getCookie("token")
-            if (this.token) {
-                if (this.message) {
-                    var body = {
-                        id: this.id,
-                        comment: this.message
-                    }
-                    Service.add_comment(this.id, this.token, body).then(res => {
-                        this.message = ""
-                        this.$emit('new_comment')
-                    })
-                }
+  data() {
+    return {
+      message: "",
+      token: ""
+    };
+  },
+  props: ["id"],
+  methods: {
+    submit_comment(e) {
+      e.stopPropagation();
+      this.token = Cookie.getCookie("token");
+      if (this.token) {
+        if (this.message) {
+          var body = {
+            id: this.id,
+            comment: this.message
+          };
+          Service.add_comment(this.id, this.token, body).then(res => {
+            if (res == "401") {
+              this.$emit("show_tip");
             } else {
-                this.$emit('show_tip')
+              this.message = "";
+              this.$emit("new_comment");
             }
+          });
         }
+      } else {
+        this.$emit("show_tip");
+      }
     }
-}
+  }
+};
 </script>

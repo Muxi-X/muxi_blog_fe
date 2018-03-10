@@ -123,8 +123,11 @@ export default {
     },
     delete_blog() {
       Service.delete_blog(this.id, this.token).then(res => {
-        if (res !== null && res !== undefined) window.location.pathname = "/";
-        else this.login_tip = true;
+        if (res == "401") {
+          this.login_tip = true;
+        } else {
+          window.location = "/";
+        }
       });
     },
     edit_blog() {
@@ -136,7 +139,11 @@ export default {
       };
       if (this.token) {
         Service.like(this.token, body).then(res => {
-          this.is_liked = true;
+          if (res == "401") {
+            this.login_tip = true;
+          } else {
+            this.is_liked = true;
+          }
         });
       } else {
         this.login_tip = true;
@@ -189,7 +196,9 @@ export default {
   margin-top: 35px;
   margin-bottom: 50px;
   overflow-x: scroll;
-  width: 100%;
+  img {
+    width: 100%;
+  }
 }
 
 .second_tag_list {

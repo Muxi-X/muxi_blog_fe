@@ -43,26 +43,27 @@
 			<button class="page_button button_size" v-on:click="page_down"> < </button>
 			<button class="right_button button_size" v-on:click="page_up"> > </button>
 		</div>
+		<a href="http://share.muxixyz.com">hah</a>
 	</div>
 </template>
 
 <script>
-import Cookie from '../../common/cookie.js'
+import Cookie from "../../common/cookie.js";
 export default {
-	data() {
-		return {
-			page_num: 1,
-			username: ""
-		}
-	},
-	props: ['items', 'blog_num'],
-	methods: {
-		page_down() {
-			this.$emit('page_down')
-		},
-		page_up() {
-			this.$emit('page_up')
-		}
-	}
-}
+  data() {
+    return {
+      page_num: 1,
+      username: ""
+    };
+  },
+  props: ["items", "blog_num"],
+  methods: {
+    page_down() {
+      this.$emit("page_down");
+    },
+    page_up() {
+      this.$emit("page_up");
+    }
+  }
+};
 </script>
