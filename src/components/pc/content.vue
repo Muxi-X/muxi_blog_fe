@@ -43,7 +43,6 @@
 			<button class="page_button button_size" v-on:click="page_down"> < </button>
 			<button class="right_button button_size" v-on:click="page_up"> > </button>
 		</div>
-		<a href="http://share.muxixyz.com">hah</a>
 	</div>
 </template>
 

@@ -6,7 +6,7 @@ const path = require("path");
 const swig = require("swig");
 const router = new Router();
 const app = new Koa();
-
+const session = require("koa-session");
 const templateRoot = path.join(__dirname, "../dist/template");
 
 app.use(userAgent);
@@ -78,7 +78,7 @@ router.get("/android", function(ctx, next) {
 });
 
 router.get("/landing", function(ctx, next) {
-  var token = ctx.cookies.get("passToken");
+  let token = ctx.cookies.get("passToken");
   ctx.cookies.set("pass", token, {
     httpOnly: false,
     domain: ".muxixyz.com"
@@ -174,5 +174,6 @@ router.get(/^\/static(?:\/|$)/, async ctx => {
 });
 
 app.use(router.routes()).use(router.allowedMethods());
+
 app.listen(3000);
 console.log("listening on port 3000");
