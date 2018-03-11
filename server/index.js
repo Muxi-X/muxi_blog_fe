@@ -6,7 +6,6 @@ const path = require("path");
 const swig = require("swig");
 const router = new Router();
 const app = new Koa();
-const session = require("koa-session");
 const templateRoot = path.join(__dirname, "../dist/template");
 
 app.use(userAgent);
