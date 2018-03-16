@@ -80,7 +80,7 @@ router.get("/landing", function(ctx, next) {
   let token = ctx.cookies.get("passToken");
   ctx.cookies.set("pass", token, {
     httpOnly: false,
-    Expires: new Date(2020, 1, 1),
+    expires: new Date(2020, 1, 1),
     domain: ".muxixyz.com"
   });
   if (!ctx.userAgent.isMobile) {
@@ -175,5 +175,5 @@ router.get(/^\/static(?:\/|$)/, async ctx => {
 
 app.use(router.routes()).use(router.allowedMethods());
 
-app.listen(3000);
-console.log("listening on port 3000");
+app.listen(8080);
+console.log("listening on port 8080");
