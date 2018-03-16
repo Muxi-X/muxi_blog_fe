@@ -19,7 +19,7 @@
                     </div>
                 </div>
                 <div class="title">{{blog.title}}</div>
-                <div v-html="compiledMarkdown" class="article"></div>
+                <div v-highlight v-html="compiledMarkdown" class="article"></div>
                 <div class="tags_list">
                     <div class="mobile_second_tag inline_block middle_font" v-for="tag in tags" :key="tags.indexOf(tag)">{{tag}}</div>
                 </div>
@@ -208,6 +208,9 @@ export default {
 .article {
   margin-bottom: 20px;
   overflow: scroll;
+  img {
+    width: 100%;
+  }
 }
 
 .mobile_second_tag {

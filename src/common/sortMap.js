@@ -1,14 +1,14 @@
 export default {
-    SortMap: {
-        "": 0,
-        "web": 1,
-        "design": 2,
-        "android": 3,
-        "product": 4,
-        "tagBlogs": 5,
-        "archiveBlogs": 6,
-        "second": 7,
-        "send": 8,
-        "edit": 9
-    }
-}
+  SortMap: {
+    "": 0,
+    web: 1,
+    design: 2,
+    android: 3,
+    product: 4,
+    tagBlogs: 5,
+    archiveBlogs: 6,
+    second: 7,
+    send: 8,
+    edit: 9
+  }
+};

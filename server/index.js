@@ -80,6 +80,7 @@ router.get("/landing", function(ctx, next) {
   let token = ctx.cookies.get("passToken");
   ctx.cookies.set("pass", token, {
     httpOnly: false,
+    Expires: new Date(2020, 1, 1),
     domain: ".muxixyz.com"
   });
   if (!ctx.userAgent.isMobile) {
