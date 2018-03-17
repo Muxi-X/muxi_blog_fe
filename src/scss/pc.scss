@@ -42,7 +42,7 @@
 }
 .send,
 .logo {
-  margin: 22px auto;
+  margin: 0 auto;
   display: block;
 }
 .send {
@@ -266,12 +266,18 @@ a {
 }
 
 .muxi_logo {
-  height: 40px;
+  padding: 10px 0;
+}
+
+.blog_logo {
+  height: 78px;
 }
 
 .design_logo {
-  height: 120px;
-  border-radius: 24px;
+  padding: 20px 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
 }
 .delete_blog {
   margin-left: 5px;

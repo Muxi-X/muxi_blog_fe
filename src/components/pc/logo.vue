@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<a href="/" class="logo" v-if="this.kind == 0">
+		<a href="/" class="logo muxi_logo" v-if="this.kind == 0">
 			<img src="../../assets/blog_logo.png" class="logo muxi_logo">
 		</a>
 		<a href="/web" class="logo muxi_logo"  v-else-if="this.kind == 1">
@@ -34,28 +34,28 @@
 </template>
 
 <script>
-	import FecthSort from '../../common/sortMap.js'
-	
-	export default {
-		data() {
-			return {
-				kind: 0,
-				tag: "",
-				tag: "",
-				year: 0,
-				month: 0
-			}
-		},
-		mounted() {
-			var api = window.location.pathname
-			var find = api.split('/')[1]
-			this.kind = FecthSort.SortMap[find];
-			if (this.kind == 5) {
-				this.tag = api.split('/')[2];
-			} else if (this.kind == 6) {
-				this.year = api.split('/')[2];
-				this.month = api.split('/')[3];
-			}
-		}
-	}
+import FecthSort from "../../common/sortMap.js";
+
+export default {
+  data() {
+    return {
+      kind: 0,
+      tag: "",
+      tag: "",
+      year: 0,
+      month: 0
+    };
+  },
+  mounted() {
+    var api = window.location.pathname;
+    var find = api.split("/")[1];
+    this.kind = FecthSort.SortMap[find];
+    if (this.kind == 5) {
+      this.tag = api.split("/")[2];
+    } else if (this.kind == 6) {
+      this.year = api.split("/")[2];
+      this.month = api.split("/")[3];
+    }
+  }
+};
 </script>
