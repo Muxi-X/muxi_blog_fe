@@ -11,7 +11,6 @@ const templateRoot = path.join(__dirname, "../dist/template");
 app.use(userAgent);
 
 router.get("/", function(ctx, next) {
-  console.log(userAgent);
   ctx.cookies.set("landing", ctx.request.query.landing, {
     httpOnly: false
   });
@@ -77,12 +76,14 @@ router.get("/android", function(ctx, next) {
 });
 
 router.get("/landing", function(ctx, next) {
-  let token = ctx.cookies.get("passToken");
-  ctx.cookies.set("pass", token, {
-    httpOnly: false,
-    expires: new Date(2020, 1, 1),
-    domain: ".muxixyz.com"
-  });
+  // console.log(ctx.cookies.get("passToken"))
+  // if(ctx.cookies.get("passToken")) {
+  //   ctx.cookies.set("pass", ctx.cookies.get("passToken") , {
+  //   httpOnly: false,
+  //   expires: new Date(2020, 1, 1),
+  //   domain: ".muxixyz.com"
+  // });
+  // }
   if (!ctx.userAgent.isMobile) {
     let template = swig.compileFile(path.resolve(templateRoot, "landing.html"));
     ctx.body = template({});

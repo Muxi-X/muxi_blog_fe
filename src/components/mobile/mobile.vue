@@ -74,7 +74,7 @@ export default {
     },
     fetch_url() {
       Service.fetch_url(this.Url, this.page_num)
-        //Service.fetch_url("", this.page_num)
+        // Service.fetch_url("", this.page_num)
         .then(res => {
           this.items = res.blogs;
           this.pages_count = res.pages_count;

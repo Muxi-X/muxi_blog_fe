@@ -7,7 +7,7 @@
                 <div class="author inline_block">{{decodeURIComponent(blog.username)}}</div>
                 <div class="time inline_block">{{new Date(blog.date).toLocaleDateString("ja-JP")}}</div>
                 <div v-if="is_author" class="author inline_block delete_blog" v-on:click="edit_blog">编辑</div>
-                <div v-if="is_author" class="author inline_block delete_blog" v-on:click="delete_blog">删除</div>
+                <div v-if="is_author" class="author inline_block delete_blog" v-on:click="cancelDelete">删除</div>
                 <svg v-on:click="this.like" v-if="!this.is_liked" class="second_like content_icon inline_block" viewBox="0 0 1024 1024">
     					<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#likeIcon"></use>
     				</svg>
@@ -29,7 +29,12 @@
                 </comment-box>
             </div>
         </div>
-        <modal v-if="this.login_tip" v-on:cancel="this.cancel">
+        <login-modal v-if="this.login_tip" v-on:cancel="this.cancel">
+        </login-modal>
+        <modal v-if="this.delete_tip">
+          <div slot="tip_content">确定删除？</div>
+          <div @click="this.delete_blog" slot="tip_confirm">删除</div>
+          <div @click="this.cancelDelete" slot="tip_cancel">取消</div>
         </modal>
         <loading v-if="this.loading" class="loading main">Loading...</loading>
     </div>
@@ -41,6 +46,8 @@ import Cookie from "../../common/cookie.js";
 import modal from "../modal.vue";
 import Service from "../../common/service.js";
 import Loading from "../loading.vue";
+import LoginModal from "../LoginModal.vue";
+import Modal from "../modal.vue";
 
 var _ = require("lodash");
 var marked = require("marked");
@@ -70,13 +77,15 @@ export default {
       token: "",
       is_author: false,
       loading: true,
-      is_liked: false
+      is_liked: false,
+      delete_tip: false
     };
   },
   components: {
     "comment-box": commentBox,
-    modal: modal,
-    loading: Loading
+    "login-modal": LoginModal,
+    loading: Loading,
+    modal: Modal
   },
   mounted() {
     this.token = Cookie.getCookie("token");
@@ -156,6 +165,9 @@ export default {
       Service.cancel_like(this.token, body).then(res => {
         this.is_liked = false;
       });
+    },
+    cancelDelete() {
+      this.delete_tip = !this.delete_tip;
     }
   }
 };

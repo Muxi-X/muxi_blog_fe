@@ -33,7 +33,7 @@
                 <comment-box class="cBox middle_font full_width" :id="this.id" v-on:new_comment="fetch_comments" v-on:show_tip="show_tip">
                 </comment-box>
             </div>
-            <modal v-if="this.tip" class="tip_mask" v-on:cancel="this.cancel"></modal>
+            <login-modal v-if="this.tip" class="tip_mask" v-on:cancel="this.cancel"></login-modal>
         </div>
         <transition name="slide-fade">
             <mobile-navi class="mobile_navi" v-show="this.show_navi" v-on:click_mask="this.show"></mobile-navi>
@@ -46,7 +46,7 @@
 import header from "./header";
 import mobileNavi from "./mobileNavi";
 import commentBox from "../commentBox";
-import modal from "../modal.vue";
+import LoginModal from "../LoginModal.vue";
 import Service from "../../common/service.js";
 import Loading from "../loading.vue";
 import Cookie from "../../common/cookie.js";
@@ -87,7 +87,7 @@ export default {
     "mobile-header": header,
     "mobile-navi": mobileNavi,
     "comment-box": commentBox,
-    modal: modal,
+    "login-modal": LoginModal,
     loading: Loading
   },
   mounted() {
@@ -143,13 +143,13 @@ export default {
       if (this.token) {
         Service.like(this.token, body).then(res => {
           if (res == "401") {
-            this.login_tip = true;
+            this.tip = true;
           } else {
             this.is_liked = true;
           }
         });
       } else {
-        this.login_tip = true;
+        this.tip = true;
       }
     },
     cancel_like() {

@@ -36,13 +36,13 @@
             </div>
             <button v-on:click="submit" class="submit">POST</button>
         </div>
-        <modal v-if="this.login_tip" v-on:cancel="this.cancel">
-        </modal>
+        <login-modal v-if="this.login_tip" v-on:cancel="this.cancel">
+        </login-modal>
     </div>
 </template>
 
 <script>
-import modal from "../modal.vue";
+import LoginModal from "../LoginModal.vue";
 import Cookie from "../../common/cookie.js";
 import Service from "../../common/service.js";
 
@@ -85,7 +85,7 @@ export default {
   },
   props: ["flag"],
   components: {
-    modal: modal
+    "login-modal": LoginModal
   },
   mounted() {
     this.token = Cookie.getCookie("token");
