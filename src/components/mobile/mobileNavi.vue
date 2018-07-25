@@ -44,7 +44,7 @@
           </svg>
           <span class="class_word vertical_align inline_block">Archive</span>
         </a>
-        <a href="http://muxistudio.com" class="link full_width">
+        <a href="http://www.muxixyz.com" class="link full_width">
           <svg class="icon vertical_align inline_block" viewBox="0 0 1024 1024">
             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#about"></use>
           </svg>
@@ -56,19 +56,16 @@
   </div>
 </template>
 <script>
-
 export default {
   data() {
-    return {
-
-    }
+    return {};
   },
   methods: {
     click_mask() {
-      this.$emit('click_mask')
+      this.$emit("click_mask");
     }
   }
-}
+};
 </script>
 
 <style lang="scss">
@@ -102,7 +99,7 @@ export default {
 .link {
   display: block;
   height: 50px;
-  font-size: 14px
+  font-size: 14px;
 }
 
 .icon {
