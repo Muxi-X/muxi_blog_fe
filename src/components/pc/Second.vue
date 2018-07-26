@@ -211,6 +211,9 @@ export default {
   img {
     width: 100%;
   }
+  a {
+    color: #ffc162;
+  }
 }
 
 .second_tag_list {
