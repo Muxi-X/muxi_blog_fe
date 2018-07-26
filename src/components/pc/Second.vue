@@ -213,6 +213,7 @@ export default {
   }
   a {
     color: #ffc162;
+    display: inline-block;
   }
 }
 

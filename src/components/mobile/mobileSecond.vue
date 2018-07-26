@@ -213,6 +213,7 @@ export default {
   }
   a {
     color: $yellow;
+    display: inline-block;
   }
 }
 
