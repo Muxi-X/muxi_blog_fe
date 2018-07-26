@@ -211,6 +211,9 @@ export default {
   img {
     width: 100%;
   }
+  a {
+    color: $yellow;
+  }
 }
 
 .mobile_second_tag {
