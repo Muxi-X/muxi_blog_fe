@@ -1,12 +1,12 @@
-## muxi_blog
+## Muxi blog Front-end Service
 
-**Start：**
+**Development**
 
-`npm install`
+➜  `npm install`
 
-`ninja2 start`
+➜  `ninja2 start`
 
-**Node Start：**
+**Node Server**
 
 ➜  muxi_blog_fe  `npm run build`
 
@@ -14,5 +14,5 @@
 
 ➜  server `npm install`
 
-➜  server `node index.js` (Node version is v8.5.0)
+➜  server `node index.js`
 
