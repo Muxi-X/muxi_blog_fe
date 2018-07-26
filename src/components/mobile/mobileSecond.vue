@@ -73,7 +73,7 @@ export default {
       blog: {
         type: Object
       },
-      show_navi: true,
+      show_navi: false,
       id: 0,
       tip: false,
       body: "",

@@ -29,8 +29,8 @@ export default {
     login() {
       Cookie.setCookie("url", window.location.href);
       window.location =
-        // "http://pass.muxixyz.com?landing=blog.muxixyz.com/landing";
-        "http://pass.muxixyz.com?landing=localhost:3000/landing";
+        "http://pass.muxixyz.com?landing=blog.muxixyz.com/landing";
+        // "http://pass.muxixyz.com?landing=localhost:3000/landing";
     },
     toProfile() {
       window.location =
