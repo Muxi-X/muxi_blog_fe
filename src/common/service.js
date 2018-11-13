@@ -15,13 +15,18 @@ function Fetch(url, opt = {}) {
       switch (response.status) {
         case 200:
           return json;
+          break;
         case 502:
           util.message(response.statusText, "err");
+          break;
         case 403:
           util.message(json.message, "err");
+          break;
         case 401:
           return response.status;
           break;
+        default:
+          return response.status;
       }
     });
   });

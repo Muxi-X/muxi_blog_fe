@@ -39,12 +39,13 @@ export default {
     };
     Service.login(body)
       .then(res => {
-        if (res !== null && res !== undefined) {
-          return res;
-        } else {
+        if (res == 401) {
           Service.register(body).then(value => {
+            console.log("register");
             Service.login(body);
           });
+        } else {
+          return res;
         }
       })
       .then(value => {
