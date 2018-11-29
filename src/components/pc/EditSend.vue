@@ -88,7 +88,7 @@ export default {
     "login-modal": LoginModal
   },
   mounted() {
-    this.token = Cookie.getCookie("token");
+    this.token = Cookie.getCookie("blogToken");
     // edit
     if (this.flag) {
       this.get_blog();

@@ -88,7 +88,7 @@ export default {
     modal: Modal
   },
   mounted() {
-    this.token = Cookie.getCookie("token");
+    this.token = Cookie.getCookie("blogToken");
     this.username = Cookie.getCookie("username");
 
     var api = window.location.pathname;

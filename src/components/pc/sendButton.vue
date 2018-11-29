@@ -8,17 +8,17 @@
   </div>
 </template>
 <script>
-import Cookie from '../../common/cookie.js'
+import Cookie from "../../common/cookie.js";
 export default {
-    data() {
-        return {
-            visible: false
-        }
-    },
-    mounted() {
-        if (Cookie.getCookie("token")) {
-            this.visible = true
-        }
+  data() {
+    return {
+      visible: false
+    };
+  },
+  mounted() {
+    if (Cookie.getCookie("blogToken")) {
+      this.visible = true;
     }
-}
+  }
+};
 </script>

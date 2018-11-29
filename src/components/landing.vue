@@ -38,19 +38,13 @@ export default {
       password: btoa("muxistudio@ccnu")
     };
     Service.login(body)
-      .then(res => {
-        if (res == 401) {
-          Service.register(body).then(value => {
-            console.log("register");
-            Service.login(body);
-          });
-        } else {
-          return res;
-        }
-      })
       .then(value => {
-        Cookie.setCookie("token", value.token);
-        Cookie.setCookie("uid", value.uid);
+        Cookie.setCookie("blogToken", value.token, 365);
+      })
+      .catch(error => {
+        Service.register(body).then(value => {
+          Service.login(body);
+        });
       });
     this.url = Cookie.getCookie("url");
     setTimeout(() => {

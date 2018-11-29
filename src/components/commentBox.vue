@@ -21,7 +21,7 @@ export default {
   methods: {
     submit_comment(e) {
       e.stopPropagation();
-      this.token = Cookie.getCookie("token");
+      this.token = Cookie.getCookie("blogToken");
       if (this.token) {
         if (this.message) {
           var body = {

@@ -81,7 +81,7 @@ export default {
           this.page_num = res.page;
           this.blog_num = res.blog_num;
 
-          if (Cookie.getCookie("token")) {
+          if (Cookie.getCookie("blogToken")) {
             for (var i = 0; i < 2; i++) {
               this.items[i].is_liked = false;
               if (
