@@ -140,7 +140,7 @@ export default {
     },
     submit() {
       if (this.image == "")
-        this.image = "http://7xtb8m.com1.z0.glb.clouddn.com/img.png";
+        this.image = "https://static.muxixyz.com/blog/avatar/loading1.png";
 
       this.body = {
         title: this.title, // 博客的标题
